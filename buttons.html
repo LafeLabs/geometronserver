@@ -2,12 +2,31 @@
 <html>
 <head>
 <script>
+function callPHP() {
+    var httpc = new XMLHttpRequest(); 
+    var url = "readbyte.php";
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    httpc.send("byte=0" + outByte.toString(8));
+}
 
+function callPHPload(){
+    var httpc = new XMLHttpRequest(); 
+    //var url = "loader.php";
+    httpc.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("byteIO").value =
+            this.responseText;
+       }
+    };
+    httpc.open("GET", "goutput.txt", true);
+    httpc.send();
+}
 
 </script>
 </head>   
 <body>
-<div class = "panel12">
+<div class = "panel12" id = "mainpanel">
     <div class = "calibration">
         <div class = "calbutton buttonon"></div>
         <div class = "calbutton buttonoff"></div>
@@ -22,8 +41,8 @@
             <li id = "octalout" class = "out"></li>
             <li id = "hexout" class = "out"></li>
         </ul>
-        <div class = "push" onclick = "console.log(outByte);"><span class = "pushlabel">SEND</span></div>
-
+        <div class = "push" onclick = "callPHP();console.log(outByte);"><span class = "pushlabel">SEND</span></div>
+        <div class = "push" onclick = "callPHPload();"><span class = "pushlabel">LOAD</span></div>
     </div>
     <div class = "leftlabel">
         <div class = "octaldigit" id = "sixtyfours">0</div>
@@ -42,11 +61,23 @@
         <div class = "indicatorbutton buttonoff" id = "button1"></div>
     </div>
 </div>
-
-
-
+<textarea id = "byteIO"></textarea>
 
 <script>
+
+width  = window.innerWidth;
+height = window.innerHeight;
+squarewidth = width;
+if(width < height){
+    squarewidth = width;
+}
+else{
+    squarewidth = height;
+}
+
+document.getElementById("mainpanel").style.width = squarewidth.toString()+ "px";
+document.getElementById("mainpanel").style.height = squarewidth.toString() + "px";
+
 outByte = 0;
 bigByte = [false,false,false,false,false,false,false,false,false];
 
@@ -115,68 +146,69 @@ document.getElementById("hexout").innerHTML = "0x" + parseInt(outstring,2).toStr
 
 </script>
 <style>
+#byteIO{
+    float:right;
+    border:solid;
+}
 ul{
     float:left;
 }
 .out{
     font-family:Courier;
-    font-size:16px;
+    font-size:1.3em;
     color:red;
 }
 .octaldigit{
     font-family:Courier;
-    font-size:90px;
-    padding:20px 2px 7px 12px;
+    font-size:7em;
+    padding:.2em 0em 0em 0.1em;
     float:left;
     color:red;    
 }
 .panel9{
-    width:380px;
-    height:380px;
-    padding:5px 5px 5px 5px;
+    width:70%;
+    height:70%;
+    padding:2% 2% 2% 2%;
     float:left;
     background-color:blue;
 }
 .panel12{
-    width:520px;
-    height:520px;
-    border:solid;
+    position:fixed;
     background-color:green;
 }
 .toplabel{
-    width:390px;
-    height:93px;
+    width:75%;
+    height:20%;
     float:left;
     color:red;
 }
 #topdisplay{
-    width:50px;
     font-family:Futura;
-    font-size:90px;
+    font-size:6em;
     position:relative;
-    top:-12px;
+    top: .1em;
 }
 .leftlabel{
-    width:95px;
-    height:390px;
+    width:15%;
+    height:73%;
     float:left;
 }
 .calibration{
-    width:95px;
-    height:90px;
+    width:20%;
+    height:20%;
     float:left;
     background-color:blue;
 }
 .calbutton{
-    width:30px;
-    height:30px;
+    width:44%;
+    height:44%;
     float:left;
-    margin: 6px 6px 6px 6px;
+    margin: 2% 2% 2% 2%;
 }
 .indicatorbutton{
-    width:100px;
-    height:100px;
-    margin:12px 12px 12px 12px;
+    width:27%;
+    height:27%;
+    margin:3% 3% 3% 3%;
     float:left;
 }
 .buttonoff{
@@ -190,19 +222,19 @@ ul{
 }
 .pushlabel{
     position:relative;
-    top:22px;
-    left:8px;
+    top:30%;
 }
 .push{
-    width:70px;
-    height:70px;
-    margin:5px 5px 5px 5px;
+    width:20%;
+    height:30%;
+    margin:2% 2% 2% 2%;
     float:right;
     border-radius:35px;
     border:solid;
     background-color:purple;
     font-family:Futura;
-    font-size:20px;
+    font-size:16px;
+    text-align:center;
 }
 .push:hover{
     background-color:pink;

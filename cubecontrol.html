@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    <textarea id = "jsonIO"></textarea>
+    <textarea id = "input1"></textarea>
+    <button onclick = "getjson();">get</button>
+    <div class = "cubepanel">
+        <h2>Creator Cube</h2>
+        <h3>[0-05]</h3>
+        <div>local file:<input class = "localfileinput"></input></div>
+        <div>URL:<input class = "urlinput"></input></div>
+    </div>
+    <div class = "cubepanel">
+        <h2>Root Magick Cube</h2>
+        <h3>[06-37]</h3>
+        <div>local file:<input class = "localfileinput"></input></div>
+        <div>URL:<input class = "urlinput"></input></div>
+    </div>
+    <div class = "cubepanel">
+        <h2>Geometron Cube</h2>
+        <h3>[0300-0377,0200-0207,01200-01207,01040-01176,01300-01377]</h3>
+        <div>local file:<input class = "localfileinput"></input></div>
+        <div>URL:<input class = "urlinput"></input></div>
+    </div>
+    <div class = "cubepanel">
+        <h2>Shape Cube</h2>
+        <h3>[0200-0277,01200-01277]</h3>
+        <div>local file:<input class = "localfileinput"></input></div>
+        <div>URL:<input class = "urlinput"></input></div>
+    </div>
+    <div class = "cubepanel">
+        <h2>Document Cube</h2>
+        <h3>[0500-0777]</h3>
+        <div>local file:<input class = "localfileinput"></input></div>
+        <div>URL:<input class = "urlinput"></input></div>
+    </div>
+<script>
+
+
+
+function getjson(){
+    var httpc = new XMLHttpRequest(); 
+    //var url = "loader.php";
+    httpc.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("jsonIO").value =
+            this.responseText;
+            cubetracker = JSON.parse(this.responseText);
+            var localfileinputs = document.getElementsByClassName("localfileinput");
+            var localurlinputs = document.getElementsByClassName("urlinput");
+            for(var index = 0;index < cubetracker.length;index++){
+                document.getElementById("input1").value += cubetracker[index].name + "\n";
+                localfileinputs[index].value = cubetracker[index].localfile;
+                localurlinputs[index].value = cubetracker[index].url;
+
+            }
+       }
+    };
+    httpc.open("GET", "cubetracker.json", true);
+    httpc.setRequestHeader("Content-Type", "application/json");
+    httpc.send();
+
+}
+</script>
+<style>
+.cubepanel{
+    border:solid;
+    border-color:red;
+    border-width:3px;
+    border-radius:15px;
+    padding:15px 15px 15px 15px;
+    width:auto;
+    height:auto;
+    float:left;
+    margin:20px 20px 20px 20px;
+}
+
+</style>
+</body>
+</html>
