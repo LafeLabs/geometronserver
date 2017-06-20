@@ -327,7 +327,7 @@ glyphSize = 60;
 
 cursorGlyph = "0342,0335,0342,0334,0334,0342,0335,0336,0330,0340,0331,0337,0337,0330,0340,0331,0336,";
 cursorStateGlyph = "";
-
+codePage = 0420;
 </script>
 </head>
 <body>
@@ -345,18 +345,153 @@ cursorStateGlyph = "";
     </div>
     <canvas class = "shapes" id = "drawcanvas"/>
 </div>
+<div class = "page" id = "page0471" style = "display:none;">
+    <div id="editor" onkeyup = "updateParagraph();"></div>
+    <div id="editor2" onkeyup = "updateParagraph2();"></div>
+    <div id="editor3" onkeyup = "updateParagraph3();"></div>
+    <button onclick = "nextCode();" id = "nextbutton">NEXT</button>
+    <button onclick = "prevCode()" id = "prevbutton">PREV</button>
+    <input size = "4" id = "codeaddr" onchange = "updateCode();"></input>
+    <input id = "csslabel" size = "4"></input>
+    <input id = "htmllabel" size = "4"></input>
+    <input id = "jslabel" size = "4"></input>
+<style>
+#nextbutton{
+    position:absolute;
+    right:2%;
+    top:10%;    
+}
+#prevbutton{
+    position:absolute;
+    right:2%;
+    top:22%;    
+}
+#codeaddr{
+    position:absolute;
+    right:1%;
+    top:15%;
+    border:solid;
+    border-width:4px;
+    border-color:black;
+}
+#csslabel{
+    position:absolute;
+    left:80%;
+    top:2%;
+    border:solid;
+    border-width:3px;
+    border-color:chartreuse;
+}
+#htmllabel{
+    position:absolute;
+    left:80%;
+    top:36%;
+    border:solid;
+    border-width:3px;
+    border-color:blue;
+}
+#jslabel{
+    position:absolute;
+    left:80%;
+    top:72%;
+    border:solid;
+    border-width:3px;
+    border-color:red;
+}
+
+#editor{
+    width:60%;
+    height:30%;
+    position:absolute;
+    left:20%;
+    top:2%;
+}
+#editor2{
+    width:60%;
+    height:30%;
+    position:absolute;
+    left:20%;
+    top:36%;
+}
+#editor3{
+    width:60%;
+    height:25%;
+    position:absolute;
+    left:20%;
+    top:72%;
+}
+</style>
+</div>
 
 <script>
+
+codePage = 0420;
+editor = ace.edit("editor");
+editor.setTheme("ace/theme/terminal");
+editor.getSession().setMode("ace/mode/css");
+editor2 = ace.edit("editor2");
+editor2.setTheme("ace/theme/cobalt");
+editor2.getSession().setMode("ace/mode/html");
+editor3 = ace.edit("editor3");
+editor3.setTheme("ace/theme/merbivore");
+editor3.getSession().setMode("ace/mode/javascript");
+document.getElementById("codeaddr").value = "0" + codePage.toString(8);
+document.getElementById("csslabel").value = "0" +  (codePage + 0100).toString(8);
+document.getElementById("htmllabel").value = "0" +  (codePage + 0200).toString(8);
+document.getElementById("jslabel").value = "0" +  (codePage + 0300).toString(8);
+
+
+
+poof();
+function nextCode(){
+    codePage++;
+    if(codePage>0477){
+        codePage = 0;
+    }
+    redrawCode();
+}
+function prevCode(){
+    codePage--;
+    if(codePage < 0400){
+        codePage = 0477;
+    }
+    redrawCode();
+}
+function updateCode(){
+    codePage = parseInt(document.getElementById("codeaddr").value,8);
+    redrawCode();
+}
+function updateParagraph(){
+ 	currentTable[codePage + 0100] = string2byteCode(editor.getValue());
+}
+function updateParagraph2(){
+ 	currentTable[codePage + 0200] = string2byteCode(editor2.getValue());
+}
+function updateParagraph3(){
+    currentTable[codePage + 0300] = string2byteCode(editor3.getValue());
+}
+function redrawCode(){
+    document.getElementById("codeaddr").value = "0" + codePage.toString(8);
+    document.getElementById("csslabel").value = "0" +  (codePage + 0100).toString(8);
+    document.getElementById("htmllabel").value = "0" +  (codePage + 0200).toString(8);
+    document.getElementById("jslabel").value = "0" +  (codePage + 0300).toString(8);
+    editor.setValue(byteCode2string(currentTable[codePage + 0100]));
+    editor2.setValue(byteCode2string(currentTable[codePage + 0200]));
+    editor3.setValue(byteCode2string(currentTable[codePage + 0300]));
+}
 
 function poof(){
     if(document.getElementById("page0470").style.display != "none"){
         document.getElementById("page0470").style.display = "none";
+        document.getElementById("page0471").style.display = "block";
     }
     else{
         document.getElementById("page0470").style.display = "block";
+        document.getElementById("page0471").style.display = "none";
     }
 }
 document.getElementById("addr").value = "0" +  currentAddress.toString(8);
+
 redraw();
 function redraw(){
     unit = 100;
@@ -571,7 +706,10 @@ function doTheThing(localCommand){
 
 </script>
 <style>
-
+input{
+    font-family:courier;
+    font-size:18px;    
+}
 canvas{
     cursor:pointer;
 }
@@ -610,7 +748,6 @@ html{
     border-color:red;
     border-width:4px;
     margin:5px 20px 10px 20px;
-
 }
 .bin{
     float:left;
@@ -658,6 +795,7 @@ html{
     margin:5px 5px 5px 5px;
     background-color:white;
 }
+
 
 </style>
 </body>
