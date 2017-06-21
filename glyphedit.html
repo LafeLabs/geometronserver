@@ -216,6 +216,10 @@
 01176:0330,0336,0336,0336,0331,0331,0333,0333,0341,0331,0331,0331,0331,0331,0331,0333,0333,0333,0333,0337,0337,0337,
 01022:0333,0200,0336,0336,0330,0330,0332,0332,0332,0336,0336,0333,0337,0337,0336,0330,0336,0333,0337,0337,0200,0333,0200,0333,0200,0331,0331,0332,0332,0200,0333,0200,0333,0200,0336,0333,0331,0337,0337,0332,0330,0336,0336,0331,0337,0342,0330,0335,0350,0335,0336,0342,0335,0335,0342,0337,0335,0335,0335,0351,0331,0331,0331,0333,0333,0336,0330,0337,0337,0337
 01023:0333,0200,0336,0336,0330,0330,0332,0332,0332,0336,0336,0333,0337,0337,0336,0330,0336,0333,0337,0337,0200,0333,0200,0333,0200,0331,0331,0332,0332,0200,0333,0200,0333,0200,0336,0333,0331,0337,0337,0332,0330,0336,0336,0331,0337,0335,0335,0331,0342,0330,0335,0350,0335,0336,0342,0335,0335,0342,0337,0335,0335,0335,0351,0331,0331,0331,0333,0333,0336,0330,0337,0337,0337,0335,0335,0331,0333
+01024:0333,0200,0336,0332,0337,0362,0203,0335,0350,0335,0310,0336,0203,0335,0335,0203,0364,0335,0335,0335,0337,0304,0313,0336,0333,0337,
+01025:0333,0200,0336,0332,0337,0330,0335,0335,0362,0203,0335,0350,0335,0310,0336,0203,0335,0335,0203,0364,0335,0335,0335,0337,0304,0313,0336,0333,0337,0335,0335,0333,0331,
+01026:0333,0200,0336,0330,0332,0336,0336,0333,0331,0337,0200,0306,0335,0342,0332,0342,0330,0335,0335,0342,0335,0335,0335,0335,0331,0334,0304,0332,0306,0335,0342,0330,0350,0335,0342,0334,0331,0335,0304,0334,0331,0332,0335,0336,0332,0337,0342,0330,0350,0335,0335,0335,0336,0342,0335,0335,0342,0335,0304,0331,0331,0331,0331,0333,0333,0333,0333,0333,0337,0337,0337
+01027:0333,0200,0336,0330,0332,0336,0336,0333,0331,0337,0332,0200,0306,0335,0342,0332,0342,0330,0335,0335,0342,0335,0335,0335,0335,0331,0334,0304,0332,0306,0335,0342,0330,0350,0335,0342,0334,0331,0335,0304,0334,0331,0333,0333,0330,0335,0342,0330,0350,0335,0335,0335,0336,0342,0335,0335,0342,0335,0304,0331,0331,0331,0331,0331,0333,0337,0337,0337
 0277:0310,0311,0312,0313,0314,0304,0305,0306,0340,0341,0342,0343,0366,0367,0200
 */
 </script>
@@ -287,7 +291,9 @@ for(var index = 0;index < currentTable.length;index++){
 }
 
 /*initialize Geometron*/
+fullCube = false;
 currentPage = 0;
+viewPage = 0470;
 explodeIndex = 0;
 explodeLimit = 10000000;
 myFont = "Futura";
@@ -324,17 +330,33 @@ unit = plotSize/8;
 side = unit;
 unit0 = unit;
 glyphSize = 60;
+usekeyboard = false;
 
 cursorGlyph = "0342,0335,0342,0334,0334,0342,0335,0336,0330,0340,0331,0337,0337,0330,0340,0331,0336,";
 cursorStateGlyph = "";
 codePage = 0420;
+
+keys1 = ["4","5","6","0"];
+commands1 = [0304,0305,0306,0300];
+keys2 = ["q","w","e","r","t"];
+commands2 = [0310,0311,0312,0313,0314];
+keys3 = ["a","s","d","f","g","h","j","k","l",";"];
+commands3 = [0330,0331,0332,0333,0334,0335,0336,0337,0350,0351];
+keys4 = ["z","x","c","v",];
+commands4 = [0340,0341,0342,0343];	
+keys = keys1.concat(keys2,keys3,keys4);
+commands = commands1.concat(commands2,commands3,commands4);
+
+
 </script>
 </head>
 <body>
-<button onclick = "poof();">POOF</button>
+<button id = "viewfwd" onclick  = "doTheThing(024)">&#x25B6</button>
+<button id = "viewback" onclick  = "doTheThing(025)">&#x25C0</button>
 <div class = "page" id = "page0470">
     <div class = "controlpanel bin shapes" id = "panel1"></div>
     <div class = "navcontrol" id = "nav1"><input id = "addr" size = "4" onchange = "updateaddr();"></input></div>
+    <div id = "keyboardbutton" class = "offbutton" onclick = "keyboardselect();">keyboard</div>
     <div class = "bin shapes" id = "superbin2">
         <div class = "glyphbin bin" id = "bin2"></div>
         <input id = "glyphinput2" onchange = "updateGlyph2();"></input>
@@ -355,7 +377,86 @@ codePage = 0420;
     <input id = "csslabel" size = "4"></input>
     <input id = "htmllabel" size = "4"></input>
     <input id = "jslabel" size = "4"></input>
+</div>
+<div class = "page" id = "page0472">
+    <div class = "title">Hypercube IO</div>
+    <textarea id = "cubeIO"></textarea>
+    <div class = "bin" id = "cubeiocontrol"><div class = "offbutton" id = "fullcubebutton" onclick = "fullcubeselect();">FULL</div></div>
+</div>
+<div class = "page" id = "page0473">
+    <div class = "title">Data Navigator</div>
+</div>
+
 <style>
+#fullcubebutton{
+    font-family:courier;
+    font-size:18px;
+    text-align:center;
+    width:60px;
+    height:22px;
+    margin:5px 5px 5px 5px;
+    border:solid;
+    border-radius:5px;
+    border-color:black;
+    float:left;
+    cursor:pointer;
+}
+#fullcubebutton:hover{
+    color:orange;
+    border-color:orange;
+}
+#fullcubebutton:active{
+    color:yellow;
+    border-color:yellow;
+}
+#cubeiocontrol{
+    position:absolute;
+    left:0px;
+    top:10%;
+    width:90px;
+    height:200px;
+}
+#keyboardbutton{
+    font-family:courier;
+    font-size:16px;
+    border:solid;
+    border-radius:5px;
+    border-color:black;
+    float:left;
+    cursor:pointer;
+}
+#keyboardbutton:hover{
+    color:orange;
+    border-color:orange;
+}
+#keyboardbutton:active{
+    color:yellow;
+    border-color:yellow;
+}
+
+.onbutton{
+    background-color:green;
+}
+.offbutton{
+    background-color:red;
+}
+#cubeIO{
+    font-family:courier;
+    font-size:16px;
+    position:absolute;
+    top:25%;
+    left:20%;
+    width:60%;
+    height:50%;
+}
+.title{
+    font-size:3em;
+    font-family:Futura;
+    text-align:center;
+    width:100%;
+    position:absolute;
+    top:5%;
+}
 #nextbutton{
     position:absolute;
     right:2%;
@@ -364,7 +465,7 @@ codePage = 0420;
 #prevbutton{
     position:absolute;
     right:2%;
-    top:22%;    
+    top:22%;
 }
 #codeaddr{
     position:absolute;
@@ -376,35 +477,37 @@ codePage = 0420;
 }
 #csslabel{
     position:absolute;
-    left:80%;
+    left:80.2%;
     top:2%;
     border:solid;
-    border-width:3px;
+    border-width:4px;
     border-color:chartreuse;
 }
 #htmllabel{
     position:absolute;
-    left:80%;
+    left:80.2%;
     top:36%;
     border:solid;
-    border-width:3px;
+    border-width:4px;
     border-color:blue;
 }
 #jslabel{
     position:absolute;
-    left:80%;
+    left:80.2%;
     top:72%;
     border:solid;
     border-width:3px;
     border-color:red;
 }
-
 #editor{
     width:60%;
     height:30%;
     position:absolute;
     left:20%;
     top:2%;
+    border:solid;
+    border-width:4px;
+    border-color:chartreuse;
 }
 #editor2{
     width:60%;
@@ -412,6 +515,9 @@ codePage = 0420;
     position:absolute;
     left:20%;
     top:36%;
+    border:solid;
+    border-width:3px;
+    border-color:blue;
 }
 #editor3{
     width:60%;
@@ -419,9 +525,11 @@ codePage = 0420;
     position:absolute;
     left:20%;
     top:72%;
+    border:solid;
+    border-width:3px;
+    border-color:red;
 }
 </style>
-</div>
 
 <script>
 
@@ -439,10 +547,42 @@ document.getElementById("codeaddr").value = "0" + codePage.toString(8);
 document.getElementById("csslabel").value = "0" +  (codePage + 0100).toString(8);
 document.getElementById("htmllabel").value = "0" +  (codePage + 0200).toString(8);
 document.getElementById("jslabel").value = "0" +  (codePage + 0300).toString(8);
+usekeyboard = false;
+document.body.onkeypress = function(event){
+    if(usekeyboard){
+        console.log("0" + event.keyCode.toString(8));
+        var key = String.fromCharCode(event.keyCode);
+        for(var index = 0;index < keys.length;index++){
+            if(keys[index] == key){
+                document.getElementById("glyphinput").value += "0" + commands[index].toString(8) + ",";
+                updateGlyph(); 
+                //console.log("0" + commands[index].toString(8));
+                console.log("0" + commands[index].toString(8));
 
+            }
+        }			
+    }
+}
 
-
-poof();
+function fullcubeselect(){
+    fullCube = !fullCube;
+    if(fullCube){
+        document.getElementById("fullcubebutton").className = "onbutton";
+    }
+    else{
+        document.getElementById("fullcubebutton").className = "offbutton";        
+    }
+    
+}
+function keyboardselect(){
+    usekeyboard = !usekeyboard;
+    if(usekeyboard){
+        document.getElementById("keyboardbutton").className = "onbutton";
+    }
+    else{
+        document.getElementById("keyboardbutton").className = "offbutton";        
+    }
+}
 function nextCode(){
     codePage++;
     if(codePage>0477){
@@ -480,16 +620,18 @@ function redrawCode(){
     editor3.setValue(byteCode2string(currentTable[codePage + 0300]));
 }
 
-function poof(){
-    if(document.getElementById("page0470").style.display != "none"){
-        document.getElementById("page0470").style.display = "none";
-        document.getElementById("page0471").style.display = "block";
-    }
-    else{
-        document.getElementById("page0470").style.display = "block";
-        document.getElementById("page0471").style.display = "none";
+function showPage(localPage){
+    var pages = document.getElementsByClassName("page");
+    for(var index = 0;index < pages.length;index++){
+        if(pages[index].id === "page0" + localPage.toString(8)){
+            pages[index].style.display = "block";
+        }
+        else{
+            pages[index].style.display = "none";
+        }
     }
 }
+showPage(0470);
 document.getElementById("addr").value = "0" +  currentAddress.toString(8);
 
 redraw();
@@ -522,6 +664,9 @@ function updateaddr(){
 
 var padnode = document.getElementById("nav1");
 pourGlyph(padnode,"022,023");
+
+var padnode = document.getElementById("cubeiocontrol");
+pourGlyph(padnode,"026,027");
 
 
 var padnode = document.getElementById("panel1");
@@ -591,12 +736,10 @@ function appendGlyphButton(localnode,localCommand){
             y0 = glyphSize + 2;
             ctx = newcanvas2.getContext("2d");
             doTheThing(0300);
-            doTheThing(512 + parseInt(this.classList[1].slice(5),8));
-            
+            doTheThing(512 + parseInt(this.classList[1].slice(5),8));            
             var cursors = document.getElementsByClassName("cursordiv");
             var thiscursor = cursors[cursors.length-1];
             document.getElementById("bin1").insertBefore(newcanvas2,thiscursor);
-
             doTheThing(032);
         }
     }
@@ -676,7 +819,41 @@ function doTheThing(localCommand){
         updateGlyph();
         redraw();
 	}	
-
+    if(localCommand == 024){//increment view page
+        viewPage++;
+        if(viewPage > 0477){
+            viewPage = 0400;
+        }
+        showPage(viewPage);
+    }
+    if(localCommand == 025){//decrement view page
+        viewPage--;
+        if(viewPage < 0400){
+            viewPage = 0477;
+        }
+        showPage(viewPage);
+    }
+	if(localCommand == 0026){//import full geometron hypercube
+		var localString = document.getElementById("cubeIO").value;
+		var inputStack = localString.split("\n");
+		for(var index = 0;index < inputStack.length;index++){
+			var stackLine = inputStack[index].split(":");
+			var localAddress = parseInt(stackLine[0],8);
+			var localGlyph = stackLine[1];
+			currentTable[localAddress] = localGlyph;
+		}
+        redraw();
+        redrawCode();
+	}
+	if(localCommand == 0027){//export full geometron hypercube		
+		var localString = "";
+		for(var index = 0;index < currentTable.length;index++){
+			if(currentTableStart[index] != currentTable[index] || fullCube){
+				localString += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
+			}
+		}
+		document.getElementById("cubeIO").value = localString;
+	}
     if(localCommand == 032){//update glyph output
         var bin1glyphs = document.getElementById("bin1").childNodes;
         var outputGlyphString = "";
@@ -795,8 +972,18 @@ html{
     margin:5px 5px 5px 5px;
     background-color:white;
 }
-
-
+#viewfwd{
+    position:absolute;
+    right:0px;
+    top:0px;    
+    background-color:yellow;
+}
+#viewback{
+    position:absolute;
+    left:0px;
+    top:0px;
+    background-color:yellow;
+}
 </style>
 </body>
 </html>
