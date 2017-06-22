@@ -1,7 +1,19 @@
+<!--START 01-->
 <!DOCTYPE HTML>
 <html>
 <head>
+<title>Geometron Hypercube</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.12.1/math.js"></script>
+<script>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
 <script id = "bytecodeScript">
 /*
 0200:0304,0342,0330,0334,0342,0330,0334,0342,0330,0334,0342,0330,0334
@@ -235,6 +247,10 @@
 01424:0333,0200,0336,0332,0336,0330,0332,060,064,062,064,0365,0333,0333,0333,0331,0337,0337,
 */
 </script>
+<!--END 01-->
+
+
+<!--START 02-->
 <script>
 //do things to string (one function, string to byte code):
 function string2byteCode(localString){
@@ -282,6 +298,8 @@ function drawGlyph(localString){
 		}
 	}
 }
+
+/* load table from top of this file */
 
 currentTable = []; 
 for(var index = 0;index < 01777;index ++){
@@ -361,9 +379,10 @@ commands4 = [0340,0341,0342,0343];
 keys = keys1.concat(keys2,keys3,keys4);
 commands = commands1.concat(commands2,commands3,commands4);
 
-
 </script>
 </head>
+<!--END 02-->
+<!--START 03-->
 <body>
 <button id = "viewfwd" onclick  = "doTheThing(024)">&#x25B6</button>
 <button id = "viewback" onclick  = "doTheThing(025)">&#x25C0</button>
@@ -432,177 +451,10 @@ commands = commands1.concat(commands2,commands3,commands4);
     </table>
 </div>
 <canvas id = "grit1"/>
-<style>
-#pagebuttons{
-    position:absolute;
-    left:3%;
-    width:100px;
-    height:500px;
-    top:100px;
-}
-#jsonnav1 td{
-    border:solid;
-}
-#jsonnav1{
-    border-collapse:collapse;
-    position:absolute;
-    left:20%;
-    top:30%;
-    width:60%;
-    font-family:courier;
-    font-size:22px;
-}
-#fullcubebutton{
-    font-family:courier;
-    font-size:18px;
-    text-align:center;
-    width:60px;
-    height:22px;
-    margin:5px 5px 5px 5px;
-    border:solid;
-    border-radius:5px;
-    border-color:black;
-    float:left;
-    cursor:pointer;
-}
-#fullcubebutton:hover{
-    color:orange;
-    border-color:orange;
-}
-#fullcubebutton:active{
-    color:yellow;
-    border-color:yellow;
-}
-#cubeiocontrol{
-    position:absolute;
-    left:0px;
-    top:10%;
-    width:90px;
-    height:200px;
-}
-#keyboardbutton{
-    font-family:courier;
-    font-size:16px;
-    border:solid;
-    border-radius:5px;
-    border-color:black;
-    float:left;
-    cursor:pointer;
-}
-#keyboardbutton:hover{
-    color:orange;
-    border-color:orange;
-}
-#keyboardbutton:active{
-    color:yellow;
-    border-color:yellow;
-}
-
-.onbutton{
-    background-color:green;
-}
-.offbutton{
-    background-color:red;
-}
-#cubeIO{
-    font-family:courier;
-    font-size:16px;
-    position:absolute;
-    top:25%;
-    left:20%;
-    width:60%;
-    height:50%;
-}
-.title{
-    font-size:3em;
-    font-family:Futura;
-    text-align:center;
-    width:100%;
-    position:absolute;
-    top:5%;
-}
-#nextbutton{
-    position:absolute;
-    right:2%;
-    top:10%;    
-}
-#prevbutton{
-    position:absolute;
-    right:2%;
-    top:22%;
-}
-#codeaddr{
-    position:absolute;
-    right:1%;
-    top:15%;
-    border:solid;
-    border-width:4px;
-    border-color:black;
-}
-#csslabel{
-    position:absolute;
-    left:80.2%;
-    top:2%;
-    border:solid;
-    border-width:4px;
-    border-color:chartreuse;
-}
-#htmllabel{
-    position:absolute;
-    left:80.2%;
-    top:36%;
-    border:solid;
-    border-width:4px;
-    border-color:blue;
-}
-#jslabel{
-    position:absolute;
-    left:80.2%;
-    top:72%;
-    border:solid;
-    border-width:3px;
-    border-color:red;
-}
-#editor{
-    width:60%;
-    height:30%;
-    position:absolute;
-    left:20%;
-    top:2%;
-    border:solid;
-    border-width:4px;
-    border-color:chartreuse;
-}
-#editor2{
-    width:60%;
-    height:30%;
-    position:absolute;
-    left:20%;
-    top:36%;
-    border:solid;
-    border-width:3px;
-    border-color:blue;
-}
-#editor3{
-    width:60%;
-    height:25%;
-    position:absolute;
-    left:20%;
-    top:72%;
-    border:solid;
-    border-width:3px;
-    border-color:red;
-}
-#grit1{
-    position:absolute;
-    bottom:2px;
-    left:2px;
-    float:left;
-    z-index: -3;
-}
-</style>
+<!--END 03-->
+<!--START 04-->
 <script>
-
+/*do JavaScript to put document together*/
 var grit1 = document.getElementById("grit1");
 grit1.width = innerWidth-4;
 unit = (innerWidth-4)/16;
@@ -645,8 +497,6 @@ document.body.onkeypress = function(event){
 }
 
 
-//doTheThing(0420);
-
 showPage("page0470");
 document.getElementById("addr").value = "0" +  currentAddress.toString(8);
 
@@ -669,6 +519,7 @@ var padnode = document.getElementById("bin2");
 pourGlyph(padnode,currentTable[0277]);
 document.getElementById("glyphinput2").value = currentTable[01330];
 
+/*JavaScript functions, starting with specific ones, then doTheThing, then localRoot */
 
 function fullcubeselect(){
     fullCube = !fullCube;
@@ -842,6 +693,49 @@ function appendGlyphButton(localnode,localCommand){
 }
 
 function doTheThing(localCommand){
+    if(localCommand >= 06 && localCommand <= 037){
+        localRoot(localCommand);
+    }
+    if(localCommand >= 040 && localCommand <= 0176){//letters 
+		 currentHTML += String.fromCharCode(localCommand);
+         currentWord += String.fromCharCode(localCommand);	    
+    }
+    if(localCommand >= 0200 && localCommand <= 0277){//shapes 
+		 drawGlyph(currentTable[localCommand]);    	    
+    }
+    if(localCommand >= 0300 && localCommand <= 0377){
+         eval(byteCode2string(currentTable[localCommand]));
+    }  
+    if(localCommand >= 0400 && localCommand <= 0477){
+        pageExists = false;
+        pageid = "page0" + localCommand.toString(8);
+        var pages =document.getElementsByClassName("page");
+        for(var index = 0;index < pages.length;index++){
+            if(pageid == pages[index].id){
+                pageExists = true;
+            }
+        }
+        if(!pageExists){//create page
+            newpage = document.createElement("div");
+            newpage.id = pageid;
+            newpage.className = "page";      
+            document.body.appendChild(newpage);
+            newstyle = document.createElement("style");
+            newstyle.id = pageid + "style";
+            document.body.appendChild(newstyle);
+         }
+
+        document.getElementById(pageid + "style").innerHTML = byteCode2string(currentTable[localCommand + 0100]);//05xx
+        document.getElementById(pageid).innerHTML = byteCode2string(currentTable[localCommand + 0200]);//06xx
+        eval(byteCode2string(currentTable[localCommand + 0300]));//07xx
+        document.getElementById(pageid).style.display = "none";
+    }
+    if(localCommand >= 01000 && localCommand <= 01777){//symbol glyphs
+		 drawGlyph(currentTable[localCommand]);    	    
+    }
+}
+
+function localRoot(localCommand){
     if(localCommand == 010){//delete
         var bin1 = document.getElementById("bin1");
         var glyphlist = bin1.childNodes;
@@ -973,48 +867,180 @@ function doTheThing(localCommand){
         document.getElementById("glyphinput").value = outputGlyphString;
         redraw();
     }
-    if(localCommand >= 040 && localCommand <= 0176){//letters 
-		 currentHTML += String.fromCharCode(localCommand);
-         currentWord += String.fromCharCode(localCommand);	    
-    }
-    if(localCommand >= 0200 && localCommand <= 0277){//shapes 
-		 drawGlyph(currentTable[localCommand]);    	    
-    }
-    if(localCommand >= 0300 && localCommand <= 0377){
-         eval(byteCode2string(currentTable[localCommand]));
-    }  
-    if(localCommand >= 0400 && localCommand <= 0477){
-        pageExists = false;
-        pageid = "page0" + localCommand.toString(8);
-        var pages =document.getElementsByClassName("page");
-        for(var index = 0;index < pages.length;index++){
-            if(pageid == pages[index].id){
-                pageExists = true;
-            }
-        }
-        if(!pageExists){//create page
-            newpage = document.createElement("div");
-            newpage.id = pageid;
-            newpage.className = "page";      
-            document.body.appendChild(newpage);
-            newstyle = document.createElement("style");
-            newstyle.id = pageid + "style";
-            document.body.appendChild(newstyle);
-         }
-
-        document.getElementById(pageid + "style").innerHTML = byteCode2string(currentTable[localCommand + 0100]);//05xx
-        document.getElementById(pageid).innerHTML = byteCode2string(currentTable[localCommand + 0200]);//06xx
-        eval(byteCode2string(currentTable[localCommand + 0300]));//07xx
-        document.getElementById(pageid).style.display = "none";
-    }
-    if(localCommand >= 01000 && localCommand <= 01777){//symbol glyphs
-		 drawGlyph(currentTable[localCommand]);    	    
-    }
 }
 
-
 </script>
+<!--END 04-->
+<!--START 05-->
 <style>
+/*All the CSS for the base cube in one place:*/
+#pagebuttons{
+    position:absolute;
+    left:3%;
+    width:100px;
+    height:500px;
+    top:100px;
+}
+#jsonnav1 td{
+    border:solid;
+}
+#jsonnav1{
+    border-collapse:collapse;
+    position:absolute;
+    left:20%;
+    top:30%;
+    width:60%;
+    font-family:courier;
+    font-size:22px;
+}
+#fullcubebutton{
+    font-family:courier;
+    font-size:18px;
+    text-align:center;
+    width:60px;
+    height:22px;
+    margin:5px 5px 5px 5px;
+    border:solid;
+    border-radius:5px;
+    border-color:black;
+    float:left;
+    cursor:pointer;
+}
+#fullcubebutton:hover{
+    color:orange;
+    border-color:orange;
+}
+#fullcubebutton:active{
+    color:yellow;
+    border-color:yellow;
+}
+#cubeiocontrol{
+    position:absolute;
+    left:0px;
+    top:10%;
+    width:90px;
+    height:200px;
+}
+#keyboardbutton{
+    font-family:courier;
+    font-size:16px;
+    border:solid;
+    border-radius:5px;
+    border-color:black;
+    float:left;
+    cursor:pointer;
+}
+#keyboardbutton:hover{
+    color:orange;
+    border-color:orange;
+}
+#keyboardbutton:active{
+    color:yellow;
+    border-color:yellow;
+}
+
+.onbutton{
+    background-color:green;
+}
+.offbutton{
+    background-color:red;
+}
+#cubeIO{
+    font-family:courier;
+    font-size:16px;
+    position:absolute;
+    top:25%;
+    left:20%;
+    width:60%;
+    height:50%;
+}
+.title{
+    font-size:3em;
+    font-family:Futura;
+    text-align:center;
+    width:100%;
+    position:absolute;
+    top:5%;
+}
+#nextbutton{
+    position:absolute;
+    right:2%;
+    top:10%;    
+}
+#prevbutton{
+    position:absolute;
+    right:2%;
+    top:22%;
+}
+#codeaddr{
+    position:absolute;
+    right:1%;
+    top:15%;
+    border:solid;
+    border-width:4px;
+    border-color:black;
+}
+#csslabel{
+    position:absolute;
+    left:80.2%;
+    top:2%;
+    border:solid;
+    border-width:4px;
+    border-color:chartreuse;
+}
+#htmllabel{
+    position:absolute;
+    left:80.2%;
+    top:36%;
+    border:solid;
+    border-width:4px;
+    border-color:blue;
+}
+#jslabel{
+    position:absolute;
+    left:80.2%;
+    top:72%;
+    border:solid;
+    border-width:3px;
+    border-color:red;
+}
+#editor{
+    width:60%;
+    height:30%;
+    position:absolute;
+    left:20%;
+    top:2%;
+    border:solid;
+    border-width:4px;
+    border-color:chartreuse;
+}
+#editor2{
+    width:60%;
+    height:30%;
+    position:absolute;
+    left:20%;
+    top:36%;
+    border:solid;
+    border-width:3px;
+    border-color:blue;
+}
+#editor3{
+    width:60%;
+    height:25%;
+    position:absolute;
+    left:20%;
+    top:72%;
+    border:solid;
+    border-width:3px;
+    border-color:red;
+}
+#grit1{
+    position:absolute;
+    bottom:2px;
+    left:2px;
+    float:left;
+    z-index: -3;
+}
 input{
     font-family:courier;
     font-size:18px;    
@@ -1134,3 +1160,4 @@ html{
 </style>
 </body>
 </html>
+<!--END 05-->
