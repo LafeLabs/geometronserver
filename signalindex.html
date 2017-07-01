@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+var httpc = new XMLHttpRequest(); 
+httpc.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var derp = this.responseText;
+        if(derp == "0"){
+            document.body.style.backgroundColor = "red";
+        }
+        else{
+            document.body.style.backgroundColor = "green";            
+        }
+    }
+}
+httpc.open("GET", "signallog.txt", true);
+httpc.send(); 
+</script>
+</body>
+</html>

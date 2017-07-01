@@ -1,0 +1,27 @@
+[
+    {
+        "description":"basecube",
+        "name":"Generalized Text Base",
+        "url":"https://pastebin.com/raw/L8kF4XXS",
+        "oldurl":"",
+        "language":"html",
+        "generator":"createfromtext.py",
+        "date":"2017-06-23",
+        "author":"Lafe Spietz",
+        "purpose":"document the Geometron Language",
+        "location":"Washington, DC"
+    },
+    {
+        "description":"basecube",
+        "name":"Generalized Text Base",
+        "url":"",
+        "oldurl":"https://pastebin.com/raw/L8kF4XXS",
+        "language":"html",
+        "generator":"createfromtext.py",
+        "date":"",
+        "author":"Lafe Spietz",
+        "purpose":"document the Geometron Language",
+        "location":"Washington, DC"
+    }
+
+]

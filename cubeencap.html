@@ -1,0 +1,388 @@
+<!--START 01-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Geometron Hypercube</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.12.1/math.js"></script>
+<script>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script id = "bytecodeScript">
+/*
+027:0166,0141,0162,040,0154,0157,0143,0141,0154,0123,0164,0162,0151,0156,0147,040,075,040,042,042,073,012,0146,0157,0162,050,0166,0141,0162,040,0151,0156,0144,0145,0170,040,075,040,060,073,0151,0156,0144,0145,0170,040,074,040,0143,0165,0162,0162,0145,0156,0164,0124,0141,0142,0154,0145,056,0154,0145,0156,0147,0164,0150,073,0151,0156,0144,0145,0170,053,053,051,0173,012,011,0151,0146,050,0143,0165,0162,0162,0145,0156,0164,0124,0141,0142,0154,0145,0123,0164,0141,0162,0164,0133,0151,0156,0144,0145,0170,0135,040,041,075,040,0143,0165,0162,0162,0145,0156,0164,0124,0141,0142,0154,0145,0133,0151,0156,0144,0145,0170,0135,040,0174,0174,040,0146,0165,0154,0154,0103,0165,0142,0145,051,0173,012,011,011,0154,0157,0143,0141,0154,0123,0164,0162,0151,0156,0147,040,053,075,040,042,060,042,040,053,040,0151,0156,0144,0145,0170,056,0164,0157,0123,0164,0162,0151,0156,0147,050,070,051,040,053,040,042,072,042,040,053,040,0143,0165,0162,0162,0145,0156,0164,0124,0141,0142,0154,0145,0133,0151,0156,0144,0145,0170,0135,040,053,040,042,0134,0156,042,073,012,011,0175,012,0175,012,0144,0157,0143,0165,0155,0145,0156,0164,056,0147,0145,0164,0105,0154,0145,0155,0145,0156,0164,0102,0171,0111,0144,050,042,0164,0145,0170,0164,0111,0117,042,051,056,0166,0141,0154,0165,0145,040,075,040,0154,0157,0143,0141,0154,0123,0164,0162,0151,0156,0147,073,
+035:0166,0141,0162,040,0160,0141,0147,0145,0163,040,075,040,0144,0157,0143,0165,0155,0145,0156,0164,056,0147,0145,0164,0105,0154,0145,0155,0145,0156,0164,0163,0102,0171,0103,0154,0141,0163,0163,0116,0141,0155,0145,050,042,0160,0141,0147,0145,042,051,073,012,0146,0157,0162,050,0166,0141,0162,040,0151,0156,0144,0145,0170,040,075,040,060,073,0151,0156,0144,0145,0170,040,074,040,0160,0141,0147,0145,0163,056,0154,0145,0156,0147,0164,0150,073,0151,0156,0144,0145,0170,053,053,051,0173,012,040,040,040,040,0151,0146,050,0160,0141,0147,0145,0163,0133,0151,0156,0144,0145,0170,0135,056,0151,0144,040,075,075,075,040,0166,0151,0145,0167,0120,0141,0147,0145,051,0173,012,040,040,040,040,040,040,040,040,0160,0141,0147,0145,0163,0133,0151,0156,0144,0145,0170,0135,056,0163,0164,0171,0154,0145,056,0144,0151,0163,0160,0154,0141,0171,040,075,040,042,0142,0154,0157,0143,0153,042,073,012,040,040,040,040,0175,012,040,040,040,040,0145,0154,0163,0145,0173,012,040,040,040,040,040,040,040,040,0160,0141,0147,0145,0163,0133,0151,0156,0144,0145,0170,0135,056,0163,0164,0171,0154,0145,056,0144,0151,0163,0160,0154,0141,0171,040,075,040,042,0156,0157,0156,0145,042,073,012,040,040,040,040,0175,012,0175,
+036:0166,0141,0162,040,0160,0141,0147,0145,0163,040,075,040,0144,0157,0143,0165,0155,0145,0156,0164,056,0147,0145,0164,0105,0154,0145,0155,0145,0156,0164,0163,0102,0171,0103,0154,0141,0163,0163,0116,0141,0155,0145,050,042,0160,0141,0147,0145,042,051,073,012,0166,0141,0162,040,0157,0154,0144,0120,0141,0147,0145,040,075,040,0166,0151,0145,0167,0120,0141,0147,0145,073,012,0146,0157,0162,050,0166,0141,0162,040,0151,0156,0144,0145,0170,040,075,040,060,073,0151,0156,0144,0145,0170,040,074,040,0160,0141,0147,0145,0163,056,0154,0145,0156,0147,0164,0150,055,061,073,0151,0156,0144,0145,0170,053,053,051,0173,012,040,040,040,040,0151,0146,050,0160,0141,0147,0145,0163,0133,0151,0156,0144,0145,0170,0135,056,0151,0144,040,075,075,040,0166,0151,0145,0167,0120,0141,0147,0145,051,0173,012,040,040,040,040,040,040,040,040,0166,0151,0145,0167,0120,0141,0147,0145,040,075,040,0160,0141,0147,0145,0163,0133,0151,0156,0144,0145,0170,053,061,0135,056,0151,0144,073,012,040,040,040,040,040,040,040,040,0142,0162,0145,0141,0153,073,012,040,040,040,040,0175,012,0175,012,0151,0146,050,0157,0154,0144,0120,0141,0147,0145,040,075,075,040,0166,0151,0145,0167,0120,0141,0147,0145,051,0173,012,040,040,040,040,0166,0151,0145,0167,0120,0141,0147,0145,040,075,040,0160,0141,0147,0145,0163,0133,060,0135,056,0151,0144,073,012,0175,012,0144,0157,0124,0150,0145,0124,0150,0151,0156,0147,050,060,063,065,051,073,012,
+037:0166,0141,0162,040,0160,0141,0147,0145,0163,040,075,040,0144,0157,0143,0165,0155,0145,0156,0164,056,0147,0145,0164,0105,0154,0145,0155,0145,0156,0164,0163,0102,0171,0103,0154,0141,0163,0163,0116,0141,0155,0145,050,042,0160,0141,0147,0145,042,051,073,012,0166,0141,0162,040,0157,0154,0144,0120,0141,0147,0145,040,075,040,0166,0151,0145,0167,0120,0141,0147,0145,073,012,0146,0157,0162,050,0166,0141,0162,040,0151,0156,0144,0145,0170,040,075,040,061,073,0151,0156,0144,0145,0170,040,074,040,0160,0141,0147,0145,0163,056,0154,0145,0156,0147,0164,0150,073,0151,0156,0144,0145,0170,053,053,051,0173,012,040,040,040,040,0151,0146,050,0160,0141,0147,0145,0163,0133,0151,0156,0144,0145,0170,0135,056,0151,0144,040,075,075,040,0166,0151,0145,0167,0120,0141,0147,0145,051,0173,012,040,040,040,040,040,040,040,040,0166,0151,0145,0167,0120,0141,0147,0145,040,075,040,0160,0141,0147,0145,0163,0133,0151,0156,0144,0145,0170,055,061,0135,056,0151,0144,073,012,040,040,040,040,040,040,040,040,0142,0162,0145,0141,0153,073,012,040,040,040,040,0175,012,0175,012,0151,0146,050,0157,0154,0144,0120,0141,0147,0145,040,075,075,040,0166,0151,0145,0167,0120,0141,0147,0145,051,0173,012,040,040,040,040,0166,0151,0145,0167,0120,0141,0147,0145,040,075,040,0160,0141,0147,0145,0163,0133,0160,0141,0147,0145,0163,056,0154,0145,0156,0147,0164,0150,055,061,0135,056,0151,0144,073,012,0175,012,0144,0157,0124,0150,0145,0124,0150,0151,0156,0147,050,060,063,065,051,073,
+0770:0151,0146,050,0143,0157,0144,0145,0120,0141,0147,0145,040,075,075,040,060,051,0173,012,040,040,040,040,0145,0144,0151,0164,0157,0162,0112,0123,056,0163,0145,0164,0126,0141,0154,0165,0145,050,0142,0171,0164,0145,0103,0157,0144,0145,062,0163,0164,0162,0151,0156,0147,050,0143,0165,0162,0162,0145,0156,0164,0124,0141,0142,0154,0145,0133,0143,0157,0144,0145,0120,0141,0147,0145,0135,051,051,073,012,040,040,040,040,0145,0144,0151,0164,0157,0162,0112,0123,056,0147,0145,0164,0123,0145,0163,0163,0151,0157,0156,050,051,056,0163,0145,0164,0115,0157,0144,0145,050,042,0141,0143,0145,057,0155,0157,0144,0145,057,0160,0171,0164,0150,0157,0156,042,051,073,012,0175,012,0151,0146,050,0143,0157,0144,0145,0120,0141,0147,0145,040,076,075,040,060,061,040,046,046,040,0143,0157,0144,0145,0120,0141,0147,0145,040,074,075,040,060,065,051,0173,040,057,057,0150,0164,0155,0154,040,0144,0157,0143,0165,0155,0145,0156,0164,040,0146,0157,0162,040,0143,0162,0145,0141,0164,0151,0157,0156,040,0141,0143,0164,0151,0157,0156,012,040,040,040,040,0145,0144,0151,0164,0157,0162,0110,0124,0115,0114,056,0163,0145,0164,0126,0141,0154,0165,0145,050,0142,0171,0164,0145,0103,0157,0144,0145,062,0163,0164,0162,0151,0156,0147,050,0143,0165,0162,0162,0145,0156,0164,0124,0141,0142,0154,0145,0133,0143,0157,0144,0145,0120,0141,0147,0145,0135,051,051,073,012,040,040,040,040,0145,0144,0151,0164,0157,0162,0112,0123,056,0147,0145,0164,0123,0145,0163,0163,0151,0157,0156,050,051,056,0163,0145,0164,0115,0157,0144,0145,050,042,0141,0143,0145,057,0155,0157,0144,0145,057,0152,0141,0166,0141,0163,0143,0162,0151,0160,0164,042,051,073,012,0175,012,0151,0146,050,0143,0157,0144,0145,0120,0141,0147,0145,040,076,075,040,060,066,040,046,046,040,0143,0157,0144,0145,0120,0141,0147,0145,040,074,075,040,060,063,067,051,0173,040,057,057,0162,0157,0157,0164,040,0155,0141,0147,0151,0143,0153,012,040,040,040,040,0145,0144,0151,0164,0157,0162,0112,0123,056,0163,0145,0164,0126,0141,0154,0165,0145,050,0142,0171,0164,0145,0103,0157,0144,0145,062,0163,0164,0162,0151,0156,0147,050,0143,0165,0162,0162,0145,0156,0164,0124,0141,0142,0154,0145,0133,0143,0157,0144,0145,0120,0141,0147,0145,0135,051,051,073,012,0175,012,057,057,0101,0123,0103,0111,0111,040,0151,0163,040,0154,0145,0146,0164,040,0142,0154,0141,0156,0153,054,040,0145,0144,0151,0164,0145,0144,040,0141,0164,040,060,061,060,064,060,055,060,061,061,067,066,012,0151,0146,050,0143,0157,0144,0145,0120,0141,0147,0145,040,076,075,040,060,062,060,060,040,046,046,040,0143,0157,0144,0145,0120,0141,0147,0145,040,074,075,040,060,062,067,067,051,0173,040,057,057,0123,0150,0141,0160,0145,040,0164,0141,0142,0154,0145,012,040,040,040,040,0144,0157,0143,0165,0155,0145,0156,0164,056,0147,0145,0164,0105,0154,0145,0155,0145,0156,0164,0102,0171,0111,0144,050,042,0147,0154,0171,0160,0150,0164,0145,0170,0164,042,051,056,0166,0141,0154,0165,0145,040,075,040,0143,0165,0162,0162,0145,0156,0164,0124,0141,0142,0154,0145,0133,0143,0157,0144,0145,0120,0141,0147,0145,0135,073,012,0175,012,0151,0146,050,0143,0157,0144,0145,0120,0141,0147,0145,040,076,075,040,060,063,060,060,040,046,046,040,0143,0157,0144,0145,0120,0141,0147,0145,040,074,075,040,060,063,067,067,051,0173,040,057,057,0147,0145,0157,0155,0145,0164,0162,0157,0156,040,0141,0143,0164,0151,0157,0156,0163,012,040,040,040,040,0145,0144,0151,0164,0157,0162,0112,0123,056,0163,0145,0164,0126,0141,0154,0165,0145,050,0142,0171,0164,0145,0103,0157,0144,0145,062,0163,0164,0162,0151,0156,0147,050,0143,0165,0162,0162,0145,0156,0164,0124,0141,0142,0154,0145,0133,0143,0157,0144,0145,0120,0141,0147,0145,0135,051,051,073,012,0175,012,0151,0146,050,0143,0157,0144,0145,0120,0141,0147,0145,040,076,075,040,060,064,060,060,040,046,046,040,0143,0157,0144,0145,0120,0141,0147,0145,040,074,075,040,060,064,067,067,051,0173,057,057,0155,0141,0156,0165,0163,0143,0162,0151,0160,0164,012,040,040,040,040,0145,0144,0151,0164,0157,0162,0103,0123,0123,056,0163,0145,0164,0126,0141,0154,0165,0145,050,0142,0171,0164,0145,0103,0157,0144,0145,062,0163,0164,0162,0151,0156,0147,050,0143,0165,0162,0162,0145,0156,0164,0124,0141,0142,0154,0145,0133,0143,0157,0144,0145,0120,0141,0147,0145,040,053,040,060,061,060,060,0135,051,051,073,012,040,040,040,040,0145,0144,0151,0164,0157,0162,0110,0124,0115,0114,056,0163,0145,0164,0126,0141,0154,0165,0145,050,0142,0171,0164,0145,0103,0157,0144,0145,062,0163,0164,0162,0151,0156,0147,050,0143,0165,0162,0162,0145,0156,0164,0124,0141,0142,0154,0145,0133,0143,0157,0144,0145,0120,0141,0147,0145,040,053,040,060,062,060,060,0135,051,051,073,012,040,040,040,040,0145,0144,0151,0164,0157,0162,0112,0123,056,0163,0145,0164,0126,0141,0154,0165,0145,050,0142,0171,0164,0145,0103,0157,0144,0145,062,0163,0164,0162,0151,0156,0147,050,0143,0165,0162,0162,0145,0156,0164,0124,0141,0142,0154,0145,0133,0143,0157,0144,0145,0120,0141,0147,0145,040,053,040,060,063,060,060,0135,051,051,073,012,0175,012,0151,0146,050,0143,0157,0144,0145,0120,0141,0147,0145,040,076,075,040,060,061,060,060,060,040,046,046,040,0143,0157,0144,0145,0120,0141,0147,0145,040,074,075,040,060,061,063,067,067,051,0173,040,057,057,0163,0171,0155,0142,0157,0154,0163,050,0147,0154,0171,0160,0150,0163,040,0157,0146,040,0147,0154,0171,0160,0150,0163,051,012,040,040,040,040,0144,0157,0143,0165,0155,0145,0156,0164,056,0147,0145,0164,0105,0154,0145,0155,0145,0156,0164,0102,0171,0111,0144,050,042,0147,0154,0171,0160,0150,0164,0145,0170,0164,042,051,056,0166,0141,0154,0165,0145,040,075,040,0143,0165,0162,0162,0145,0156,0164,0124,0141,0142,0154,0145,0133,0143,0157,0144,0145,0120,0141,0147,0145,0135,073,012,0175,012,0151,0146,050,0143,0157,0144,0145,0120,0141,0147,0145,040,076,075,040,060,061,064,060,060,040,046,046,040,0143,0157,0144,0145,0120,0141,0147,0145,040,074,075,040,060,061,064,067,067,051,0173,040,057,057,0163,0171,0155,0142,0157,0154,0163,050,0150,0164,0155,0154,040,0157,0146,040,0150,0164,0155,0154,051,012,040,040,040,040,0145,0144,0151,0164,0157,0162,0110,0124,0115,0114,056,0163,0145,0164,0126,0141,0154,0165,0145,050,0142,0171,0164,0145,0103,0157,0144,0145,062,0163,0164,0162,0151,0156,0147,050,0143,0165,0162,0162,0145,0156,0164,0124,0141,0142,0154,0145,0133,0143,0157,0144,0145,0120,0141,0147,0145,040,053,040,060,061,060,060,060,0135,051,051,073,012,0175,012,
+*/
+</script>
+<!--END 01-->
+
+<!--START 02-->
+<script>
+//do things to string (one function, string to byte code):
+function string2byteCode(localString){
+	var localByteCode = "";
+	for(var stringIndex = 0;stringIndex < localString.length;stringIndex++){
+		var tempCharCode = localString.charCodeAt(stringIndex);
+		if(tempCharCode != 0){
+			localByteCode += "0";
+			localByteCode += tempCharCode.toString(8);
+			localByteCode += ",";
+		}
+	}
+	return localByteCode;
+}
+//do things to glyphs() 
+function byteCode2string(localByteCode){
+	var localString = "";
+	var stringArray = localByteCode.split(",");
+	for(var index = 0;index < stringArray.length;index++){
+		var myCharCode = String.fromCharCode(parseInt(stringArray[index],8));
+		if(parseInt(stringArray[index],8) >= 040 && parseInt(stringArray[index],8) < 0177 ){
+			localString += myCharCode;
+		}
+		if(parseInt(stringArray[index],8) == 012){//newline
+			localString += myCharCode;
+		}
+		if(parseInt(stringArray[index],8) == 011){//vertical tab
+			localString += myCharCode;
+		}		
+		if(parseInt(stringArray[index],8) >= 0400 && parseInt(stringArray[index],8) <= 0777){
+			if(currentTable[parseInt(stringArray[index],8)].length > 0){
+				localString += byteCode2string(currentTable[parseInt(stringArray[index],8)]);
+			}
+		}		
+		
+	}
+	return localString;
+}
+
+function drawGlyph(localString){
+	var tempArray = localString.split(',');
+	for(var index = 0;index < tempArray.length;index++){
+		if(explodeIndex < explodeLimit){
+			doTheThing(parseInt(tempArray[index],8));
+		}
+	}
+}
+
+function spellGlyph(localString){
+	var tempArray = localString.split(',');
+	for(var index = 0;index < tempArray.length;index++){
+		doTheThing(parseInt(tempArray[index],8) + 01000);
+	}
+}
+
+function doTheThing(localCommand){
+    if(localCommand >= 06 && localCommand <= 037){
+         eval(byteCode2string(currentTable[localCommand]));
+    }
+    if(localCommand >= 040 && localCommand <= 0176){//letters 
+		 currentHTML += String.fromCharCode(localCommand);
+         currentWord += String.fromCharCode(localCommand);	    
+    }
+    if(localCommand >= 0200 && localCommand <= 0277){//shapes 
+		 drawGlyph(currentTable[localCommand]);    	    
+    }
+    if(localCommand >= 0300 && localCommand <= 0377){
+         eval(byteCode2string(currentTable[localCommand]));
+    }  
+    if(localCommand >= 0400 && localCommand <= 0477){
+        pageExists = false;
+        pageid = "page0" + localCommand.toString(8);
+        var pages =document.getElementsByClassName("page");
+        for(var index = 0;index < pages.length;index++){
+            if(pageid == pages[index].id){
+                pageExists = true;
+            }
+        }
+        if(!pageExists){//create page
+            newpage = document.createElement("div");
+            newpage.id = pageid;
+            newpage.className = "page";      
+            document.body.appendChild(newpage);
+            newstyle = document.createElement("style");
+            newstyle.id = pageid + "style";
+            document.body.appendChild(newstyle);
+         }
+
+        document.getElementById(pageid + "style").innerHTML = byteCode2string(currentTable[localCommand + 0100]);//05xx
+        document.getElementById(pageid).innerHTML = byteCode2string(currentTable[localCommand + 0200]);//06xx
+        eval(byteCode2string(currentTable[localCommand + 0300]));//07xx
+        document.getElementById(pageid).style.display = "none";
+    }
+    if(localCommand >= 0700 && localCommand <= 0777){
+        eval(byteCode2string(currentTable[localCommand]));//07xx
+    }
+    if(localCommand >= 01000 && localCommand <= 01777){//symbol glyphs
+		 drawGlyph(currentTable[localCommand]);    	    
+    }
+}
+
+</script>
+<script>
+//get the cube that is in this document(if there is one)
+//after that, get the cube at cube.txt locally on server, which also has creator and meta-creator
+/*initialize Geometron*/
+fullCube = false;
+
+currentTable = []; 
+for(var index = 0;index < 01777;index ++){
+    currentTable.push("");
+}
+var inputbytecode = document.getElementById("bytecodeScript").text;
+var bytecodearray = inputbytecode.split("\n");
+for(var index = 0;index < bytecodearray.length;index++){
+    if(bytecodearray[index].includes(":")){
+        var localBytecode = bytecodearray[index].split(":");
+        var localAddress = parseInt(localBytecode[0],8);
+        currentTable[localAddress] = localBytecode[1];
+    }
+}
+
+currentTableStart = [];
+for(var index = 0;index < currentTable.length;index++){
+    currentTableStart.push(currentTable[index]);
+}
+
+currentPage = 0;
+viewPage = "page0470";
+explodeIndex = 0;
+explodeLimit = 10000000;
+myFont = "Futura";
+currentWord = "";
+currentSVG = "";
+currentHTML = "";
+currentAddress = 0210;
+currentGlyph = "0300,";
+phi = 0.5*(Math.sqrt(5) + 1);
+scaleFactor = 2;
+thetaStep = Math.PI/2;
+theta0 = -Math.PI/2; 
+theta = theta0;
+x0 = 0;
+y0 = 0;
+x = x0;
+y = y0;
+unit = 100;
+side = unit;
+glyphSize = 60;
+usekeyboard = false;
+cursorGlyph = "0342,0335,0342,0334,0334,0342,0335,0336,0330,0340,0331,0337,0337,0330,0340,0331,0336,";
+cursorStateGlyph = "";
+codePage = 0420;
+A = 0;//accumulator
+cursorPosition = 0;
+keys1 = ["4","5","6","0"];
+commands1 = [0304,0305,0306,0300];
+keys2 = ["q","w","e","r","t"];
+commands2 = [0310,0311,0312,0313,0314];
+keys3 = ["a","s","d","f","g","h","j","k","l",";"];
+commands3 = [0330,0331,0332,0333,0334,0335,0336,0337,0350,0351];
+keys4 = ["z","x","c","v",];
+commands4 = [0340,0341,0342,0343];	
+keys = keys1.concat(keys2,keys3,keys4);
+commands = commands1.concat(commands2,commands3,commands4);
+</script>
+</head>
+<!--END 02-->
+<!--START 03-->
+<body>
+<button id = "viewfwd" onclick  = "doTheThing(036)">&#x25B6</button>
+<button id = "viewback" onclick  = "doTheThing(037)">&#x25C0</button>
+<!--END 03-->
+<!--START 04-->
+<div class = "page" id = "page0470" style = "display:block;">
+    <div id="editorCSS"></div>
+    <div id="editorHTML"></div>
+    <div id="editorJS"></div>
+    <textarea id = "textIO"></textarea>
+    <input size = "4" id = "codeaddr" value = "0400"></input>
+    <input id = "glyphtext"></input>
+    <button id = "EXPORT">EXPORT</button>
+    <button id = "ACTION">ACTION</button>
+</div>
+<div class = "page" id = "page0400" style = "display:none;font-size:60px;font-family:Futura;">
+DERP    
+</div>
+<script>
+editorCSS = ace.edit("editorCSS");
+editorCSS.setTheme("ace/theme/terminal");
+editorCSS.getSession().setMode("ace/mode/css");
+editorHTML = ace.edit("editorHTML");
+editorHTML.setTheme("ace/theme/cobalt");
+editorHTML.getSession().setMode("ace/mode/html");
+editorJS = ace.edit("editorJS");
+editorJS.setTheme("ace/theme/merbivore");
+editorJS.getSession().setMode("ace/mode/javascript");
+
+if(codePage == 0){
+    editorJS.setValue(byteCode2string(currentTable[codePage]));
+    editorJS.getSession().setMode("ace/mode/php");
+}
+if(codePage >= 01 && codePage <= 05){ //html document for creation action
+    editorHTML.setValue(byteCode2string(currentTable[codePage]));
+    editorJS.getSession().setMode("ace/mode/javascript");
+}
+if(codePage >= 06 && codePage <= 037){ //root magick
+    editorJS.setValue(byteCode2string(currentTable[codePage]));
+}
+//ASCII is left blank, edited at 01040-01176
+if(codePage >= 0200 && codePage <= 0277){ //Shape table
+    document.getElementById("glyphtext").value = currentTable[codePage];
+}
+if(codePage >= 0300 && codePage <= 0377){ //geometron actions
+    editorJS.setValue(byteCode2string(currentTable[codePage]));
+}
+if(codePage >= 0400 && codePage <= 0477){//manuscript
+    editorCSS.setValue(byteCode2string(currentTable[codePage + 0100]));
+    editorHTML.setValue(byteCode2string(currentTable[codePage + 0200]));
+    editorJS.setValue(byteCode2string(currentTable[codePage + 0300]));
+}
+if(codePage >= 01000 && codePage <= 01377){ //symbols(glyphs of glyphs)
+    document.getElementById("glyphtext").value = currentTable[codePage];
+}
+if(codePage >= 01400 && codePage <= 01477){ //symbols(html of html)
+    editorHTML.setValue(byteCode2string(currentTable[codePage + 01000]));
+}
+
+document.getElementById("editorCSS").onkeyup = function(){
+    currentTable[codePage + 0100] = string2byteCode(editorCSS.getValue());
+}
+document.getElementById("editorHTML").onkeyup = function(){
+    if(codePage >= 0400 && codePage <= 0477){
+        currentTable[codePage + 0200] = string2byteCode(editorHTML.getValue());
+    }
+    if(codePage >= 01 && codePage <= 05){
+        currentTable[codePage] = string2byteCode(editorHTML.getValue());
+    }
+    if(codePage >= 01400 && codePage <= 01477){
+        currentTable[codePage] = string2byteCode(editorHTML.getValue());
+    }
+}
+document.getElementById("editorJS").onkeyup = function(){
+    if(codePage >= 0400 && codePage <= 0477){
+        currentTable[codePage + 0300] = string2byteCode(editorJS.getValue());
+    }
+    if(codePage >= 0300 && codePage <= 0377){
+        currentTable[codePage] = string2byteCode(editorJS.getValue());
+    }
+    if(codePage >= 06 && codePage <= 037){
+        currentTable[codePage] = string2byteCode(editorJS.getValue());
+    }
+}
+
+document.getElementById("codeaddr").onchange = function(){
+    codePage = parseInt(this.value,8); 
+    doTheThing(0770);
+}
+document.getElementById("EXPORT").onclick = function(){
+    doTheThing(027);
+}
+document.getElementById("ACTION").onclick = function(){
+    doTheThing(codePage);
+}
+</script>
+
+<!--END 04-->
+<!--START 05-->
+<style>
+html{
+    background-color:yellow;
+}
+#viewfwd{
+    position:absolute;
+    right:0px;
+    top:0px;    
+    background-color:yellow;
+    font-size:22px;
+    border:solid;
+    border-color:black;
+    cursor:pointer;
+    z-index:100;
+}
+#viewback{
+    position:absolute;
+    left:0px;
+    top:0px;
+    background-color:yellow;
+    border:solid;
+    border-color:black;
+    font-size:22px;
+    cursor:pointer;
+    z-index:100;
+}
+
+
+#editorCSS{
+    width:40%;
+    height:30%;
+    position:absolute;
+    left:10%;
+    top:2%;
+    border:solid;
+    border-width:4px;
+    border-color:chartreuse;
+}
+#editorHTML{
+    width:40%;
+    height:30%;
+    position:absolute;
+    left:10%;
+    top:36%;
+    border:solid;
+    border-width:3px;
+    border-color:blue;
+}
+#editorJS{
+    width:40%;
+    height:25%;
+    position:absolute;
+    left:10%;
+    top:72%;
+    border:solid;
+    border-width:3px;
+    border-color:red;
+}
+#codeaddr{
+    position:absolute;
+    top:10%;
+    left:1%;
+}
+#textIO{
+    position:absolute;
+    width:30%;
+    right:2%;
+    top:10%;
+    height:30%;
+}
+#glyphtext{
+    position:absolute;
+    width:30%;
+    right:2%;
+    bottom:5%;
+    font-size:22px;
+    font-family:courier;
+}
+#EXPORT{
+    position:absolute;
+    top:70%;
+    left:80%;
+}
+#ACTION{
+    position:absolute;
+    left:10px;
+    top:40%;
+}
+</style>
+</body>
+</html>
+<!--END 05-->

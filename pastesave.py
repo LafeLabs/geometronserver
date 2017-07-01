@@ -10,3 +10,4 @@ textout = foo.read()
 foo.close()
 url = x.paste(api_dev_key,textout,"hypercube",api_user_key,"text",'unlisted','N')
 print url
+#open json file, add url, save it(assumes that a php called from js already updated the json file)
