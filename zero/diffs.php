@@ -1,6 +1,6 @@
 <?php
-$creatortxt = ;
-$diffarray = explode("<p>", $creatortxt);
+$diffstack = $_POST["diffstack"];
+$diffarray = explode("<p>", $diffstack);
 $cubetxt = "";
 for ($index = 0; $index < count($diffarray); $index++) {
     $cubetxt .= "\n";
@@ -12,7 +12,4 @@ for ($index = 0; $index < count($diffarray); $index++) {
 $file = fopen("cube.txt","w");
 fwrite($file,$cubetxt);
 fclose($file);
-
-
-
 ?>

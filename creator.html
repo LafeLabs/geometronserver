@@ -1,22 +1,24 @@
+<!DOCTYPE HTML>
 <html>
-<body>
-<button id = "derp" onclick="callpy();">CREATE</button>
-<style>
-    #derp{
-        font-size:36px;
-    }
-</style>
-
-<script>
-
-function callpy() {
-    var httpc = new XMLHttpRequest();
-    var url = "creator.php";
-    httpc.open("GET", url, true);
-    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    httpc.send();
-}
-
-</script>
-</body>
+    <body>
+        <button id ="create">CREATE</button>
+        <script>
+            document.getElementById("create").onclick = function(){
+                var httpc = new XMLHttpRequest();
+                var url = "creator.php";
+                httpc.open("GET", url, true);
+                httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                httpc.send();
+            }
+        </script>
+        <style>
+            #create{
+                position:absolute;
+                left:40%;
+                width:20%;
+                font-size:40px;
+                font-family:Futura;
+            }
+        </style>
+    </body>
 </html>

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<div id = "main">
+    <a href = "index.html">index.html</a>
+    <br/>
+    basecube url:<input id = "baseinput" size = "35" value = "https://pastebin.com/raw/NQMMPPdT"></input>
+    <br/>
+    diffcube url:<input id = "diffcube" size = "35" value = "https://pastebin.com/raw/BZZ7KpmY"></input>
+    <button id = "create">CREATE</button>
+</div>
+<script>
+document.getElementById("create").onclick = function(){
+    var httpc = new XMLHttpRequest(); 
+    var url = "creator.php";// <-- note creator.php needs to exist for this to work:
+    /*
+        <?php
+            $baseurl = $_POST["baseurl"];
+            $basecube = file_get_contents($baseurl);
+            $basecubearray = explode("\n", $basecube);
+            for($index = 0;$index < count($basecubearray);$index++){
+                $subarray = explode(":",$basecubearray[$index]);
+                echo byteCode2string($subarray[1]);
+            }
+
+            function byteCode2string($inputbytecode) {
+                $bytecodearray = explode(",", $inputbytecode);
+                $outputstring = " ";
+                for ($index = 0; $index < count($bytecodearray); $index++) {
+                    if(strlen($bytecodearray[$index]) > 0){
+                        $outputstring .= chr(octdec($bytecodearray[$index]));
+                    }
+                }
+                return $outputstring;
+            }
+            function string2byteCode($inputstring){
+                $outputcode = "";
+                for( $index = 0; $index < strlen($inputstring);$index++){
+                    $outputcode .= "0".decoct(ord($inputstring[$index])).",";
+                }
+                return $outputcode;
+            }
+        ?>
+    */
+        baseurl = document.getElementById("baseinput").value;
+        httpc.open("POST", url, true); // sending as POST
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        httpc.send("baseurl=" + baseurl);
+}
+</script>
+<style>
+html{
+    background-color:yellow;
+}
+#main{
+    position:absolute;
+    top:50%;
+    left:30%;
+    font-size:24px;
+    font-family:courier;
+    background-color:white;
+    border:solid;
+    border-radius:20px;
+    border-width:3px;
+    padding: 15px 15px 15px 15px;
+}
+</style>
+</body>
+</html>
