@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <body>
+        <button id ="create">CREATE</button>
+        <a id = "mainlink" href = "index.html">index.html</a>
+        <script>
+            document.getElementById("create").onclick = function(){
+                var httpc = new XMLHttpRequest();
+                var url = "creator.php";
+                httpc.open("GET", url, true);
+                httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                httpc.send();
+            }
+        </script>
+        <style>
+            html{
+                background-color:yellow;
+            }
+            #mainlink{
+                position:absolute;
+                left:40%;
+                top:50%;
+                font-size:22px;
+            }
+            #create{
+                position:absolute;
+                left:40%;
+                top:25%;
+                width:20%;
+                font-size:40px;
+                font-family:Futura;
+                cursor:pointer;
+            }
+            #create:hover{
+                background-color:purple;
+            }
+        </style>
+    </body>
+</html>
