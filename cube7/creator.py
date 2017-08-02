@@ -57,9 +57,15 @@ for index in range(06,037):
 
 htmlOUT += byteCode2string(hyperCube[03])
 
+for index in range(0400,0477):
+    if len(hyperCube[index]) > 1:
+        htmlOUT += "<div style = \"display:none\" class = \"json\" id = \"data" + oct(index) + "\">\n"
+        htmlOUT += byteCode2string(hyperCube[index]) 
+        htmlOUT += "\n</div>\n"
+
 for index in range(0600,0677):
     if len(hyperCube[index]) > 1:
-        htmlOUT += "<div id = \"div" + oct(index) + "\">\n"
+        htmlOUT += "<div class = \"page\" id = \"div" + oct(index) + "\">\n"
         htmlOUT += byteCode2string(hyperCube[index]) 
         htmlOUT += "\n</div>\n"
 
@@ -76,6 +82,7 @@ for index in range(0500,0577):
         htmlOUT += "\n</style>\n"
 
 
+htmlOUT += byteCode2string(hyperCube[04])
 
 htmlOUT += byteCode2string(hyperCube[05])
 
