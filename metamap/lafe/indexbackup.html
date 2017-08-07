@@ -1,0 +1,1422 @@
+<!--<page01>-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS, NO PROPERTY NO MONEY NO MINING-->
+<!-- FREE INFORMATION FOR A WORLD FREE OF THE SOFTWARE ENGINEER -->
+    <title>Metamap</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<!--</page01>-->
+
+<script id = "bytecodeScript">
+/*
+01300:0333,0200,0336,0330,0332,0340,0350,0335,0336,0330,0342,0331,0331,0331,0342,0330,0330,0335,0335,0331,0331,0342,0330,0330,0330,0342,0331,0334,0334,0334,0351,0331,0331,0333,0333,0337,0337
+01304:0333,0200,0336,0330,0332,0341,0342,0335,0342,0335,0342,0335,0342,0350,0335,0351,0336,0336,0330,0330,0341,0331,0331,0335,0330,0330,0341,0331,0331,0335,0330,0330,0341,0331,0331,0335,0330,0330,0341,0331,0331,0350,0334,0351,0337,0337,0330,0335,0335,0333,0337
+01305:0333,0200,0336,0330,0332,0305,0342,0335,0342,0335,0342,0335,0342,0335,0342,0335,0341,0350,0335,0351,0336,0330,0336,0336,0341,0337,0337,0331,0335,0330,0336,0336,0341,0337,0337,0331,0335,0330,0336,0336,0341,0337,0337,0331,0335,0330,0336,0336,0341,0337,0337,0331,0335,0330,0336,0336,0341,0337,0337,0331,0350,0335,0304,0337,0331,0333,0337
+01306:0333,0200,0336,0330,0332,0306,0342,0335,0342,0335,0342,0335,0342,0335,0342,0335,0341,0350,0335,0351,0336,0330,0336,0336,0341,0337,0337,0331,0335,0330,0336,0336,0341,0337,0337,0331,0335,0330,0336,0336,0341,0337,0337,0331,0335,0330,0336,0336,0341,0337,0337,0331,0335,0330,0336,0336,0341,0337,0337,0331,0350,0335,0335,0335,0337,0342,0334,0336,0330,0336,0336,0341,0337,0337,0331,0304,0335,0337,0331,0333,0337
+01310:0333,0200,0336,0332,0350,0335,0310,0337,0342,0330,0334,0334,0342,0330,0334,0334,0342,0330,0334,0334,0342,0330,0334,0334,0334,0351,0336,0313,0333,0337
+01311:0335,0305,0342,0334,0311,0337,0342,0336,0335,0330,0334,0350,0334,0337,0342,0334,0334,0304,0336,0313,0335,0200,0334,0305,0350,0335,0342,0330,0335,0335,0335,0311,0336,0342,0330,0334,0334,0334,0336,0342,0335,0335,0335,0337,0331,0334,0334,0334,0337,0331,0334,0313,0304,0335
+01312:0333,0200,0352,0334,0342,0330,0334,0334,0334,0334,0342,0334,0312,0337,0313,0336,0342,0330,0334,0334,0334,0334,0336,0342,0334,0334,0304,0312,0336,0313,0337,0333,0337
+01313:0333,0200,0336,0336,0332,0332,0330,0342,0334,0342,0330,0335,0342,0330,0335,0342,0330,0342,0330,0335,0342,0330,0335,0342,0335,0331,0333,0337,0337
+01314:0333,0200,0314,0336,0332,0332,0330,0200,0333,0200,0333,0200,0331,0337,0313
+01315:0333,0313,0200,0336,0330,0332,0341,0335,0342,0334,0334,0342,0334,0334,0330,0334,0331,0337
+01316:0333,0200,0336,0336,0330,0332,0332,0332,0336,0341,0330,0330,0330,0330,0341,0333,0333,0331,0331,0341,0333,0333,0330,0330,0341,0331,0331,0331,0331,0341,0333,0333,0331,0331,0337,0337,0337,
+01317:0333,0200,0336,0336,0330,0332,0336,0330,0333,0337,0342,0336,0330,0334,0337,0337,0342,0330,0336,0342,0330,0335,0336,0342,0331,0342,0332,0330,0337,0337,0333,0333,0331,0337
+01320:0333,0200,0336,0336,0330,0332,0337,0320,0204,0336,0333,0331,0337,0337,
+01321:0333,0200,0336,0336,0330,0332,0337,0321,0204,0336,0333,0331,0337,0337,
+01322:0333,0200,0336,0336,0330,0332,0337,0322,0204,0336,0333,0331,0337,0337,
+01323:0333,0200,0336,0336,0330,0332,0337,0323,0204,0336,0333,0331,0337,0337,
+01324:0333,0200,0336,0336,0330,0332,0337,0324,0204,0336,0333,0331,0337,0337,
+01325:0333,0200,0336,0336,0330,0332,0337,0325,0204,0336,0333,0331,0337,0337,
+01326:0333,0200,0336,0336,0330,0332,0337,0326,0204,0336,0333,0331,0337,0337,
+01327:0333,0200,0336,0336,0330,0332,0337,0327,0204,0336,0333,0331,0337,0337,
+01330:0333,0200,0313,0336,0336,0330,0332,0336,0332,0337,0342,0334,0342,0330,0335,0342,0330,0334,0336,0342,0330,0335,0350,0335,0337,0310,0337,0342,0330,0335,0335,0342,0330,0335,0335,0335,0336,0313,0336,0342,0330,0351,0335,0331,0331,0331,0331,0333,0333,0333,0337,0337,0337
+01331:0333,0200,0335,0335,0333,0331,0313,0336,0336,0330,0332,0336,0332,0337,0342,0334,0342,0330,0335,0342,0330,0334,0336,0342,0330,0335,0350,0335,0337,0310,0337,0342,0330,0335,0335,0342,0330,0335,0335,0335,0336,0313,0336,0342,0330,0351,0335,0331,0331,0331,0331,0333,0333,0333,0337,0337,0337,0332,0335,0335,0331
+01332:0333,0200,0334,0333,0313,0336,0336,0330,0332,0336,0332,0337,0342,0334,0342,0330,0335,0342,0330,0334,0336,0342,0330,0335,0350,0335,0337,0310,0337,0342,0330,0335,0335,0342,0330,0335,0335,0335,0336,0313,0336,0342,0330,0351,0335,0331,0331,0331,0331,0333,0333,0333,0337,0337,0337,0335,0331
+01333:0333,0200,0335,0331,0313,0336,0336,0330,0332,0336,0332,0337,0342,0334,0342,0330,0335,0342,0330,0334,0336,0342,0330,0335,0350,0335,0337,0310,0337,0342,0330,0335,0335,0342,0330,0335,0335,0335,0336,0313,0336,0342,0330,0351,0335,0331,0331,0331,0331,0333,0333,0333,0337,0337,0337,0330,0334
+01334:0333,0200,0336,0330,0332,0336,0350,0343,0334,0334,0343,0334,0334,0343,0334,0342,0335,0330,0336,0330,0334,0334,0334,0337,0342,0334,0351,0336,0331,0337,0337,0333,0337
+01335:0333,0200,0336,0330,0332,0336,0350,0343,0334,0334,0343,0334,0334,0343,0334,0334,0334,0342,0334,0330,0336,0330,0335,0335,0335,0337,0342,0336,0335,0331,0351,0337,0337,0332,0335,0335,0337,0331
+01336:0333,0200,0336,0330,0334,0336,0330,0337,0342,0336,0331,0335,0337,0331,0337
+01337:0333,0200,0336,0330,0332,0336,0342,0334,0342,0334,0342,0334,0342,0330,0330,0334,0337,0331,0337
+01340:0333,0200,0336,0330,0332,0340,0333,0331,0337
+01341:0333,0200,0336,0330,0332,0341,0340,0333,0331,0337
+01342:0333,0200,0336,0330,0332,0334,0336,0342,0330,0340,0331,0335,0335,0342,0330,0340,0333,0333,0330,0334,0337,0337
+01343:0333,0200,0336,0330,0332,0350,0343,0335,0342,0334,0334,0342,0335,0340,0351,0331,0333,0337
+01344:0304,0313,0333,0200,0336,0332,0344,0333,0337
+01345:0304,0313,0333,0200,0336,0332,0345,0333,0337
+01346:0304,0313,0333,0200,0336,0332,0346,0333,0337
+01347:0304,0313,0333,0200,0336,0332,0336,0330,0330,0347,0331,0331,0337,0333,0337,
+01350:0333,0200,0336,0330,0332,0350,0335,0342,0335,0335,0342,0334,0336,0336,0342,0330,0330,0342,0331,0331,0351,0337,0337,0334,0333,0331,0337
+01351:0333,0200,0336,0332,0330,0350,0335,0336,0336,0342,0330,0330,0342,0330,0330,0342,0331,0331,0331,0331,0335,0337,0337,0342,0335,0342,0334,0351,0333,0330,0334,0337
+01352:0333,0200,0336,0330,0332,0335,0350,0352,0334,0334,0334,0342,0335,0335,0336,0336,0342,0330,0330,0342,0331,0331,0335,0335,0342,0330,0330,0342,0331,0331,0335,0335,0337,0337,0342,0335,0335,0335,0351,0353,0330,0334,0334,0333,0337
+01353:0333,0200,0336,0330,0332,0335,0350,0352,0334,0342,0335,0335,0342,0335,0335,0336,0336,0342,0330,0330,0342,0331,0331,0334,0334,0334,0334,0334,0334,0342,0330,0330,0342,0331,0331,0335,0335,0335,0351,0353,0337,0337,0333,0330,0334,0337
+01360:0333,0200,
+01361:0333,0200,0336,0336,0330,0332,0337,0200,0306,0350,0336,0334,0342,0330,0334,0334,0334,0334,0342,0330,0335,0335,0335,0335,0342,0330,0334,0334,0334,0334,0342,0330,0334,0334,0334,0334,0334,0335,0330,0330,0330,0304,0334,0331,0337,0337,
+01362:0333,0200,0336,0336,0330,0332,0332,0332,0340,0342,0330,0342,0330,0335,0342,0330,0342,0330,0350,0334,0334,0334,0342,0334,0334,0335,0334,0342,0334,0304,0330,0330,0330,0334,0334,0333,0337,0337,
+01363:0304,0313,0333,0200,0336,0332,0330,0336,0330,0332,0335,0342,0330,0342,0330,0335,0342,0330,0342,0330,0334,0350,0334,0342,0334,0334,0342,0340,0335,0304,0331,0333,0337,0337
+01365:0313,0304,0333,0200,0336,0330,0332,0336,0331,0332,0337,0350,0350,0334,0342,0335,0335,0342,0334,0304,0333,0350,0350,0334,0342,0335,0335,0342,0334,0304,0336,0333,0331,0337,0337
+01200:0333,0200,0336,0336,0330,0332,0337,0200,0336,0331,0333,0337,0337
+01201:0304,0313,0333,0200,0336,0336,0330,0330,0332,0332,0332,0335,0336,0337,0337,0342,0330,0335,0350,0335,0336,0336,0342,0335,0335,0342,0335,0304,0337,0331,0331,0333,0337,0337
+01020:0304,0333,0200,0336,0330,0332,0336,0336,0332,0337,0200,0333,0333,0200,0332,0332,0336,0330,0335,0337,0342,0330,0350,0335,0335,0351,0333,0350,0336,0334,0342,0334,0334,0342,0337,0335,0351,0333,0336,0333,0331,0337,0337,0331,0337,0304,0336,0330,0330,0336,0330,0334,0331,0337,0337
+01021:0304,0333,0200,0336,0330,0332,0336,0336,0332,0337,0200,0333,0333,0200,0332,0332,0336,0330,0335,0337,0342,0330,0350,0335,0335,0335,0336,0342,0335,0335,0342,0337,0335,0351,0333,0336,0333,0331,0337,0337,0331,0337,0304
+01022:0333,0200,0336,0336,0330,0330,0332,0332,0332,0336,0336,0333,0337,0337,0336,0330,0336,0333,0337,0337,0200,0333,0200,0333,0200,0331,0331,0332,0332,0200,0333,0200,0333,0200,0336,0333,0331,0337,0337,0332,0330,0336,0336,0331,0337,0342,0330,0335,0350,0335,0336,0342,0335,0335,0342,0337,0335,0335,0335,0351,0331,0331,0331,0333,0333,0336,0330,0337,0337,0337
+01023:0333,0200,0336,0336,0330,0330,0332,0332,0332,0336,0336,0333,0337,0337,0336,0330,0336,0333,0337,0337,0200,0333,0200,0333,0200,0331,0331,0332,0332,0200,0333,0200,0333,0200,0336,0333,0331,0337,0337,0332,0330,0336,0336,0331,0337,0335,0335,0331,0342,0330,0335,0350,0335,0336,0342,0335,0335,0342,0337,0335,0335,0335,0351,0331,0331,0331,0333,0333,0336,0330,0337,0337,0337,0335,0335,0331,0333
+01024:0333,0200,0336,0336,0330,0332,0337,0200,0336,0336,0330,0332,0337,0200,0336,0336,0330,0332,0337,0200,0333,0333,0333,0331,0331,0331,0336,0331,0333,0337,0337,0337,0337
+01025:0333,0200,0336,0336,0330,0332,0337,0336,0336,0330,0332,0337,0200,0336,0336,0330,0332,0337,0200,0333,0333,0333,0331,0331,0331,0336,0331,0333,0337,0337,0337,0337
+01026:0333,0200,0336,0330,0332,0336,0336,0333,0331,0337,0200,0306,0335,0342,0332,0342,0330,0335,0335,0342,0335,0335,0335,0335,0331,0334,0304,0332,0306,0335,0342,0330,0350,0335,0342,0334,0331,0335,0304,0334,0331,0332,0335,0336,0332,0337,0342,0330,0350,0335,0335,0335,0336,0342,0335,0335,0342,0335,0304,0331,0331,0331,0331,0333,0333,0333,0333,0333,0337,0337,0337
+01027:0333,0200,0336,0330,0332,0336,0336,0333,0331,0337,0332,0200,0306,0335,0342,0332,0342,0330,0335,0335,0342,0335,0335,0335,0335,0331,0334,0304,0332,0306,0335,0342,0330,0350,0335,0342,0334,0331,0335,0304,0334,0331,0333,0333,0330,0335,0342,0330,0350,0335,0335,0335,0336,0342,0335,0335,0342,0335,0304,0331,0331,0331,0331,0331,0333,0337,0337,0337
+01031:0333,0200,0336,0330,0332,0336,0332,0331,0123,0126,0107,0365,0330,0330,0332,0332,0330,0335,0335,0336,0330,0332,0337,0201,0335,0350,0335,0336,0342,0335,0335,0342,0334,0304,0333,0333,0333,0333,0331,0331,0331,0331,0331,0332,0336,0333,0336,0332,0337,0337,0337,0337,0337,
+01010:0333,0200,0350,0334,0310,0337,0342,0336,0332,0335,0335,0337,0342,0336,0333,0334,0351,0313
+0200:0304,0342,0330,0334,0342,0330,0334,0342,0330,0334,0342,0330,0334
+0201:0342,0330,
+01201:0304,0313,0333,0200,0336,0336,0330,0330,0332,0332,0332,0335,0336,0337,0337,0342,0330,0335,0350,0335,0336,0336,0342,0335,0335,0342,0335,0304,0337,0331,0331,0333,0337,0337
+01344:0333,0200,0336,0330,0332,0336,0332,0340,0335,0337,0342,0330,0340,0334,0332,0336,0331,0332,0331,0337,0337,0202,
+0202:0304,0313,0350,0335,0336,0336,0342,0333,0342,0333,0342,0333,0342,0333,0334,0304,0337,0337,
+01345:0202,0200,0350,0334,0343,0335,0304,
+01346:0202,0200,0350,0334,0332,0335,0335,0343,0333,0335,0304,0334,
+01202:0202,0200,
+01203:0304,0313,0202,0332,0333,0200,0336,0336,0330,0330,0332,0332,0332,0335,0336,0337,0337,0342,0330,0335,0350,0335,0336,0336,0342,0335,0335,0342,0335,0304,0337,0331,0331,0333,0337,0337,
+0203:0344,0330
+0204:0362,0203,0334,0203,0334,0203,0334,0203,0334,0363
+01204:0202,0200,0336,0336,0330,0332,0337,0200,0336,0331,0333,0337,0337,
+01365:0313,0304,0333,0200,0336,0330,0332,0336,0331,0332,0337,0350,0350,0334,0342,0335,0335,0342,0334,0304,0333,0350,0350,0334,0342,0335,0335,0342,0334,0304,0336,0333,0331,0337,0337
+01205:0202,0200,0336,0336,0330,0332,0332,0332,0330,0205,0331,0331,0332,0337,0337,0333,
+0205:0362,0203,0335,0203,0203,0335,0203,0335,0203,0203,0335,0363,0336,0330,0333,0336,0331,0332,0337,0365,0336,0332,0331,0337,0337,
+0206:0336,0332,0337,0362,0203,0334,0336,0203,0335,0350,0335,0337,0310,0337,0203,0335,0335,0203,0335,0304,0335,0336,0313,0336,0203,0334,0337,0203,0363,0335,0335,0336,0332,0337,
+01206:0202,0200,0336,0332,0206,0333,0337,
+01366:0333,0200,0336,0336,0332,0332,0332,0330,0335,0337,0366,0340,0342,0330,0332,0335,0335,0367,0335,0336,0333,0330,0337,0337,0331
+01367:0333,0200,0336,0336,0332,0332,0332,0330,0335,0337,0366,0330,0332,0335,0335,0367,0335,0336,0340,0334,0337,0342,0336,0333,0330,0337,0337,0331,0335,0331,0336,0332,0337,
+01364:0304,0313,0333,0200,0336,0332,0330,0336,0330,0332,0335,0342,0330,0342,0330,0335,0342,0330,0342,0330,0334,0350,0334,0342,0334,0334,0342,0340,0335,0304,0331,0333,0337,0337,0332,0202,
+0220:0304,0313,0337,0340,0336,0336,0331,0331,0333,0330,0337,0332,0332,0201,0335,0201,0201,0201,0334,0336,0201,0335,0337,0350,0335,0310,0337,0201,0335,0335,0201,0335,0304,0335,0336,0313,0336,0201,0334,0337,0201,0201,0201,0335,0333,0333,0336,0330,0332,0337,
+0210:0316,0336,0313,0336,0314,0337,0337,0313,
+01210:0333,0200,0336,0330,0336,0332,0334,0337,0342,0336,0330,0335,0336,0330,0332,0337,071,0365,0331,0331,061,060,0365,0333,0333,0336,0333,0331,0337,0337,0337,0337,
+0211:0316,0336,0336,0336,0313,0337,0337,0337,0337,0337,0337,0337,
+0207:0342,0334,0342,0335,0335,0342,0334,0336,0330,0340,0331,0337,0337,0330,0340,0331,0336,
+01207:0333,0336,0330,0332,0336,0336,0341,0337,0333,0333,0331,0331,0337,0337,
+0210:0335,0340,0341,0330,0340,0341,0334,0334,0306,0335,0330,0340,0341,0334,0334,0342,0330,0334,0334,0342,0330,0334,0334,0342,0314,0336,0330,0335,0330,0334,0334,0337,0341,0342,0330,0341,0334,0334,0342,0330,0341,0334,0334,0342,0330,0336,0331,0331,0341,0330,0341,0335,0334,0334,0330,0341,0334,0330,0341,0334,0330,0341,0334,0330,0341,0334,0300,0332,0332,0332,0330,0330,0300,0332,0332,0332,0332,0305,0311,0336,0330,0335,0350,0334,0335,0333,0335,0351,0337,0342,0341,0330,0335,0335,0342,0341,0330,0335,0335,0342,0341,0330,0335,0335,0342,0341,0330,0335,0335,0342,0341,0330,
+*/
+</script>
+<!--<page02>-->
+<script>
+
+function string2byteCode(localString){
+	var localByteCode = "";
+	for(var stringIndex = 0;stringIndex < localString.length;stringIndex++){
+		var tempCharCode = localString.charCodeAt(stringIndex);
+		if(tempCharCode != 0){
+			localByteCode += "0";
+			localByteCode += tempCharCode.toString(8);
+			localByteCode += ",";
+		}
+	}
+	return localByteCode;
+}
+
+function byteCode2string(localByteCode){
+	var localString = "";
+	var stringArray = localByteCode.split(",");
+	for(var index = 0;index < stringArray.length;index++){
+		var myCharCode = String.fromCharCode(parseInt(stringArray[index],8));
+		if(parseInt(stringArray[index],8) >= 040 && parseInt(stringArray[index],8) < 0177 ){
+			localString += myCharCode;
+		}
+		if(parseInt(stringArray[index],8) == 012){//newline
+			localString += myCharCode;
+		}
+		if(parseInt(stringArray[index],8) == 011){//vertical tab
+			localString += myCharCode;
+		}		
+		if(parseInt(stringArray[index],8) >= 0400 && parseInt(stringArray[index],8) <= 0777){
+			if(currentTable[parseInt(stringArray[index],8)].length > 0){
+				localString += byteCode2string(currentTable[parseInt(stringArray[index],8)]);
+			}
+		}		
+		
+	}
+	return localString;
+}
+
+function drawGlyph(localString){
+	var tempArray = localString.split(',');
+	for(var index = 0;index < tempArray.length;index++){
+		doTheThing(parseInt(tempArray[index],8));
+	}
+}
+ 
+function spellGlyph(localString){
+	var tempArray = localString.split(',');
+	for(var index = 0;index < tempArray.length;index++){
+		ctx.lineWidth = 2;
+	   // ctx.strokeStyle="black";
+        if(x > 0.94*innerWidth){
+            y+= 1.1*unit;
+            x = unit;
+        }
+		doTheThing(parseInt(tempArray[index],8) + 01000);
+	}
+}
+function doTheThing(localCommand){
+ 
+    if(localCommand >= 040 && localCommand <= 0176){
+		 currentHTML += String.fromCharCode(localCommand);
+         currentWord += String.fromCharCode(localCommand);	    
+    }
+    if(localCommand >= 0200 && localCommand <= 0277){//shapes 
+		 drawGlyph(currentTable[localCommand]);    	    
+    }
+    if(localCommand >= 01000 && localCommand <= 01777){//symbol glyphs
+		 drawGlyph(currentTable[localCommand]);    	    
+    } 
+    // </page02>
+
+    if(localCommand == 0300){// <page0300>
+      x = x0;
+      y = y0;
+      theta = theta0;
+      side = unit;
+      thetaStep = Math.PI/2;
+      scaleFactor = 2;
+      ctx.lineWidth = 2;
+      ctx.strokeStyle="#00ff00";
+      ctx.fillStyle="#00ff00";
+      currentWord = "";
+    //</page0300>
+    }
+    if(localCommand == 0304){//<page0304>
+      thetaStep = Math.PI/2;
+    //</page0304>
+    }
+    if(localCommand == 0305){//<page0305>
+      thetaStep = 2*Math.PI/5;
+    //</page0305>
+    }
+    if(localCommand == 0306){//<page0306>
+      thetaStep = Math.PI/3;
+    //</page0306>
+    }
+    if(localCommand == 0310){//<page0310>
+       scaleFactor = Math.sqrt(2); 
+    //</page0310>
+    }
+    if(localCommand == 0311){//<page0311>
+       scaleFactor = phi; //"golden" ratio 
+    //</page0311>
+    }
+    if(localCommand == 0312){//<page0312>
+       scaleFactor = Math.sqrt(3); 
+    //</page0312>
+    }
+    if(localCommand == 0313){//<page0313>
+      scaleFactor = 2;  //2x
+    //</page0313>
+    }
+    if(localCommand == 0314){//<page0314>
+      scaleFactor = 3;  //3x
+    //</page0314>
+    }
+    if(localCommand == 0315){//<page0315>
+      scaleFactor = 3.14159;  //pi*
+    //</page0315>
+    }
+    if(localCommand == 0316){//<page0316>
+      scaleFactor = 5;  //5*
+    //</page0316>
+    }
+    if(localCommand == 0317){//<page0317>
+       side = unit; 
+    //</page0317>
+    }
+    if(localCommand == 0320){//<page0320>
+		ctx.strokeStyle="black";
+    	ctx.lineWidth = 2;    	
+    	ctx.fillStyle = "black";
+    //</page0320>
+    }
+    if(localCommand == 0321){//<page0321>
+		ctx.strokeStyle = "yellow";
+    	ctx.lineWidth = 2;    	
+    	ctx.fillStyle = "yellow";
+    //</page0321>
+    }
+    if(localCommand == 0322){//<page0322>
+		ctx.strokeStyle="orange";
+    	ctx.lineWidth = 2;
+    	ctx.fillStyle = "orange";    
+    //</page0322>
+    }
+    if(localCommand == 0323){//<page0323>
+		ctx.strokeStyle="white";
+    	ctx.lineWidth = 2;
+    	ctx.fillStyle = "white";    
+    //</page0323>
+    }
+    if(localCommand == 0324){//<page0324>
+		ctx.strokeStyle="red";
+    	ctx.lineWidth = 2;
+    	ctx.fillStyle = "red";    
+    //</page0324>
+    }
+    if(localCommand == 0325){//<page0325>
+		ctx.strokeStyle="green";
+    	ctx.lineWidth = 2;
+    	ctx.fillStyle = "green";    
+    //</page0325>
+    }
+    if(localCommand == 0326){//<page0326>
+		ctx.strokeStyle="purple";
+    	ctx.lineWidth = 2;
+    	ctx.fillStyle = "purple";    
+    //</page0326>
+    }
+    if(localCommand == 0327){//<page0327>
+		ctx.strokeStyle="blue";
+    	ctx.lineWidth = 2;
+    	ctx.fillStyle = "blue";    
+    //</page0327>
+    }
+    if(localCommand == 0330){//<page0330>
+      x += side*Math.cos(theta);   
+      y += side*Math.sin(theta); 
+    //</page0330>
+    }
+    if(localCommand == 0331){//<page0331>
+      x -= side*Math.cos(theta);   
+      y -= side*Math.sin(theta); 
+    //</page0331>
+    }
+    if(localCommand == 0332){//<page0332>
+      x += side*Math.cos(theta - thetaStep);
+      y += side*Math.sin(theta - thetaStep);
+    //</page0332>
+    }
+    if(localCommand == 0333){//<page0333>
+      x += side*Math.cos(theta + thetaStep);
+      y += side*Math.sin(theta + thetaStep);
+    //</page0333>
+    }
+    if(localCommand == 0334){//<page0334>
+      theta -= thetaStep; // CCW
+    //</page0334>    
+    }
+    if(localCommand == 0335){//<page0335>
+      theta += thetaStep; // CW
+    //</page0335>
+    }
+    if(localCommand == 0336){//<page0336>
+      side /= scaleFactor; // -
+    //</page0336>
+    }
+    if(localCommand == 0337){//<page0337>
+      side *= scaleFactor; // +
+    //</page0337>
+    }
+    if(localCommand == 0340){//<page0340>
+ 
+    	//point
+		ctx.beginPath();
+		ctx.arc(x, y, 3, 0, 2 * Math.PI);
+		ctx.fill();	
+		ctx.closePath();
+		currentSVG += "<circle cx=\"";
+		currentSVG += Math.round(x).toString();
+		currentSVG += "\" cy = \"";
+		currentSVG += Math.round(y).toString();
+		currentSVG += "\" r = \"3\" stroke = \"black\" stroke-width = \"2\" ";
+		currentSVG += "fill = \"black\" />\n";		
+    //</page0340>
+    }
+    if(localCommand == 0341){//<page0341>
+      //circle
+		ctx.beginPath();
+		ctx.arc(x, y, side, 0, 2 * Math.PI);
+		ctx.closePath();
+		ctx.stroke();
+		currentSVG += "    <circle cx=\"";
+		currentSVG += Math.round(x).toString();
+		currentSVG += "\" cy = \"";
+		currentSVG += Math.round(y).toString();
+		currentSVG += "\" r = \"" + side.toString() + "\" stroke = \"black\" stroke-width = \"2\" ";
+		currentSVG += "fill = \"none\" />\n";		
+    //</page0341>
+    }
+    if(localCommand == 0342){//<page0342>
+        //line
+    	ctx.beginPath();
+    	ctx.moveTo(x,y);
+		ctx.lineTo(x + side*Math.cos(theta),y + side*Math.sin(theta));
+		ctx.stroke();		
+   		ctx.closePath();
+   		
+   		var x2 = Math.round(x + side*Math.cos(theta));
+   		var y2 = Math.round(y + side*Math.sin(theta));
+   		currentSVG += "    <line x1=\""+Math.round(x).toString()+"\" y1=\""+Math.round(y).toString()+"\" x2=\""+x2.toString()+"\" y2=\""+y2.toString()+"\" style=\"stroke:black;stroke-width:2\" />\n"
+
+        //</page0342>
+    }
+    if(localCommand == 0343){//<page0343>
+    	ctx.beginPath();
+		ctx.arc(x, y, side, theta - thetaStep,theta + thetaStep);
+		ctx.stroke();
+		ctx.closePath();
+		localString = "";
+		localString += "  <path d=\"";	
+		localString += "M";
+		var localInt = x + side*Math.cos(theta - thetaStep);
+		localString += localInt.toString();
+		localString += " ";
+		localInt = y + side*Math.sin(theta - thetaStep);
+		localString += localInt.toString();
+		currentSVG += localString;
+		localString = "           A" + side.toString() + " " + side.toString() + " 0 0 1 ";
+		localInt = x + side*Math.cos(theta + thetaStep);
+		localString += localInt.toString() + " ";
+		localInt = y + side*Math.sin(theta + thetaStep);
+		localString += localInt.toString() + "\" fill = \"none\" stroke = \"black\" stroke-width = \"2\" />\n";
+		currentSVG += localString;
+//</page0343>    
+    }
+    if(localCommand == 0344){//<page0344>
+       //part of a poly line or path 
+		ctx.lineTo(x + side*Math.cos(theta),y + side*Math.sin(theta));
+		ctx.stroke();		
+
+   		var x2 = Math.round(x + side*Math.cos(theta));
+   		var y2 = Math.round(y + side*Math.sin(theta));
+   		currentSVG += "L" + x2 + " " + y2 + " ";
+
+    //</page0344>
+    }
+    if(localCommand == 0345){//<page0345>
+       //arc
+		ctx.arc(x, y, side, theta - thetaStep,theta + thetaStep);
+		ctx.stroke();
+    //</page0345>
+    }
+    if(localCommand == 0346){//<page0346>
+      //arc, reverse direction
+		ctx.arc(x, y, side, theta + thetaStep,theta - thetaStep,true);
+		ctx.stroke();
+    //</page0346>
+    }
+    if(localCommand == 0347){//<page0347>
+        //filled circle
+		ctx.beginPath();
+		ctx.arc(x, y, side, 0, 2 * Math.PI);
+		ctx.closePath();
+		ctx.stroke();
+		ctx.fill();
+		currentSVG += "    <circle cx=\"";
+		currentSVG += Math.round(x).toString();
+		currentSVG += "\" cy = \"";
+		currentSVG += Math.round(y).toString();
+		currentSVG += "\" r = \"" + side.toString() + "\" stroke = \"black\" stroke-width = \"2\" ";
+		currentSVG += "fill = \"black\" />\n";		
+
+    //</page0347>
+    }
+    if(localCommand == 0350){//<page0350>
+      thetaStep /= 2;  //angle/2
+    //</page0350>
+    }
+    if(localCommand == 0351){//<page0351>
+      thetaStep *= 2;  //2angle
+    //</page0351>
+    }
+    if(localCommand == 0352){//<page0352>
+      thetaStep /= 3; //angle/3
+    //</page0352>
+    }
+    if(localCommand == 0353){//<page0353>
+      thetaStep *= 3; //3angle
+	//</page0353>
+    }
+    if(localCommand == 0360){//<page0360>
+		imgData = imgctx.getImageData(x,y,side,side);
+	//</page0360>
+    }
+    if(localCommand == 0361){//<page0361>
+        var IMG = document.getElementById(currentImage);
+        IMG.style.left = (x - imgx0*(side/unit)).toString() + "px";
+        IMG.style.top = (y - imgy0*(side/unit)).toString() + "px";
+        IMG.style.width = (imgw*side/unit).toString() + "px";  
+        //</page0361>
+    }
+    if(localCommand == 0362){//<page0362>
+	   ctx.beginPath();
+	   ctx.moveTo(x,y);
+	   currentSVG += "	<path d = \"M";
+	   currentSVG += Math.round(x).toString() + " ";
+	   currentSVG += Math.round(y).toString() + " ";
+
+//	   currentSVG += "  <polyline points=\"";		
+    //</page0362>
+    }
+    if(localCommand == 0363){//<page0363>
+	   ctx.closePath();
+	   ctx.stroke();		
+	   ctx.fill();		
+	   currentSVG += "Z\""+ " stroke = \"black\" stroke-width = \"2\" fill = \"none\" "+"/>";
+    //</page0363>
+    }
+    if(localCommand == 0364){//<page0364>
+	   ctx.closePath();
+	   ctx.stroke();		
+	   ctx.fill();		
+	   currentSVG += "Z\""+ " stroke = \"black\" stroke-width = \"2\" fill = \"black\" "+"/>";
+    //</page0364>
+    }
+    if(localCommand == 0365){//<page0365>
+        ctx.font=side.toString(8) + "px " + myFont;
+		ctx.fillText(currentWord,x,y);
+		currentSVG += "    <text x=\"";
+		currentSVG += Math.round(x).toString();
+		currentSVG += "\" y = \"";
+		currentSVG += Math.round(y).toString();
+		currentSVG += "\" fill = \"black\""; 
+		currentSVG += " font-size = \"";
+		currentSVG += side + "px\"";
+		currentSVG += " font-family = \"futura\"";
+		currentSVG += ">";
+		currentSVG += currentWord;
+		currentSVG += "</text>\n";	
+	//</page0365>
+    }
+    if(localCommand == 0366){//<page0366>
+		ctx.beginPath();
+		ctx.moveTo(Math.round(x),Math.round(y));
+		cpx1 = Math.round(x + side*Math.cos(theta));
+		cpy1 = Math.round(y + side*Math.sin(theta));
+		currentSVG += "<path    d = \"M";
+		currentSVG += (Math.round(x)).toString() + ",";
+		currentSVG += (Math.round(y)).toString() + " C";
+		currentSVG += cpx1.toString() + "," + cpy1.toString() + " ";
+		
+//<path  d="M100,200 C150,150 200,150 250,200" />
+	//</page0366>
+    }
+    if(localCommand == 0367){//<page0367>
+		x2 = Math.round(x);
+		y2 = Math.round(y);
+		cpx2 = Math.round(x + side*Math.cos(theta));
+		cpy2 = Math.round(y + side*Math.sin(theta));
+		ctx.bezierCurveTo(cpx1,cpy1,cpx2,cpy2,x2,y2);
+		ctx.stroke();
+		currentSVG += cpx2.toString() + "," + cpy2.toString() + " ";
+		currentSVG += x2.toString() + "," + y2.toString() + "\" fill = \"none\" stroke-width = \"2\" stroke = \"black\" />";		
+    //</page0367>
+    }
+    if(localCommand == 06){ //<page06>
+        fullCube = false;
+        currentTable = []; 
+        for(var index = 0;index < 01777;index ++){
+            currentTable.push("");
+        }
+        var inputbytecode = document.getElementById("bytecodeScript").text;
+        var bytecodearray = inputbytecode.split("\n");
+        for(var index = 0;index < bytecodearray.length;index++){
+            if(bytecodearray[index].includes(":")){
+                var localBytecode = bytecodearray[index].split(":");
+                var localAddress = parseInt(localBytecode[0],8);
+                currentTable[localAddress] = localBytecode[1];
+            }
+        }
+        currentTableStart = [];
+        for(var index = 0;index < currentTable.length;index++){
+            currentTableStart.push(currentTable[index]);
+        }
+//</page06>
+    }
+    if(localCommand == 07){//<page07>
+        //intialize
+        myFont = "Futura";
+        currentWord = "";
+        currentSVG = "";
+        currentHTML = "";
+        currentAddress = 0210;
+        currentGlyph = "0300,";
+        currentAction = 0;
+        currentCommand = "0300";
+        phi = 0.5*(Math.sqrt(5) + 1);
+        scaleFactor = 2;
+        thetaStep = Math.PI/2;
+        theta0 = -Math.PI/2; 
+        theta = theta0;
+        x0 = innerWidth/2;
+        y0 = innerHeight/2;
+        x = x0;
+        y = y0;
+        unit = 300;
+        side = unit;
+        hereGlyph = "";
+        meglyph = "0320,0341,0337,0341,0337,0341,0337,0341,0342,0335,0342,0335,0342,0335,0342,0335,0336,0336,";
+        x0 = innerWidth/2;
+        y0 = innerHeight/2;
+        unit = x0/8;//16 wm span total screen size
+        side = unit;
+        currentGlyph = "0300,0330,0341,0333,0207,0336,0341,";
+        viewGlyph = "";
+        x0 = 5;
+        y0 = 55;
+        unit = 50;
+        side = unit;
+
+        currentImage = "image0606a";
+        imgx0 = 0;
+        imgy0 = 0;
+        imgw = 400; //natural width in pixels
+        imgunit = 200; //when width is natural width, this is "unit" in pixels
+        physicalunit = "555 feet";
+        lat0 = 38.8894427;//washington monument
+        lon0 = -77.035224;//washington monument
+
+        keys1 = ["","4","5","6","0","!"];
+        commands1 = [0300,0304,0305,0306,0300,027];
+        keys2 = ["q","w","e","r","t","[","]","p"];
+        commands2 = [0310,0311,0312,0313,0314,020,021,010];
+        keys3 = ["a","s","d","f","g","h","j","k","l",";"];
+        commands3 = [0330,0331,0332,0333,0334,0335,0336,0337,0350,0351];
+        keys4 = ["z","x","c","v",",",".","Q","W","E","R","T","Y","U","I"];
+        commands4 = [0340,0341,0342,0343,022,023,0200,0201,0202,0203,0204,0205,0206,020];	
+
+        keys = keys1.concat(keys2,keys3,keys4);
+        commands = commands1.concat(commands2,commands3,commands4);
+    //</page07>
+    }
+    if(localCommand == 010){//<page010>
+    //delete
+    var glypharray = currentGlyph.split(",");
+    currentGlyph = "";
+    for(var index = 0;index < glypharray.length-1;index++){
+      if(glypharray[index + 1] != "0207"){
+        currentGlyph += glypharray[index] + ",";
+      }
+    }
+    currentGlyph += glypharray[glypharray.length-1] + ",";
+    redraw(); 
+//</page010>
+    }
+    if(localCommand == 011){//<page011>
+//insert
+    var glypharray = currentGlyph.split(",");
+    currentGlyph = "";
+    for(var index = 0;index < glypharray.length-1;index++){
+      if(glypharray[index] != "0207"){
+        currentGlyph += glypharray[index] + ",";
+      }
+      else{
+        currentGlyph += currentCommand + ",0207,";
+      }
+    }
+    currentGlyph += glypharray[glypharray.length-1];
+    redraw();
+    //</page011>
+    }
+    if(localCommand == 020){//<page020>
+   //back arrow
+    var glypharray = currentGlyph.split(",");
+    currentGlyph = "";
+    if(glypharray[0] == "0207"){
+        for(var index = 1;index < glypharray.length-1;index++){
+            if(glypharray[index].length >0){
+                currentGlyph += glypharray[index] + ",";
+            }        
+        }
+        currentGlyph += "0207,";
+    }
+    else{
+      for(var index = 0;index < glypharray.length-1;index++){
+        if(glypharray[index + 1] == "0207"){
+          currentGlyph += "0207,";
+           if(glypharray[index].length >0){
+                currentGlyph += glypharray[index] + ",";
+            }        
+        }
+        if(glypharray[index] != "0207" && glypharray[index + 1] != "0207"){
+           if(glypharray[index].length >0){
+                currentGlyph += glypharray[index] + ",";
+            }        
+        }
+      }
+      if(glypharray[index].length >0){
+            currentGlyph += glypharray[glypharray.length-1] + ",";
+      }        
+
+    }
+
+    redraw();  
+    //</page020>
+    }
+    if(localCommand == 021){//<page021>
+   //forward arrow
+    var glypharray = currentGlyph.split(",");
+    currentGlyph = "";
+    if(glypharray[glypharray.length - 2] == "0207"){
+      currentGlyph += "0207,";
+      for(var index = 0;index < glypharray.length - 2;index++){
+         currentGlyph += glypharray[index] + ",";
+      }
+    }
+    else{
+      for(var index = 0;index < glypharray.length-1;index++){
+        if(glypharray[index] == "0207"){
+          currentGlyph += glypharray[index+1] + ",";
+          currentGlyph += "0207,";
+        }
+        if(glypharray[index] != "0207" && glypharray[index - 1] != "0207"){
+          currentGlyph += glypharray[index] + ",";
+        }
+      }
+      currentGlyph += glypharray[glypharray.length-1];
+    }
+    redraw();  
+    //</page021>
+    }
+    if(localCommand == 022){//<page022>
+   //previous glyph in table
+    currentAddress--;
+    var fooArray = currentTable[currentAddress].split(",");
+    currentGlyph = "";
+    for(var index = 0;index < fooArray.length;index++){
+        if(fooArray[index].length > 0){
+            currentGlyph +=  fooArray[index] + ",";
+        }
+    }
+    currentGlyph += "0207,";
+    document.getElementById("codeaddr").value = "0" + currentAddress.toString(8);
+    redraw();
+    //</page022>
+    }
+    if(localCommand == 023){//<page023>
+   //next glyph in table
+    currentAddress++;
+    var fooArray = currentTable[currentAddress].split(",");
+    currentGlyph = "";
+    for(var index = 0;index < fooArray.length;index++){
+        if(fooArray[index].length > 0){
+            currentGlyph +=  fooArray[index] + ",";
+        }
+    }
+    currentGlyph += "0207,";
+    document.getElementById("codeaddr").value = "0" + currentAddress.toString(8);
+    redraw();
+    //</page023>
+    }
+    if(localCommand == 027){//<page027>
+         //export cube, "!" is the key command to invok
+        var localString = "";
+		for(var index = 0;index < currentTable.length;index++){
+			if(currentTableStart[index] != currentTable[index] || fullCube){
+				localString += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
+			}
+		}
+        editor.setValue(localString);
+        currentAddress = 0177;
+    //</page027>
+    }
+
+//<page03>
+
+}
+
+
+doTheThing(06);
+doTheThing(07);
+
+function distanceFeet(Alat,Alon,Blat,Blon){
+    var ay = Alat*(60)*(1.15078)*(5280);
+    var by = Blat*(60)*(1.15078)*(5280);
+    var ax = Alon*(60)*(1.15078)*(5280)*Math.cos(Alat*180/Math.PI);
+    var bx = Blon*(60)*(1.15078)*(5280)*Math.cos(Alat*180/Math.PI);
+    var deltax = ax-bx;
+    var deltay = ay-by;
+    return Math.sqrt(deltax*deltax + deltay*deltay);
+}
+
+function distanceUnits(Alat,Alon,Blat,Blon,unitvalue){
+    var ay = Alat*(60)*(1.15078)*(5280);
+    var by = Blat*(60)*(1.15078)*(5280);
+    var ax = Alon*(60)*(1.15078)*(5280)*Math.cos(Alat*180/Math.PI);
+    var bx = Blon*(60)*(1.15078)*(5280)*Math.cos(Alat*180/Math.PI);
+    var deltax = -(bx-ax)/unitvalue;
+    var deltay = (by-ay)/unitvalue;
+    deltax = 0.01*Math.round(100*deltax);
+    deltay = 0.01*Math.round(100*deltay);
+    return deltax.toString() + "," + deltay.toString();
+}
+
+</script>
+</head>
+
+
+<body> 
+<button id = "backbutton" class = "navbutton">BACK</button>
+<button id = "fwdbutton" class = "navbutton">FWD</button>
+
+<!--</page03>-->
+<!--<page0410>-->
+<div style = "display:none" class = "json" id = "data0410">
+[
+{
+    "url":"https://i.imgur.com/dFr93kL.jpg",
+    "title":"Crystal City Map",
+    "imgx0":1280,
+    "imgy0":1150,
+    "imgw":1936,
+    "latlon0":"38.858946, -77.048988",
+    "marker0":"VRE sign on crystal drive",
+    "latlon1":"38.857576, -77.049262",
+    "marker1":"18th and crystal",
+    "d01":1,
+    "circlerad":76,
+    "physicalunitvalue":300,
+    "physicalunit":"feet",
+    "feetperpixel":1.0,
+    "artist":"Lafe Spietz",
+    "date":"August 2017",
+    "media":"pen, ink, paper",
+    "purpose":"demonstration and prototyping of geometron methods",
+    "cloudhypercubeurl":"www.lafelabs.org",
+    "ancestor":"www.lafelabs.org",
+    "mapid":"lafespietz080317",
+    "descendants":"www.lafelabs.org"
+},
+{
+    "url":"https://i.imgur.com/zrxvR1e.jpg",
+    "title":"pentagon area",
+    "imgx0":1100,
+    "imgy0":1330,
+    "imgw":1936,
+    "latlon0":"38.869181, -77.053740",
+    "marker0":"pentagon metro entrance",
+    "latlon1":"38.872905, -77.054638",
+    "marker1":"NNE corner",
+    "d01":1,
+    "circlerad":135,
+    "physicalunitvalue":300,
+    "physicalunit":"feet",
+    "feetperpixel":1.0,
+    "artist":"Lafe Spietz",
+    "date":"August 2017"
+},
+{
+		"url": "https://i.imgur.com/7poqN6I.jpg",
+		"title": "TR island map",
+		"imgx0": "340",
+		"imgy0": "930",
+		"imgw": "1936",
+		"latlon0": "38.896318, -77.065397",
+		"marker0": "Island side of pedestrian bridge",
+		"latlon1": "38.892940, -77.055951",
+		"marker1": "TR bridge, East side",
+		"d01": 1392,
+		"circlerad": "335",
+		"physicalunitvalue": 300,
+		"physicalunit": "feet",
+		"feetperpixel": 3.64,
+		"artist": "Lafe Spietz",
+		"date": "August 2017"
+    },
+    {
+		"url": "https://i.imgur.com/i9vGar4.jpg",
+		"title": "Tidal Basin",
+		"imgx0": "1570",
+		"imgy0": "330",
+		"imgw": "1936",
+		"latlon0": "38.889456, -77.035240",
+		"marker0": "Washington Monument",
+		"latlon1": "38.881404, -77.036592",
+		"marker1": "Jefferson Memorial",
+		"d01": 1740,
+		"circlerad": "340",
+		"physicalunitvalue": 555,
+		"physicalunit": "feet",
+		"feetperpixel": 1.83,
+		"artist": "Lafe Spietz",
+		"date": "August 2017"
+	}
+]
+</div>
+<!--</page0410>-->
+<!--<page0603>-->
+<div class = "page" id = "div0603">
+    <div class = "title">Distance Units</div>
+<div id = "llnums">
+    <div>38.889435$^{\circ}$ N
+        <div id = "miles100">$\times$ 700 miles</div> 
+        <div id = "miles10">$\times$ 70 miles</div> 
+        <div id = "miles">$\times$ 7 miles</div> 
+        <div id = "thousand">$\times$ 1000 yards</div> 
+        <div id = "hundred">$\times$ 100 yards</div> 
+        <div id = "ten">$\times$ 10 yards</div> 
+        <div id = "yard">$\times$ 1 yard</div>     
+        <div id = "inches">$\times$ 3 inches</div>     
+    </div>
+     
+</div>
+    <div class = "scroll">
+    Circumference of the Earth:
+<p style = "text-align:center;">
+40,000 km $\equiv$ 360 degrees(lattitude)
+<p>
+    This was the original definition of the meter: one 40 millionth of the distance from the equator to the poles.  
+This has long since been replaced by a definition involving the speed of light and the atomic clock, but it stood for some time,
+and the original definition required epic adventures across a large fraction of the globe to measure the relationship 
+between distance and angle.  
+<p>
+    Lattitude is the distance in angle units described here from the equator, and generally has either a N or S to denote if 
+    it's North or South of the equator.  In computer software north and south are generally just denoted by sign: plus
+    above equator south below.  
+<p>
+    Longitude is the angle around the world from that of Greenwitch, England.  Unlike the equator, this is an arbitrary
+    political decision, based on the historical naval power of the British Empire.  Other prime meridians have been used, 
+    but again for the purpose of computer software it's fixed in England.  Anything between 0 and 180 degrees west is marked as 
+    "W", but again in comptuer software it's just denoted by sign.  So everything in the Americas is negative, most of Europe is positive, 
+    as is all of Asia. 
+
+<p style = "text-align:center;">
+1 arc minute of lattitude $\equiv$ 1 nautical mile
+<p style = "text-align:center;">
+1 degree $\equiv$ 60 arc minutes
+<p>
+$$1 \textrm{ mile}\left(\frac{1 \textrm{ NM}}{1.1508\textrm{ mile}}\right)\left(\frac{1\textrm{ deg}}{60\textrm{ NM}}\right) = 0.014482\textrm{ deg}$$
+$$\approx 0.015\textrm{ degree lattitude}$$
+$$\textrm{1 foot} = \frac{\textrm{0.015 deg}}{\textrm{5280 feet}} \approx 0.000003^{\circ}$$
+$$\textrm{1 yard} \approx 0.00001^{\circ}$$
+$$\textrm{10 yard} \approx 0.0001^{\circ}$$
+$$\textrm{100 yard} \approx 0.001^{\circ}$$
+$$\textrm{1000 yard} \approx 0.01^{\circ}$$
+
+Longitude degrees are multiplied by cosine of the lattitude.  
+Washington, DC is at approximately 39 degrees north lattitude, and the cosine of that is about 0.777 or 
+about 78%(down by 22%). 60 degrees North or South is 50% down, which is roughly Anchorage, Alaska or
+ Oslo Norway(give or take a couple degrees).
+
+<table id = "latlond" class = "calculator">
+        <tr>
+            <td>latlon0:</td><td><input value = "38.889435, -77.035223"></input></td>
+        </tr>
+        <tr>
+            <td>latlon1:</td><td><input value = "38.881479, -77.036592"></input></td>
+        </tr>
+        <tr>
+            <td>d01(feet):</td><td><input value = "2921"></input></td>
+        </tr>
+        <tr>
+            <td>unit(feet):</td><td><input value = "555"></input></td>
+        </tr>
+        <tr>
+            <td>d01(units):</td><td><input value = "5.26"></input></td>
+        </tr>
+        <tr>
+            <td>$\Delta x,\Delta y$:</td><td><input value = "-0.62,-5.23"></input></td>
+        </tr>        
+    </table>
+</div>
+</div> 
+<!--</page0603>-->
+<!--<page0610>-->
+<div class = "page" id = "div0610">
+    <img id = "image0610"></img>
+    <div id = "tablecontainer">
+        <table id = "table0610"></table>
+    </div>
+    <textarea id = "textIO"></textarea>
+        <canvas id = "canvas0610"></canvas>
+        <div class = "mapbutton" id = "prevmap">&#x25c0</div><div class = "mapbutton" id = "nextmap">&#x25ba</div>
+
+    <table  id = "pantable">
+    <tr>
+        <td class = "panbutton" onclick = "x0 -= 0.5*unit;redraw0710();">&#x2B05</td> 
+        <td class = "panbutton" onclick = "y0 -= 0.5*unit;redraw0710();">&#x2B06</td>
+        <td class = "panbutton" onclick = "y0 += 0.5*unit;redraw0710();">&#x2B07</td>
+        <td class = "panbutton" onclick = "x0 += 0.5*unit;redraw0710();">&#x27A1</td>
+        <td class = "panbutton" onclick = "zoom /= 1.1;redraw0710();" style = "padding-left:10px;padding-right:10px;">-</td>
+        <td class = "panbutton" onclick = "zoom += 1.1;redraw0710();" style = "padding-left:10px;padding-right:10px;">+</td>
+        <td class = "panbutton" onclick = "" style = "padding-left:10px;padding-right:10px;">&#x2A37</td>
+    </tr>
+    </table>
+</div>
+<!--</page0610>-->
+<!--<page0620>-->
+<div class = "page" id = "div0620">
+    <div class = "title">Outfeed Control</div>
+</div>
+<!--</page0620>-->
+<!--<page0621>-->
+<div class = "page" id = "div0621">
+    <div class = "title">Infeed Control</div>
+</div>
+<!--</page0621>-->
+<!--<page0622>-->
+<div class = "page" id = "div0622">
+    <div class = "title">Map Viewer</div>
+</div>
+<!--</page0622>-->
+<!--<page0623>-->
+<div class = "page" id = "div0623">
+    <div class = "title">Story of The Metamap</div>
+</div>
+<!--</page0623>-->
+<!--<page0624>-->
+<div class = "page" id = "div0624">
+    <div class = "title">How to Create Map Art</div>
+</div>
+<!--</page0624>-->
+<!--<page0625>-->
+<div class = "page" id = "div0625">
+    <div class = "title">Location Finder</div>
+</div>
+<!--</page0625>-->
+<!--<page0700>-->
+<script id = "script0700">
+    zoom = 1;
+    pages = document.getElementsByClassName("page");
+    currentPage = 0;
+    for(index = 0;index < pages.length;index++){
+        if(index != currentPage){
+            pages[index].style.display = "none";
+        }
+    }
+    
+    document.getElementById("backbutton").onclick = function(){
+        pages[currentPage].style.display = "none";
+        currentPage--;
+        if(currentPage < 0){
+            currentPage = pages.length - 1;
+        }
+        pages[currentPage].style.display = "block";
+                
+    }
+    document.getElementById("fwdbutton").onclick = function(){
+        pages[currentPage].style.display = "none";
+        currentPage++;
+        if(currentPage > pages.length -1){
+            currentPage = 0;
+        }
+        pages[currentPage].style.display = "block";
+    }
+
+</script>
+<!--</page0700>-->
+<!--<page0703>-->
+<script id = "script0703">
+
+
+dinputs = document.getElementById("latlond").getElementsByTagName("INPUT");
+dinputs[0].onchange= function(){
+    var latlon0local = this.value;
+    var latlon1local = dinputs[1].value;
+    var lat0l = parseFloat(latlon0local.split(",")[0]);
+    var lon0l = parseFloat(latlon0local.split(",")[1]);
+    var lat1l = parseFloat(latlon1local.split(",")[0]);
+    var lon1l = parseFloat(latlon1local.split(",")[1]);
+    var dflocal = distanceFeet(lat0l,lon0l,lat1l,lon1l);
+    dinputs[2].value = dflocal;
+    dinputs[4].value = dflocal/dinputs[3].value;
+    dinputs[5].value = distanceUnits(lat0l,lon0l,lat1l,lon1l,dinputs[3].value);
+}
+dinputs[1].onchange= function(){
+    var latlon1local = this.value;
+    var latlon0local = dinputs[0].value;
+    var lat0l = parseFloat(latlon0local.split(",")[0]);
+    var lon0l = parseFloat(latlon0local.split(",")[1]);
+    var lat1l = parseFloat(latlon1local.split(",")[0]);
+    var lon1l = parseFloat(latlon1local.split(",")[1]);
+    var dflocal = distanceFeet(lat0l,lon0l,lat1l,lon1l);
+    dinputs[2].value = dflocal;
+    dinputs[4].value = dflocal/dinputs[3].value;
+    dinputs[5].value = distanceUnits(lat0l,lon0l,lat1l,lon1l,dinputs[3].value);
+
+}
+dinputs[3].onchange= function(){
+    var latlon0local = dinputs[0].value;
+    var latlon1local = dinputs[1].value;
+    var lat0l = parseFloat(latlon0local.split(",")[0]);
+    var lon0l = parseFloat(latlon0local.split(",")[1]);
+    var lat1l = parseFloat(latlon1local.split(",")[0]);
+    var lon1l = parseFloat(latlon1local.split(",")[1]);
+    var dflocal = distanceFeet(lat0l,lon0l,lat1l,lon1l);
+    dinputs[2].value = dflocal;
+    dinputs[4].value = dflocal/dinputs[3].value;
+    dinputs[5].value = distanceUnits(lat0l,lon0l,lat1l,lon1l,dinputs[3].value);
+}
+</script>
+<!--</page0703>-->
+<!--<page0710>-->
+<script id = "script0710">
+    document.getElementById("canvas0610").width = innerWidth;
+    document.getElementById("canvas0610").height = innerHeight;
+    ctx = document.getElementById("canvas0610").getContext("2d");
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+
+    x0 = innerWidth/2;
+    y0 = innerHeight/2;
+
+
+    imageIndex = 3;
+    mydata = JSON.parse(document.getElementById("data0410").innerHTML);
+
+    var alat = parseFloat(mydata[imageIndex].latlon0.split(",")[0]);   
+    var alon = parseFloat(mydata[imageIndex].latlon0.split(",")[1]);   
+    var blat = parseFloat(mydata[imageIndex].latlon1.split(",")[0]);   
+    var blon = parseFloat(mydata[imageIndex].latlon1.split(",")[1]);   
+    mydata[imageIndex].d01 = Math.round(distanceFeet(alat,alon,blat,blon));   
+    imgratio = (innerWidth/2)/mydata[imageIndex].imgw;
+   // imgratio = 0.3;
+    mydata[imageIndex].feetperpixel = Math.round(imgratio*100*mydata[imageIndex].d01/(mydata[imageIndex].circlerad))/100;
+    document.getElementById("textIO").value = JSON.stringify(mydata, null, '    ');
+    
+    currentImage = "image0610";
+    maintable = document.getElementById("table0610");
+
+    tableinputs = maintable.getElementsByClassName("inputclass");      
+
+    for(var datax in mydata[imageIndex]){
+        var newtr = document.createElement("TR");
+        var newtd = document.createElement("TD");
+        newtd.innerHTML = datax + ":";
+        newtr.appendChild(newtd);
+        maintable.appendChild(newtr);
+        var newtd2 = document.createElement("TD");
+        var newinput = document.createElement("INPUT");
+        newinput.value = mydata[imageIndex][datax];
+        newtd2.appendChild(newinput);
+        newtr.appendChild(newtd2);
+        newinput.id = "input" + datax;
+        newinput.className = "inputclass";
+        newinput.onchange = function(){
+            var dataname = this.id;
+            dataname = dataname.substring(5);
+            mydata[imageIndex][dataname] = this.value;
+            document.getElementById("textIO").value = JSON.stringify(mydata, null, '\t');
+            redraw0710();
+        }
+    }
+    document.getElementById(currentImage).width = innerWidth/2;
+   // imgratio = (innerWidth/2)/mydata[imageIndex].imgw;
+
+redraw0710();
+function redraw0710(){
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+    document.getElementById(currentImage).src = mydata[imageIndex].url;
+    
+    document.getElementById(currentImage).width = zoom*innerWidth/2;
+    document.getElementById(currentImage).style.left = (x0 - zoom*imgratio*mydata[imageIndex].imgx0) + "px";
+    document.getElementById(currentImage).style.top = y0 - zoom*imgratio*mydata[imageIndex].imgy0 + "px";
+    unit = zoom*mydata[imageIndex].circlerad;
+    drawGlyph("0300,0327,0341,0340,");
+    unit = zoom*imgratio*mydata[imageIndex].physicalunitvalue/mydata[imageIndex].feetperpixel;
+    drawGlyph("0300,0321,0341,0340,0316,0337,0341,0333,0336,065,0313,0336,0365,0300,0321,0333,0336,061,0365,");
+    
+}
+
+    document.getElementById("prevmap").onclick = function(){
+        imageIndex--;
+        if(imageIndex < 0){
+            imageIndex = mydata.length - 1;
+        }
+        loadtable();
+    }
+    document.getElementById("nextmap").onclick = function(){
+        imageIndex++;
+        if(imageIndex > mydata.length - 1){
+            imageIndex = 0;
+        }
+        loadtable();
+    }
+
+function loadtable(){
+    var alat = parseFloat(mydata[imageIndex].latlon0.split(",")[0]);   
+    var alon = parseFloat(mydata[imageIndex].latlon0.split(",")[1]);   
+    var blat = parseFloat(mydata[imageIndex].latlon1.split(",")[0]);   
+    var blon = parseFloat(mydata[imageIndex].latlon1.split(",")[1]);   
+    mydata[imageIndex].d01 = Math.round(distanceFeet(alat,alon,blat,blon));   
+    mydata[imageIndex].feetperpixel = Math.round(imgratio*100*mydata[imageIndex].d01/(mydata[imageIndex].circlerad))/100;
+    document.getElementById(currentImage).width = innerWidth/2;
+    redraw0710();
+
+    var index = 0;
+    for(var datax in mydata[imageIndex]){
+        tableinputs[index].value = mydata[imageIndex][datax];
+        index++;
+    }
+}
+
+</script>
+
+<!--</page0710>-->
+<!--<page0500>-->
+<style id = "style0500">
+html{
+    background-color:black;
+}
+body{ 
+    overflow:hidden;
+    font-family:Futura, Futura-Medium, "Futura Medium", "Century Gothic", CenturyGothic, "Apple Gothic", AppleGothic, "URW Gothic L", "Avant Garde", sans-serif;
+    color:#00ff00;
+    font-size:18px;
+}
+
+</style>
+<!--</page0500>-->
+<!--<page0503>-->
+<style id = "style0503">
+.title{
+    position:absolute;
+    z-index:2;
+    top:1%;
+    width:100%;
+    font-size:1.5em;
+    text-align:center;
+}
+.scroll{
+    position:absolute;
+    z-index:2;
+    width:35%;
+    border:solid;
+    border-radius:15px;
+    top:10%;
+    height:80%;
+    left:5%;
+    font-family:century-schoolbook;
+    padding:10px 30px 10px 20px;
+    overflow:scroll;
+    text-align:justify;
+}
+.calculator{
+    border:solid;
+    border-radius:15px;
+    z-index:2;
+    padding:10px 10px 10px 10px;
+}
+.calculator input{
+    width:14em;
+    font-family:courier;
+    font-size:16px;
+}
+.calculator td{
+    text-align:right;
+}
+#llnums{
+    position:absolute;
+    right:10%;
+    top:10%;
+    width:40%;
+    height:40%;
+    font-size:4em;
+}
+#miles100{
+    position:absolute;
+    left:-1em;
+    top:8em;
+    font-size:0.2em;
+    transform:rotate(90deg);  
+}
+
+#miles10{
+    position:absolute;
+    left:3em;
+    top:8em;
+    font-size:0.2em;
+    transform:rotate(90deg);  
+}
+#miles{
+    position:absolute;
+    left:7.5em;
+    top:8em;
+    font-size:0.2em;
+    transform:rotate(90deg);  
+}
+#thousand{
+    position:absolute;
+    left:10em;
+    top:8em;
+    font-size:0.2em;
+    transform:rotate(90deg);
+}
+#hundred{
+    position:absolute;
+    left:13em;
+    top:8em;
+    font-size:0.2em;
+    transform:rotate(90deg);
+}
+#ten{
+    position:absolute;
+    left:16em;
+    top:8em;
+    font-size:0.2em;
+    transform:rotate(90deg);
+}
+#yard{
+    position:absolute;
+    left:19.5em;
+    top:8em;
+    font-size:0.2em;
+    transform:rotate(90deg);
+}
+#inches{
+    position:absolute;
+    left:22em;
+    top:8em;
+    font-size:0.2em;
+    transform:rotate(90deg);
+}
+
+
+</style>
+<!--</page0503>-->
+<!--<page0510>-->
+<style id = "style0510">
+    #textIO{
+        position:absolute;
+        bottom:50px;
+        right:50px;
+        width:40%;
+        height:100px;
+        border:solid;
+        background-color:black;
+        color:#00ff00;
+        font-family:courier;
+        font-size:14px;
+        z-index:3;
+    }
+    #table0610{
+        border-collapse: collapse;
+    }
+    #table0610 td{
+        border:solid;
+        text-align:right;
+        padding:3px 3px 3px 3px;
+    }
+    #tablecontainer{
+        overflow:scroll;
+        position:absolute;
+        border:solid;
+        border-radius:15px;
+        left:10px;
+        top:70px;
+        padding:10px 10px 10px 10px;
+        bottom:50px;
+        font-family:courier;
+        font-size:18px;
+        background-color:black;
+        z-index:3;
+
+    }
+
+#image0610{
+    position:absolute;
+    z-index:-2;
+    left:0px;
+    top:0px;
+} 
+
+#canvas0610{
+    z-index:0;
+    position:absolute;
+    left:0px;
+    top:0px;
+    overflow:hidden;
+}
+
+input{
+    font-family:courier;
+    font-size:18px;
+    color:#00ff00;
+    border-color:#00ff00;
+    background-color: black;
+    width:12em;
+    z-index:3;
+}
+.navbutton{
+        position:absolute;
+        top:5px;
+        height:50px;
+        width:100px;
+        font-family:courier;
+        font-size:14px;
+        color:#00ff00;
+        background-color:black;
+        border-color:#00ff00;
+        cursor:pointer;
+        z-index:4;
+    }
+    .navbutton:hover{
+        background-color:#004000;
+    }
+    .navbutton:active{
+        background-color:#707000;
+    }
+    #backbutton{
+        left:5px;
+    }
+    #fwdbutton{
+        right:5px;
+    }
+    .backgroundcanvas{
+        position:absolute;
+        z-index:0;
+        left:0px;
+        top:0px;
+        overflow:hidden;
+        background-color:black;
+    }
+
+    #nextmap{
+        right:5px;
+    }
+    #prevmap{
+        left:5px;
+        float:left;
+    }
+    .mapbutton{
+        position:absolute;
+        bottom:5px;
+        z-index:4;
+        border:solid;
+        width:2em;
+        text-align:center;
+        height:1.2em;
+        cursor:pointer;
+    }
+    .mapbutton:hover{
+        background-color:#004000;
+    }
+    .mapbutton:active{
+        background-color:#707000;
+    }
+    #pantable{
+        position:absolute;
+        bottom:5px;
+        left:200px;
+        background-color:black;
+        border:none;
+    }
+    #pantable td{
+        border:solid;
+        margin:10px 10px 10px 10px;
+    }
+    .panbutton{
+        cursor:pointer;
+    }
+    .panbutton:hover{
+        background-color:#004000;
+    }
+    .panbutton:active{
+        background-color:#707000;
+    }
+</style>
+<!--</page0510>-->
+<!--<page05>-->
+</body>
+</html>
+<!--</page05>-->
