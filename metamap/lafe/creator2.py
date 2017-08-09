@@ -25,7 +25,7 @@ f = open("index.html", 'r')
 indexstring = f.read()
 f.close()
 
-f = open("creator.py", 'r')
+f = open("cubify.py", 'r')
 cubifytext = f.read()
 f.close()
 

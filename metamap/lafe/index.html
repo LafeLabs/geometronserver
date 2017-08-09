@@ -841,12 +841,117 @@ function distanceUnits(Alat,Alon,Blat,Blon,unitvalue){
 		"feetperpixel": 1.83,
 		"artist": "Lafe Spietz",
 		"date": "August 2017"
+    },
+    {
+		"url": "https://i.imgur.com/I60Uy0q.jpg",
+		"title": "APL",
+		"imgx0": "200",
+		"imgy0": "1000",
+		"imgw": "1936",
+		"latlon0": "39.164356, -76.900681",
+		"marker0": "water tower",
+		"latlon1": "39.162693,-76.899513",
+		"marker1": "front circle",
+		"d01": 668,
+		"circlerad": "265",
+		"physicalunitvalue": "100",
+		"physicalunit": "feet",
+		"feetperpixel": 0.82,
+		"artist": "Lafe Spietz",
+		"date": "August 2017"
 	}
 ]
 </div>
 <!--</page0410>-->
-<!--<page0603>-->
-<div class = "page" id = "div0603">
+<!--<page0600>-->
+<div class = "page" id = "div0600">
+    <div class = "title">How to Build Art Maps</div>
+    <div class = "scroll" style = "width:60%;padding:0px 20px 0px 0px;">
+    <ol class = "mainlist">
+        <li>Trace out an outline using reference points traced, with at least two points of known location clearly marked, printed or constructed to be accurate</li>
+        <li>Do art: color, draw, paint, etc. as needed to make an interesting map, as close to scale as possible</li>
+        <li>Photograph with "up" as close as possible to North, and as close as possible to flat, with the camera directly over your map</li>
+        <li>Save photo to cloud storage such as imgur, copy the direct url into the clipboard</li>
+        <li>paste same url into map alignment tool here, which should then populate the "width" field automatically</li>
+        <li>choose two points that are marked on your map which can be found using google or some other map tool</li>
+        <li>copy/paste lat/lon coordinates as a single string from the map tool to the proper field for each of the two markers in map builder, add names for each point</li>
+        <li>adjust the imgx0, imgy0 and circlerad until bullseye circle is centered on point zero and the circle goes through point 1, from which pixel/feet conversion is computed, from which image width in feet is computed</li>
+        <li>Add title, date, artist name, comments</li>
+        <li>copy the json data for this to outfeed.txt using outfeed.php from your user account on your home geometron server in the /metamap/username/ directory.  since anyone can do this, it's considered totally disposable, but should usually be ok, and should certainly last a few minutes and usually at least hours. At this point other artists can in real time start using and adding to your work if they choose, with the understanding that it's still volatile memory</li>
+        <li>Go look at the map in a viewer, play with it, edit as needed</li>
+        <li>manually add to a feed on a cloud storage site you have secure access to such as pastebin</li>
+        <li>send out manual notices to subscribers to grab the data as needed</li>
+    </ol>
+    </div>
+</div>
+<!--</page0600>-->
+<!--<page0610>-->
+<div class = "page" id = "div0610">
+    <img id = "image0610"></img>
+    <div id = "tablecontainer">
+        <table id = "table0610"></table>
+    </div>
+    <textarea id = "textIO"></textarea>
+        <canvas id = "canvas0610"></canvas>
+        <div class = "mapbutton" id = "prevmap">&#x25c0</div><div class = "mapbutton" id = "nextmap">&#x25ba</div>
+
+    <table  id = "pantable">
+    <tr>
+        <td class = "panbutton" onclick = "x0 -= 0.5*unit;redraw0710();">&#x2B05</td> 
+        <td class = "panbutton" onclick = "y0 -= 0.5*unit;redraw0710();">&#x2B06</td>
+        <td class = "panbutton" onclick = "y0 += 0.5*unit;redraw0710();">&#x2B07</td>
+        <td class = "panbutton" onclick = "x0 += 0.5*unit;redraw0710();">&#x27A1</td>
+        <td class = "panbutton" onclick = "zoom /= 1.1;redraw0710();" style = "padding-left:10px;padding-right:10px;">-</td>
+        <td class = "panbutton" onclick = "zoom += 1.1;redraw0710();" style = "padding-left:10px;padding-right:10px;">+</td>
+        <td class = "panbutton" onclick = "" style = "padding-left:10px;padding-right:10px;">&#x2A37</td>
+    </tr>
+    </table>
+</div>
+<!--</page0610>-->
+<!--<page0620>-->
+<div class = "page" id = "div0620">
+    <div class = "title">Outfeed Control</div>
+    <div id = "keydiv">
+        <h2 id = "keytitle">Key</h2>
+        <textarea id = "keyIO"></textarea>
+    </div>
+        <button id = "publishbutton">PUBLISH</button>
+        <button id = "retrievebutton">RETRIEVE LOCAL</button>
+
+    <div id = "rawdatadiv">        
+        <h2 id = "rawdatatitle">Raw JSON data</h2>
+        <textarea id = "outrawIO"></textarea>
+    </div>
+
+</div>
+<!--</page0620>-->
+<!--<page0621>-->
+<div class = "page" id = "div0621">
+    <div class = "title">Infeed Control</div>
+</div>
+<!--</page0621>-->
+<!--<page0622>-->
+<div class = "page" id = "div0622">
+    <div class = "title">Map Viewer</div>
+</div>
+<!--</page0622>-->
+<!--<page0623>-->
+<div class = "page" id = "div0623">
+    <div class = "title">Story of The Metamap</div>
+</div>
+<!--</page0623>-->
+<!--<page0624>-->
+<div class = "page" id = "div0624">
+    <div class = "title">How to Create Map Art</div>
+</div>
+<!--</page0624>-->
+<!--<page0625>-->
+<div class = "page" id = "div0625">
+    <div class = "title">Location Finder</div>
+</div>
+<!--</page0625>-->
+<!--<page0663>-->
+<div class = "page" id = "div0663">
     <div class = "title">Distance Units</div>
 <div id = "llnums">
     <div>38.889435$^{\circ}$ N
@@ -921,69 +1026,7 @@ about 78%(down by 22%). 60 degrees North or South is 50% down, which is roughly 
     </table>
 </div>
 </div> 
-<!--</page0603>-->
-<!--<page0610>-->
-<div class = "page" id = "div0610">
-    <img id = "image0610"></img>
-    <div id = "tablecontainer">
-        <table id = "table0610"></table>
-    </div>
-    <textarea id = "textIO"></textarea>
-        <canvas id = "canvas0610"></canvas>
-        <div class = "mapbutton" id = "prevmap">&#x25c0</div><div class = "mapbutton" id = "nextmap">&#x25ba</div>
-
-    <table  id = "pantable">
-    <tr>
-        <td class = "panbutton" onclick = "x0 -= 0.5*unit;redraw0710();">&#x2B05</td> 
-        <td class = "panbutton" onclick = "y0 -= 0.5*unit;redraw0710();">&#x2B06</td>
-        <td class = "panbutton" onclick = "y0 += 0.5*unit;redraw0710();">&#x2B07</td>
-        <td class = "panbutton" onclick = "x0 += 0.5*unit;redraw0710();">&#x27A1</td>
-        <td class = "panbutton" onclick = "zoom /= 1.1;redraw0710();" style = "padding-left:10px;padding-right:10px;">-</td>
-        <td class = "panbutton" onclick = "zoom += 1.1;redraw0710();" style = "padding-left:10px;padding-right:10px;">+</td>
-        <td class = "panbutton" onclick = "" style = "padding-left:10px;padding-right:10px;">&#x2A37</td>
-    </tr>
-    </table>
-</div>
-<!--</page0610>-->
-<!--<page0620>-->
-<div class = "page" id = "div0620">
-    <div class = "title">Outfeed Control</div>
-    <div id = "outfeeddiv">
-        [
-            {
-                "title":"My first data",
-                "author":"lafe",
-                "data":"0400:0101,0102,0103"
-            }
-        ]
-    </div>
-</div>
-<!--</page0620>-->
-<!--<page0621>-->
-<div class = "page" id = "div0621">
-    <div class = "title">Infeed Control</div>
-</div>
-<!--</page0621>-->
-<!--<page0622>-->
-<div class = "page" id = "div0622">
-    <div class = "title">Map Viewer</div>
-</div>
-<!--</page0622>-->
-<!--<page0623>-->
-<div class = "page" id = "div0623">
-    <div class = "title">Story of The Metamap</div>
-</div>
-<!--</page0623>-->
-<!--<page0624>-->
-<div class = "page" id = "div0624">
-    <div class = "title">How to Create Map Art</div>
-</div>
-<!--</page0624>-->
-<!--<page0625>-->
-<div class = "page" id = "div0625">
-    <div class = "title">Location Finder</div>
-</div>
-<!--</page0625>-->
+<!--</page0663>-->
 <!--<page0700>-->
 <script id = "script0700">
     zoom = 1;
@@ -1015,8 +1058,8 @@ about 78%(down by 22%). 60 degrees North or South is 50% down, which is roughly 
 
 </script>
 <!--</page0700>-->
-<!--<page0703>-->
-<script id = "script0703">
+<!--<page0763>-->
+<script id = "script0763">
 
 
 dinputs = document.getElementById("latlond").getElementsByTagName("INPUT");
@@ -1058,7 +1101,7 @@ dinputs[3].onchange= function(){
     dinputs[5].value = distanceUnits(lat0l,lon0l,lat1l,lon1l,dinputs[3].value);
 }
 </script>
-<!--</page0703>-->
+<!--</page0763>-->
 <!--<page0710>-->
 <script id = "script0710">
     document.getElementById("canvas0610").width = innerWidth;
@@ -1162,6 +1205,30 @@ function loadtable(){
 </script>
 
 <!--</page0710>-->
+<!--<page0720>-->
+<script id = "script0720">
+document.getElementById("retrievebutton").onclick = function(){
+    var datapages = document.getElementsByClassName("json");
+    var datastringout = "";
+    for(var index  = 0;index < datapages.length;index++){
+        datastringout += datapages[index].id.substring(4) + ":" + string2byteCode(datapages[index].innerHTML);
+        datastringout += "\n";
+    }
+    document.getElementById("outrawIO").value = datastringout;    
+}
+
+document.getElementById("publishbutton").onclick = function(){
+    var datastring = document.getElementById("outrawIO").value;
+    var httpc = new XMLHttpRequest(); 
+    var url = "outfeed.php";
+    httpc.open("POST", url, true); // sending as POST
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    httpc.send("data=" + datastring);
+}
+
+
+</script> 
+<!--</page0720>-->
 <!--<page0500>-->
 <style id = "style0500">
 html{
@@ -1174,10 +1241,18 @@ body{
     font-size:18px;
 }
 
+.mainlist{
+    position:absolute;
+    top:5%;
+    left:5%;
+}
+li{
+    width:95%;
+}
 </style>
 <!--</page0500>-->
-<!--<page0503>-->
-<style id = "style0503">
+<!--<page0563>-->
+<style id = "style0563">
 .title{
     position:absolute;
     z-index:2;
@@ -1282,7 +1357,7 @@ body{
 
 
 </style>
-<!--</page0503>-->
+<!--</page0563>-->
 <!--<page0510>-->
 <style id = "style0510">
     #textIO{
@@ -1436,6 +1511,101 @@ input{
     border-radius:15px;
     bottom:10%;
 }
+#keydiv{
+    position:absolute;
+    left:2%;
+    width:10%;
+    height:50%;
+    top:20%;
+    border:solid;
+    border-color:#00ff00;
+    border-radius:15px;
+    overflow:scroll;
+}
+#keyIO{
+    position:absolute;
+    left:5%;
+    right:5%;
+    top:3em;
+    bottom:5%;
+    background-color:black;
+    color:#00ff00;
+    border:solid;
+    border-radius:15px;
+    border-color:#00ff00;
+    font-size:16px;
+    font-family:courier;
+}
+#keytitle{
+    position:absolute;
+    top:-.5em;
+    font-size:1em;
+    height:1.2em;
+    text-align:center;
+    width:100%;
+}
+#rawdatadiv{
+    position:absolute;
+    left:35%;
+    width:50%;
+    height:70%;
+    top:15%;
+    border:solid;
+    border-color:#00ff00;
+    border-radius:15px;
+    z-index:4;
+    overflow:scroll;
+}
+#outrawIO{
+    position:absolute;
+    left:5%;
+    right:5%;
+    top:3em;
+    bottom:5%;
+    background-color:black;
+    color:#00ff00;
+    border:solid;
+    border-radius:15px;
+    border-color:#00ff00;
+    font-size:16px;
+    font-family:courier;
+    z-index:3;
+
+}
+#rawdatatitle{
+    position:absolute;
+    top:-.5em;
+    font-size:1em;
+    height:1.2em;
+    text-align:center;
+    width:100%;
+    z-index:2;
+}
+button{
+    background-color:black;
+    border-color:#00ff00;
+    color:#00ff00;
+    cursor:pointer;
+    z-index:4;
+}
+button:hover{
+    background-color: #004000;
+}
+button:active{
+    background-color:#707000;
+}
+
+#publishbutton{
+    position:absolute;
+    left:20%;
+    top:20%;
+}
+#retrievebutton{
+    position:absolute;
+    left:20%;
+    top:50%;
+}
+
 </style>
 <!--</page0520>-->
 <!--<page05>-->

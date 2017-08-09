@@ -111,7 +111,7 @@ htmlOUT += byteCode2string(hyperCube[05])
 htmlOUT += "</page05>-->"
 
 
-outputFile = 'indexout.html'
+outputFile = 'index.html'
 f = open(outputFile, 'w')
 f.write(htmlOUT)
 f.close()
