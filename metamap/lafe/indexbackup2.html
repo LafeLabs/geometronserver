@@ -102,100 +102,6 @@ MathJax.Hub.Config({
 0207:0342,0334,0342,0335,0335,0342,0334,0336,0330,0340,0331,0337,0337,0330,0340,0331,0336,
 01207:0333,0336,0330,0332,0336,0336,0341,0337,0333,0333,0331,0331,0337,0337,
 0210:0335,0340,0341,0330,0340,0341,0334,0334,0306,0335,0330,0340,0341,0334,0334,0342,0330,0334,0334,0342,0330,0334,0334,0342,0314,0336,0330,0335,0330,0334,0334,0337,0341,0342,0330,0341,0334,0334,0342,0330,0341,0334,0334,0342,0330,0336,0331,0331,0341,0330,0341,0335,0334,0334,0330,0341,0334,0330,0341,0334,0330,0341,0334,0330,0341,0334,0300,0332,0332,0332,0330,0330,0300,0332,0332,0332,0332,0305,0311,0336,0330,0335,0350,0334,0335,0333,0335,0351,0337,0342,0341,0330,0335,0335,0342,0341,0330,0335,0335,0342,0341,0330,0335,0335,0342,0341,0330,0335,0335,0342,0341,0330,
-0176:
-0140:0300
-041:0310
-061:0304
-0100:0311
-062:0305
-043:0312
-063:0306
-044:0313
-064:0350
-045:0314
-065:0351
-0136:0316
-066:0352
-046:
-067:0353
-052:0203
-070:0201
-050:0204
-071:0347
-051:
-060:0365
-0137:
-055:
-053:
-075:010
-0121:
-0161:0320
-0127:
-0167:0321
-0105:
-0145:0322
-0122:
-0162:0323
-0124:
-0164:0324
-0131:
-0171:0325
-0125:
-0165:0326
-0111:
-0151:0327
-0117:
-0157:0334
-0120:
-0160:0330
-0173:
-0133:0335
-0175:022
-0135:020
-0174:023
-0134:021
-0101:
-0141:0340
-0123:
-0163:0341
-0104:
-0144:0342
-0106:
-0146:0343
-0107:
-0147:0362
-0110:
-0150:0363
-0112:
-0152:0364
-0113:
-0153:0344
-0114:
-0154:0332
-072:
-073:0333
-042:
-047:
-0132:
-0172:0366
-0130:
-0170:0367
-0103:
-0143:0345
-0126:
-0166:0346
-0102:
-0142:
-0116:
-0156:
-0115:
-0155:
-046:
-054:0336
-046:
-056:0331
-077:
-057:0337
 */
 </script>
 <!--<page02>-->
@@ -934,8 +840,7 @@ function distanceUnits(Alat,Alon,Blat,Blon,unitvalue){
 		"physicalunit": "feet",
 		"feetperpixel": 1.83,
 		"artist": "Lafe Spietz",
-        "date": "August 2017",
-        "glyph":"0300,0200,"
+		"date": "August 2017"
     },
     {
 		"url": "https://i.imgur.com/I60Uy0q.jpg",
@@ -958,118 +863,30 @@ function distanceUnits(Alat,Alon,Blat,Blon,unitvalue){
 ]
 </div>
 <!--</page0410>-->
-<!--<page0605>-->
-<div class = "page" id = "div0605">
-    <table id = "keymaptable"></table>
-    <textarea id = "keymaptextIO"></textarea>
+<!--<page0600>-->
+<div class = "page" id = "div0600">
+    <div class = "title">How to Build Art Maps</div>
+    <div class = "scroll" style = "width:60%;padding:0px 20px 0px 0px;">
+    <ol class = "mainlist">
+        <li>Trace out an outline using reference points traced, with at least two points of known location clearly marked, printed or constructed to be accurate</li>
+        <li>Do art: color, draw, paint, etc. as needed to make an interesting map, as close to scale as possible</li>
+        <li>Photograph with "up" as close as possible to North, and as close as possible to flat, with the camera directly over your map</li>
+        <li>Save photo to cloud storage such as imgur, copy the direct url into the clipboard</li>
+        <li>paste same url into map alignment tool here, which should then populate the "width" field automatically</li>
+        <li>choose two points that are marked on your map which can be found using google or some other map tool</li>
+        <li>copy/paste lat/lon coordinates as a single string from the map tool to the proper field for each of the two markers in map builder, add names for each point</li>
+        <li>adjust the imgx0, imgy0 and circlerad until bullseye circle is centered on point zero and the circle goes through point 1, from which pixel/feet conversion is computed, from which image width in feet is computed</li>
+        <li>Add title, date, artist name, comments</li>
+        <li>copy the json data for this to outfeed.txt using outfeed.php from your user account on your home geometron server in the /metamap/username/ directory.  since anyone can do this, it's considered totally disposable, but should usually be ok, and should certainly last a few minutes and usually at least hours. At this point other artists can in real time start using and adding to your work if they choose, with the understanding that it's still volatile memory</li>
+        <li>Go look at the map in a viewer, play with it, edit as needed</li>
+        <li>manually add to a feed on a cloud storage site you have secure access to such as pastebin</li>
+        <li>send out manual notices to subscribers to grab the data as needed</li>
+    </ol>
+    </div>
 </div>
-<!--</page0605>-->
-<!--<page0705>-->
-<script id = "script0705">
-    row0lower = "`1234567890-=";
-    row0upper = "~!@#$%^&*()_+";
-    row1lower = "qwertyuiop[]\\";
-    row1upper = "QWERTYUIOP{}|";
-    row2lower = "asdfghjkl;\'";
-    row2upper = "ASDFGHJKL:\"";
-    row3lower = "zxcvbnm,./";
-    row3upper = "ZXCVBNM<>?";
-    var newtr = document.createElement("TR");
-    for(var index = 0;index < row0lower.length;index++){
-        var newtd = document.createElement("TD");
-        newtd.innerHTML = "<span>" + row0upper.charAt(index) + "<input class = \"keymapinput\"></input></span>" + "<br>" + "<span>" + row0lower.charAt(index) + "<input class = \"keymapinput\"></input></span>" ;
-        newtr.appendChild(newtd);
-    }
-    document.getElementById("keymaptable").appendChild(newtr);
-
-    var newtr = document.createElement("TR");
-    for(var index = 0;index < row1lower.length;index++){
-        var newtd = document.createElement("TD");
-        newtd.innerHTML = "<span>" + row1upper.charAt(index) + "<input class = \"keymapinput\"></input></span>" + "<br>" + "<span>" + row1lower.charAt(index) + "<input class = \"keymapinput\"></input></span>" ;
-        newtr.appendChild(newtd);
-        newtd.style.position = "relative";
-        newtd.style.left = "6em";
-    }
-    document.getElementById("keymaptable").appendChild(newtr);
-
-    var newtr = document.createElement("TR");
-    for(var index = 0;index < row2lower.length;index++){
-        var newtd = document.createElement("TD");
-        newtd.innerHTML = "<span>" + row2upper.charAt(index) + "<input class = \"keymapinput\"></input></span>" + "<br>" + "<span>" + row2lower.charAt(index) + "<input class = \"keymapinput\"></input></span>" ;
-        newtr.appendChild(newtd);
-        newtd.style.position = "relative";
-        newtd.style.left = "7em";
-    }
-    document.getElementById("keymaptable").appendChild(newtr);
-
-    var newtr = document.createElement("TR");
-    for(var index = 0;index < row3lower.length;index++){
-        var newtd = document.createElement("TD");
-        newtd.innerHTML = "<span>" + row3upper.charAt(index) + "<input class = \"keymapinput\"></input></span>" + "<br>" + "<span>" + row3lower.charAt(index) + "<input class = \"keymapinput\"></input></span>" ;
-        newtr.appendChild(newtd);
-        newtd.style.position = "relative";
-        newtd.style.left = "8em";
-    }
-    document.getElementById("keymaptable").appendChild(newtr);
-
-    var keymapinputs = document.getElementsByClassName("keymapinput");
-    for(var index = 0;index < keymapinputs.length;index++){
-        keymapinputs[index].onchange = function(){
-            var keyaddress = parseInt("0" + (this.parentNode.innerHTML.charCodeAt(0)).toString(8),8);
-            currentTable[keyaddress]  = this.value;
-            redraw0705();
-        }
-    }
-    redraw0705();
-    function redraw0705(){
-        document.getElementById("keymaptextIO").value = "";
-        for(var index = 0;index < keymapinputs.length;index++){
-            var keyaddress = parseInt("0" + (keymapinputs[index].parentNode.innerHTML.charCodeAt(0)).toString(8),8);
-            document.getElementById("keymaptextIO").value += "0" + (keymapinputs[index].parentNode.innerHTML.charCodeAt(0)).toString(8) + ":" + currentTable[keyaddress] +  "\n";        
-            keymapinputs[index].value = currentTable[keyaddress];
-        }
-    }
-</script>
-<!--</page0705>-->
-<!--<page0505>-->
-<style id= "style0505">
-#keymaptable{
-    position:absolute;
-    left:10px;
-    top:100px;
-    color:#00ff00;
-}
-#keymaptable td{
-    border:solid;
-    width:3.5em;
-    height:60px;
-}
-.keymapinput{
-    width:3em;
-    font-family:courier;
-    font-size:12px;
-    float:right;
-}
-#keymaptextIO{
-    position:absolute;
-    right:50px;
-    top:200px;
-    width:150px;
-    height:400px;
-    background-color:black;
-    color:#00ff00;
-    font-family:courier;
-    font-size:16px;
-    border:solid;
-    border-radius:15px;
-    padding: 15px 15px 15px 15px;
-    overflow:scroll;
-}
-</style>
-<!--</page0505>-->
+<!--</page0600>-->
 <!--<page0610>-->
 <div class = "page" id = "div0610">
-    <input id = "glyphkeycontrol"></input>
     <img id = "image0610"></img>
     <div id = "tablecontainer">
         <table id = "table0610"></table>
@@ -1080,12 +897,13 @@ function distanceUnits(Alat,Alon,Blat,Blon,unitvalue){
 
     <table  id = "pantable">
     <tr>
-        <td class = "panbutton" onclick = "x0 -= 0.5*unit;redraw();">&#x2B05</td> 
-        <td class = "panbutton" onclick = "y0 -= 0.5*unit;redraw();">&#x2B06</td>
-        <td class = "panbutton" onclick = "y0 += 0.5*unit;redraw();">&#x2B07</td>
-        <td class = "panbutton" onclick = "x0 += 0.5*unit;redraw();">&#x27A1</td>
-        <td class = "panbutton" onclick = "zoom /= 1.1;redraw();" style = "padding-left:10px;padding-right:10px;">-</td>
-        <td class = "panbutton" onclick = "zoom += 1.1;redraw();" style = "padding-left:10px;padding-right:10px;">+</td>
+        <td class = "panbutton" onclick = "x0 -= 0.5*unit;redraw0710();">&#x2B05</td> 
+        <td class = "panbutton" onclick = "y0 -= 0.5*unit;redraw0710();">&#x2B06</td>
+        <td class = "panbutton" onclick = "y0 += 0.5*unit;redraw0710();">&#x2B07</td>
+        <td class = "panbutton" onclick = "x0 += 0.5*unit;redraw0710();">&#x27A1</td>
+        <td class = "panbutton" onclick = "zoom /= 1.1;redraw0710();" style = "padding-left:10px;padding-right:10px;">-</td>
+        <td class = "panbutton" onclick = "zoom += 1.1;redraw0710();" style = "padding-left:10px;padding-right:10px;">+</td>
+        <td class = "panbutton" onclick = "" style = "padding-left:10px;padding-right:10px;">&#x2A37</td>
     </tr>
     </table>
 </div>
@@ -1297,7 +1115,7 @@ dinputs[3].onchange= function(){
 
     imageIndex = 3;
     mydata = JSON.parse(document.getElementById("data0410").innerHTML);
-    currentGlyph = mydata[imageIndex].glyph + "0207,";
+
     var alat = parseFloat(mydata[imageIndex].latlon0.split(",")[0]);   
     var alon = parseFloat(mydata[imageIndex].latlon0.split(",")[1]);   
     var blat = parseFloat(mydata[imageIndex].latlon1.split(",")[0]);   
@@ -1337,7 +1155,7 @@ dinputs[3].onchange= function(){
     document.getElementById(currentImage).width = innerWidth/2;
    // imgratio = (innerWidth/2)/mydata[imageIndex].imgw;
 
-redraw();
+redraw0710();
 function redraw0710(){
     ctx.clearRect(0,0,innerWidth,innerHeight);
     document.getElementById(currentImage).src = mydata[imageIndex].url;
@@ -1349,17 +1167,7 @@ function redraw0710(){
     drawGlyph("0300,0327,0341,0340,");
     unit = zoom*imgratio*mydata[imageIndex].physicalunitvalue/mydata[imageIndex].feetperpixel;
     drawGlyph("0300,0321,0341,0340,0316,0337,0341,0333,0336,065,0313,0336,0365,0300,0321,0333,0336,061,0365,");
-    drawGlyph(mydata[imageIndex].glyph);
-}
-function redraw(){
-    redraw0710();
-    doTheThing(0300);
-    drawGlyph(currentGlyph);
-    doTheThing(0300);
-    side = 30;
-    x = 500;
-    y = 50;
-    spellGlyph(currentGlyph);   
+    
 }
 
     document.getElementById("prevmap").onclick = function(){
@@ -1392,20 +1200,6 @@ function loadtable(){
         tableinputs[index].value = mydata[imageIndex][datax];
         index++;
     }
-}
-
-document.getElementById("glyphkeycontrol").onkeypress = function(){
-    var key = event.key;
-    var keyaddress = key.charCodeAt(0);
-    currentAction = parseInt(currentTable[keyaddress],8);
-    if(currentAction >= 06 && currentAction < 040){
-        doTheThing(currentAction);
-    }
-    else{
-        currentCommand = "0" + currentAction.toString(8);
-        doTheThing(011);
-    }
-    document.getElementById("glyphkeycontrol").value = "";
 }
 
 </script>
@@ -1566,11 +1360,6 @@ li{
 <!--</page0563>-->
 <!--<page0510>-->
 <style id = "style0510">
-    #glyphkeycontrol{
-        position:absolute;
-        left:200px;
-        top:5px;
-    }
     #textIO{
         position:absolute;
         bottom:50px;

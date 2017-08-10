@@ -22,7 +22,7 @@ def byteCode2string(inputcode):
     return outputstring
 
 
-cubeurl = "https://pastebin.com/raw/Yj3JVM1E"
+cubeurl = "https://pastebin.com/raw/X5p1F8L1"
 response1 = urllib2.urlopen(cubeurl)
 hypercubestring = response1.read()
 response1.close()
