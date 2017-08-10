@@ -958,6 +958,36 @@ function distanceUnits(Alat,Alon,Blat,Blon,unitvalue){
 ]
 </div>
 <!--</page0410>-->
+<!--<page0411>-->
+<div style = "display:none" class = "json" id = "data0411">
+[
+{
+    "name":"main words",
+    "words":"Here is a message",
+    "x":-1,
+    "y":-3,
+    "w":3,
+    "h":1,
+    "fontsize":0.5,
+    "glyph":"0327,0341,",
+    "class":"wordbox",
+    "rotate":0
+},
+{
+    "name":"other words",
+    "words":"Message 2",
+    "x":0,
+    "y":2,
+    "w":5,
+    "h":0.5,
+    "fontsize":1,
+    "glyph":"0327,0341,0333,0341,",
+    "class":"wordbox",
+    "rotate":20
+}
+]
+</div>
+<!--</page0411>-->
 <!--<page0605>-->
 <div class = "page" id = "div0605">
     <table id = "keymaptable"></table>
@@ -1297,6 +1327,23 @@ dinputs[3].onchange= function(){
 
     imageIndex = 3;
     mydata = JSON.parse(document.getElementById("data0410").innerHTML);
+    wordboxdata = JSON.parse(document.getElementById("data0411").innerHTML);
+    for(var index = 0;index < wordboxdata.length;index++){
+        var newdiv = document.createElement("DIV");
+        newdiv.innerHTML = wordboxdata[index].words;
+        document.getElementById("div0610").appendChild(newdiv);
+        newdiv.className = wordboxdata[index].class;
+        newdiv.style.position = "absolute";
+        newdiv.style.left = wordboxdata[index].x*unit - 0.5*wordboxdata[index].w*unit + x0 + "px";
+        newdiv.style.top = -wordboxdata[index].y*unit - 0.5*wordboxdata[index].h*unit + y0 + "px";
+        newdiv.style.width = wordboxdata[index].w*unit + "px";
+        newdiv.style.height = wordboxdata[index].h*unit + "px";
+        newdiv.style.fontSize = wordboxdata[index].fontsize*unit + "px";
+        newdiv.style.textAlign = "center";
+    }
+    wordboxes = document.getElementsByClassName(wordboxdata[0].class);
+
+
     currentGlyph = mydata[imageIndex].glyph + "0207,";
     var alat = parseFloat(mydata[imageIndex].latlon0.split(",")[0]);   
     var alon = parseFloat(mydata[imageIndex].latlon0.split(",")[1]);   
@@ -1350,6 +1397,13 @@ function redraw0710(){
     unit = zoom*imgratio*mydata[imageIndex].physicalunitvalue/mydata[imageIndex].feetperpixel;
     drawGlyph("0300,0321,0341,0340,0316,0337,0341,0333,0336,065,0313,0336,0365,0300,0321,0333,0336,061,0365,");
     drawGlyph(mydata[imageIndex].glyph);
+    for(var index = 0;index < wordboxes.length;index++){
+        wordboxes[index].style.left = wordboxdata[index].x*unit - 0.5*wordboxdata[index].w*unit + x0 + "px";
+        wordboxes[index].style.top = -wordboxdata[index].y*unit - 0.5*wordboxdata[index].h*unit + y0 + "px";
+        wordboxes[index].style.width = wordboxdata[index].w*unit + "px";
+        wordboxes[index].style.height = wordboxdata[index].h*unit + "px";
+        wordboxes[index].style.fontSize = wordboxdata[index].fontsize*unit + "px";
+    }
 }
 function redraw(){
     redraw0710();
