@@ -6,7 +6,6 @@
 <!-- FREE INFORMATION FOR A WORLD FREE OF THE SOFTWARE ENGINEER -->
     <title>Metamap</title>
 <!--</page01>-->
-
 <script id = "bytecodeScript">
 /*
 01300:0333,0200,0336,0330,0332,0340,0350,0335,0336,0330,0342,0331,0331,0331,0342,0330,0330,0335,0335,0331,0331,0342,0330,0330,0330,0342,0331,0334,0334,0334,0351,0331,0331,0333,0333,0337,0337
@@ -93,100 +92,65 @@
 0207:0342,0334,0342,0335,0335,0342,0334,0336,0330,0340,0331,0337,0337,0330,0340,0331,0336,
 01207:0333,0336,0330,0332,0336,0336,0341,0337,0333,0333,0331,0331,0337,0337,
 0210:0335,0340,0341,0330,0340,0341,0334,0334,0306,0335,0330,0340,0341,0334,0334,0342,0330,0334,0334,0342,0330,0334,0334,0342,0314,0336,0330,0335,0330,0334,0334,0337,0341,0342,0330,0341,0334,0334,0342,0330,0341,0334,0334,0342,0330,0336,0331,0331,0341,0330,0341,0335,0334,0334,0330,0341,0334,0330,0341,0334,0330,0341,0334,0330,0341,0334,0300,0332,0332,0332,0330,0330,0300,0332,0332,0332,0332,0305,0311,0336,0330,0335,0350,0334,0335,0333,0335,0351,0337,0342,0341,0330,0335,0335,0342,0341,0330,0335,0335,0342,0341,0330,0335,0335,0342,0341,0330,0335,0335,0342,0341,0330,
-0176:
-0140:0300
-041:0310
-061:0304
-0100:0311
-062:0305
-043:0312
-063:0306
-044:0313
-064:0350
-045:0314
-065:0351
-0136:0316
-066:0352
-046:
-067:0353
-052:0203
-070:0201
-050:0204
-071:0347
-051:
-060:0365
-0137:
-055:
-053:
-075:010
-0121:
-0161:0320
-0127:
-0167:0321
-0105:
-0145:0322
-0122:
-0162:0323
-0124:
-0164:0324
-0131:
-0171:0325
-0125:
-0165:0326
-0111:
-0151:0327
-0117:
-0157:0334
-0120:
-0160:0330
-0173:
-0133:0335
-0175:022
-0135:020
-0174:023
-0134:021
-0101:
-0141:0340
-0123:
-0163:0341
-0104:
-0144:0342
-0106:
-0146:0343
-0107:
-0147:0362
-0110:
-0150:0363
-0112:
-0152:0364
-0113:
-0153:0344
-0114:
-0154:0332
-072:
-073:0333
-042:
-047:
-0132:
-0172:0366
-0130:
-0170:0367
-0103:
-0143:0345
-0126:
-0166:0346
-0102:
-0142:
-0116:
-0156:
-0115:
-0155:
-046:
-054:0336
-046:
-056:0331
-077:
-057:0337
+0140:0300,
+041:0310,
+061:0304,
+0100:0311,
+062:0305,
+043:0312,
+063:0306,
+044:0313,
+064:0350,
+045:0314,
+065:0351,
+0136:0316,
+066:0352,
+067:0353,
+052:0203,
+070:0201,
+050:0204,
+071:0347,
+060:0365,
+075:010,
+0161:0320,
+0167:0321,
+0145:0322,
+0162:0323,
+0164:0324,
+0171:0325,
+0165:0326,
+0151:0327,
+0157:0334,
+0160:0330,
+0133:0335,
+0175:022,
+0135:020,
+0174:023,
+0134:021,
+0141:0340,
+0163:0341,
+0144:0342,
+0146:0343,
+0147:0362,
+0150:0363,
+0152:0364,
+0153:0344,
+0154:0332,
+073:0333,
+0172:0366,
+0170:0367,
+0143:0345,
+0166:0346,
+054:0336,
+056:0331,
+057:0337,
+0250:0313,0336,0330,0337,
+0251:0313,0336,0331,0337,
+0252:0313,0336,0332,0337,
+0253:0313,0336,0333,0337,
+0254:0305,0311,0335,0362,0203,0335,0335,0336,0203,0335,0203,0363,0335,0337,
+0256:0313,0336,0336,0310,0336,0314,0337,0312,0337,0313,
+0257:0313,0337,0337,0310,0337,0314,0336,0312,0336,0313,
 */
 </script>
 <!--<page02>-->
@@ -248,6 +212,21 @@ function spellGlyph(localString){
 		doTheThing(parseInt(tempArray[index],8) + 01000);
 	}
 }
+function spellGlyphVertical(localString){
+    theta = theta0;
+    doTheThing(0304);
+	var tempArray = localString.split(',');
+	for(var index = 0;index < tempArray.length;index++){
+		ctx.lineWidth = 2;
+		doTheThing(parseInt(tempArray[index],8) + 01000);
+		drawGlyph("0331,0332,");
+        if(y > innerHeight - 50){
+            x -= 40;
+            y = 100;
+        }
+	}
+}
+
 function doTheThing(localCommand){
  
     if(localCommand >= 040 && localCommand <= 0176){
@@ -332,9 +311,9 @@ function doTheThing(localCommand){
     //</page0321>
     }
     if(localCommand == 0322){//<page0322>
-		ctx.strokeStyle="orange";
+		ctx.strokeStyle="pink";
     	ctx.lineWidth = 2;
-    	ctx.fillStyle = "orange";    
+    	ctx.fillStyle = "pink";    
     //</page0322>
     }
     if(localCommand == 0323){//<page0323>
@@ -864,11 +843,156 @@ function distanceUnits(Alat,Alon,Blat,Blon,unitvalue){
                 {
                     "name": "potomac region",
                     "url": "https://i.imgur.com/8aqAVGB.jpg"
+                },
+                {
+                    "name": "fifteenth to eighteenth",
+                    "url": "https://i.imgur.com/6r11Sri.jpg"
+                },
+                {
+                    "name": "eighteenth and south official",
+                    "url": "https://i.imgur.com/zmOaELB.jpg"
+                },
+                {
+                    "name": "Full Map",
+                    "url": "https://i.imgur.com/oNpYdj5.jpg"
+                },
+                {
+                    "name": "south end official",
+                    "url": "https://i.imgur.com/axuV6bk.jpg"
+                },
+                {
+                    "name": "15th and crystal closeup",
+                    "url": "https://i.imgur.com/jlK0Z1A.jpg"
+                },
+                {
+                    "name": "23rd and up indoor mall",
+                    "url": "https://i.imgur.com/CNgXUST.jpg"
                 }
             ]
         }
-    </div>        
+</div>        
 <!--</page0401>-->
+<!--<page0402>-->
+<div style = "display:none" class = "json" id = "data0402">
+{
+    "template":{
+        "name":"",
+        "latlon":"",
+        "url":"",
+        "description":" ",
+        "scale":30,
+        "scaleunits":"feet"
+    },
+    "dataarray":[
+    {
+        "name":"VRE Sign",
+        "latlon":"38.859107, -77.048975",
+        "url":"https://i.imgur.com/iNUBfJa.png",
+        "description":"Sign on Crystal Drive for the train station across from the underground mall",
+        "scale":6,
+        "scaleunits":"feet"
+    },
+    {
+        "name":"Crystal City Metro Entrance",
+        "latlon":"38.858029, -77.051482",
+        "url":"https://i.imgur.com/CJWfyks.jpg",
+        "description":"General Entrance Area, broadly defined(30 foot radius? Go check)",
+        "scale":30,
+        "scaleunits": "feet"
+    },
+    {
+        "name":"Crystal City Courtyard Green Front/middle sculpture",
+        "latlon":"38.854731, -77.049190",
+        "url":"",
+        "description":"Sculpture with the lights between starbucks and noodles",
+        "scale":30,
+        "scaleunits":"feet"
+    },
+    {
+        "name": "15th and Crystal",
+        "latlon": "38.860088, -77.049273",
+        "url": "https://i.imgur.com/DOI3A99.jpg",
+        "description": "middle of intersection",
+        "scale": "60",
+        "scaleunits": "feet"
+    },
+    {
+        "name": "Raised viewing promontory",
+        "latlon": "38.867987, -77.044905",
+        "url": "https://i.imgur.com/PwKpX1m.jpg",
+        "description": "Far north end of long bridge park, along raised walkway",
+        "scale": "50",
+        "scaleunits": "feet"
+    },
+    {
+        "name": "Long Bridge Southern Entrance",
+        "latlon": "38.862469, -77.048560",
+        "url": "https://i.imgur.com/wbvF6IT.jpg",
+        "description": "Beginning of raised walking path on Eastern edge of Long Bridge Park",
+        "scale": "50",
+        "scaleunits": "feet"
+    }
+    ]
+}
+</div>
+<!--</page0402>-->        
+<!--<page0403>-->
+<div style = "display:none" class = "json" id = "data0403">
+    {
+        "template":{
+            "sourcedata":"0401,0402,",
+            "mapindex":0,
+            "landmark0index":0,            
+            "landmark1index":1,        
+            "imgx0":0,
+            "imgy0":0,
+            "imgw":1936,
+            "imgtheta":0,
+            "feetperpixel":1
+        },
+        "dataarray":[
+        {
+            "sourcedata": "0401,0402,",
+            "mapindex": "1",
+            "landmark0index": 0,
+            "landmark1index": "3",
+            "imgx0": "1284",
+            "imgy0": "1150",
+            "imgw": 1936,
+            "imgtheta": 0,
+            "feetperpixel": "3.1"
+        },
+        {
+            "sourcedata": "0401,0402,",
+            "mapindex": "5",
+            "landmark0index": "5",
+            "landmark1index": "3",
+            "imgx0": "1458",
+            "imgy0": "900",
+            "imgw": 1936,
+            "imgtheta": 0,
+            "feetperpixel": "3.2"
+        }
+        ]
+    }
+</div>
+<!--</page0403>-->                
+<!--<page0405>-->
+<div style = "display:none" class = "json" id = "data0405">
+    {
+        "template": {
+            "mapeditindex": 0,
+            "glyph": "0300,"
+        },
+        "dataarray": [
+            {
+                "mapeditindex": 0,
+                "glyph": "0300,0320,0201,0334,0201,0201,0336,0201,0334,0201,0201,0201,0201,0201,0201,0334,0201,0201,0201,0201,0201,0334,0201,0201,0201,0201,"
+            }
+        ]
+    }
+</div>
+<!--</page0405>-->
 <!--<page0601>-->
 <div class = "page" id = "div0601">
     <div class = "title">Raw Map Photos</div>
@@ -889,10 +1013,157 @@ function distanceUnits(Alat,Alon,Blat,Blon,unitvalue){
 <!--</page0601>-->
 <!--<page0602>-->
     <div class = "page" id = "div0602">
-        <div class = "title">Position and Scale the Maps</div>
+        <div class = "title">Landmarks</div>
+        <div class = "leftscroll">
+            <button class = "navbutton" id = "landmarksback">&#x25C0</button>
+            <button class = "navbutton" id = "landmarksnew">NEW</button>
+            <button class = "navbutton" id = "landmarksfwd">&#x25B6</button>        
+            <table class = "jsontable" id = "landmarkstable"></table>        
         </div>
+        <img id = "landmarkimage"></img>
+        <div class = "rightscroll">
+            <h2>JSON</h2>
+            <textarea id = "jsonIOlandmarks"></textarea>                
+            <h2>ByteCode</h2>
+            <textarea id = "bytecodeIOlandmarks"></textarea>            
+        </div>  
     </div>
 <!--</page0602>-->           
+<!--<page0603>-->
+    <div class = "page" id = "div0603">
+        <div class = "title">Position and Scale Images</div>
+        <div class = "leftscroll">
+            <button class = "navbutton" id = "mapeditback">&#x25C0</button>
+            <button class = "navbutton" id = "mapeditnew">NEW</button>
+            <button class = "navbutton" id = "mapeditfwd">&#x25B6</button>        
+            <table class = "jsontable" id = "mapedittable"></table>
+        </div>
+        <div id = "mapeditimagebox">
+            <canvas id = "canvas0603"></canvas>
+            <img id = "mapeditimage"></img>
+        </div>
+        <div class = "rightscroll">
+            <h2>JSON</h2>
+            <textarea id = "jsonIOmapedit"></textarea>                
+            <h2>ByteCode</h2>
+            <textarea id = "bytecodeIOmapedit"></textarea>            
+        </div>  
+        <div class = "lowerleftscroll">
+            <img id = "imglandmark0"></img>
+            <div id = "divlandmark0"></div>
+            <img id = "imglandmark1"></img>            
+            <div id = "divlandmark1"></div>    
+        </div>
+        <table  class = "pantable">
+                <tr>
+                    <td class = "panbutton" onclick = "viewAction0603 = 0252;redraw0703();">&#x2B05</td> 
+                    <td class = "panbutton" onclick = "viewAction0603 = 0250;redraw0703();">&#x2B06</td>
+                    <td class = "panbutton" onclick = "viewAction0603 = 0251;redraw0703();">&#x2B07</td>
+                    <td class = "panbutton" onclick = "viewAction0603 = 0253;redraw0703();">&#x27A1</td>
+                    <td class = "panbutton" onclick = "viewAction0603 = 0256;redraw0703();" style = "padding-left:10px;padding-right:10px;">-</td>
+                    <td class = "panbutton" onclick = "viewAction0603 = 0257;redraw0703();" style = "padding-left:10px;padding-right:10px;">+</td>
+                </tr>
+        </table>            
+    </div>
+<!--</page0603>-->    
+<!--<page0605>-->
+    <div class = "page" id = "div0605">
+            <div class = "title">Edit Map Glyphs</div>
+            <canvas id = "canvas0605"></canvas>
+            <img id = "img0605"></img>
+            <table  class = "pantable">
+                    <tr>
+                        <td class = "panbutton" onclick = "x0 -= 0.5*unit;redraw0705();">&#x2B05</td> 
+                        <td class = "panbutton" onclick = "y0 -= 0.5*unit;redraw0705();">&#x2B06</td>
+                        <td class = "panbutton" onclick = "y0 += 0.5*unit;redraw0705();">&#x2B07</td>
+                        <td class = "panbutton" onclick = "x0 += 0.5*unit;redraw0705();">&#x27A1</td>
+                        <td class = "panbutton" onclick = "zoom /= 1.1;redraw0705();" style = "padding-left:10px;padding-right:10px;">-</td>
+                        <td class = "panbutton" onclick = "zoom *= 1.1;redraw0705();" style = "padding-left:10px;padding-right:10px;">+</td>
+                    </tr>
+            </table>            
+            <input id = "keycapture0605"></input>
+            <div class = "tinyleftscroll">
+                    <h2>JSON</h2>
+                    <textarea id = "jsonIOglyphedit"></textarea>                
+                    <h2>ByteCode</h2>
+                    <textarea id = "bytecodeIOglyphedit"></textarea>            
+            </div> 
+    </div>
+<!--</page0605>-->         
+<!--<page0606>-->
+<div class = "page" id = "div0606">
+    <div class = "title">Export SVG Map Coloring Book Pages</div>
+    <div class = "innerpage">
+        <canvas id = "canvaspage"></canvas>
+    </div>
+    <div class = "leftscroll">
+        <textarea id = "svgIO0606">
+        </textarea>
+    </div>
+    <table  class = "pantableleft">
+            <tr>
+                <td class = "panbutton" onclick = "viewAction0606 = 0252;redraw0706();">&#x2B05</td> 
+                <td class = "panbutton" onclick = "viewAction0606 = 0250;redraw0706();">&#x2B06</td>
+                <td class = "panbutton" onclick = "viewAction0606 = 0251;redraw0706();">&#x2B07</td>
+                <td class = "panbutton" onclick = "viewAction0606 = 0253;redraw0706();">&#x27A1</td>
+                <td class = "panbutton" onclick = "viewAction0606 = 0256;redraw0706();" style = "padding-left:10px;padding-right:10px;">-</td>
+                <td class = "panbutton" onclick = "viewAction0606 = 0257;redraw0706();" style = "padding-left:10px;padding-right:10px;">+</td>
+            </tr>
+    </table>       
+    <a href = "coloringpage.svg" class = "lowerleftlink">coloringpage.svg</a>     
+</div>
+<!--</page0606>-->             
+<!--<page0607>-->
+        <div class = "page" id = "div0607">
+                <div class = "title">Add Links as "a" Elements in divs</div>
+        </div>
+<!--</page0607>-->             
+<!--<page0610>-->
+    <div class = "page" id = "div0610">
+            <div class = "title">Add Vector Images</div>
+    </div>
+<!--</page0610>-->             
+<!--<page0620>-->
+        <div class = "page" id = "div0620">
+                <div class = "title">Map Viewer</div>
+        </div>
+<!--</page0620>-->             
+<!--<page0621>-->
+        <div class = "page" id = "div0621">
+            <div class = "title">Map Publisher</div>
+        </div>
+<!--</page0621>-->     
+<!--<page0700>-->
+        <script id = "script0700">
+                zoom = 1;
+                pages = document.getElementsByClassName("page");
+                currentPage = 0;
+                for(index = 0;index < pages.length;index++){
+                    if(index != currentPage){
+                        pages[index].style.display = "none";
+                    }
+                }
+                
+                document.getElementById("backbutton").onclick = function(){
+                    pages[currentPage].style.display = "none";
+                    currentPage--;
+                    if(currentPage < 0){
+                        currentPage = pages.length - 1;
+                    }
+                    pages[currentPage].style.display = "block";
+                            
+                }
+                document.getElementById("fwdbutton").onclick = function(){
+                    pages[currentPage].style.display = "none";
+                    currentPage++;
+                    if(currentPage > pages.length -1){
+                        currentPage = 0;
+                    }
+                    pages[currentPage].style.display = "block";
+                }
+            
+            </script>
+<!--</page0700>-->        
 <!--<page0701>-->
 <script id = "script0701">
     rawmapindex = 0;
@@ -933,7 +1204,7 @@ function distanceUnits(Alat,Alon,Blat,Blon,unitvalue){
             rawmapindex = 0;
         }
         for(var label in json0401.dataarray[rawmapindex]){
-            document.getElementsByClassName(label)[0].value= json0401.dataarray[rawmapindex][label];
+            document.getElementById("div0601").getElementsByClassName(label)[0].value= json0401.dataarray[rawmapindex][label];
         }
         redraw0701();
     }
@@ -943,7 +1214,7 @@ function distanceUnits(Alat,Alon,Blat,Blon,unitvalue){
             rawmapindex = json0401.dataarray.length - 1;
         }
         for(var label in json0401.dataarray[rawmapindex]){
-            document.getElementsByClassName(label)[0].value= json0401.dataarray[rawmapindex][label];
+            document.getElementById("div0601").getElementsByClassName(label)[0].value= json0401.dataarray[rawmapindex][label];
         }
         redraw0701();
     }
@@ -956,38 +1227,285 @@ function redraw0701(){
     currentTable[0401] = string2byteCode(JSON.stringify(json0401, null, '    '));
 }
 </script>
-<!--</page0701>-->                
-<!--<page0700>-->
-<script id = "script0700">
-    zoom = 1;
-    pages = document.getElementsByClassName("page");
-    currentPage = 0;
-    for(index = 0;index < pages.length;index++){
-        if(index != currentPage){
-            pages[index].style.display = "none";
+<!--</page0701>-->   
+<!--<page0702>-->
+<script id = "script0702">
+    landmarkindex = 0;
+    json0402 = JSON.parse(document.getElementById("data0402").innerHTML);
+    currentTable[0402] = string2byteCode(JSON.stringify(json0402, null, '    '));
+    document.getElementById("jsonIOlandmarks").value = JSON.stringify(json0402, null, '    ');
+    document.getElementById("bytecodeIOlandmarks").value = "0402:" + string2byteCode(JSON.stringify(json0402, null, '    '));
+
+    landmarktable = document.getElementById("landmarkstable");
+
+    for(var label in json0402.template){
+        var newtr = document.createElement("TR");
+        var newtd = document.createElement("TD");
+        newtd.innerHTML = label + ":";
+        newtd.style.textAlign = "right";
+        newtr.appendChild(newtd);
+        landmarktable.appendChild(newtr);
+        var newtd2 = document.createElement("TD");
+        newtr.appendChild(newtd2);
+        var newinput = document.createElement("INPUT");
+        newinput.value = json0402.dataarray[landmarkindex][label];
+        newinput.className = label; 
+        newtd2.appendChild(newinput);
+        newinput.onchange = function(){
+            var newlabel = this.className;
+            json0402.dataarray[landmarkindex][newlabel] = this.value;
+            document.getElementById("jsonIO").value = JSON.stringify(json0402, null, '    ');
+            redraw0702();
         }
     }
-    
-    document.getElementById("backbutton").onclick = function(){
-        pages[currentPage].style.display = "none";
-        currentPage--;
-        if(currentPage < 0){
-            currentPage = pages.length - 1;
-        }
-        pages[currentPage].style.display = "block";
-                
+    document.getElementById("landmarkimage").src = json0402.dataarray[landmarkindex]["url"];
+    inputs0602 = document.getElementById("landmarkstable").getElementsByTagName("INPUT");
+
+    function redraw0702(){
+        currentTable[0402] = string2byteCode(JSON.stringify(json0402, null, '    '));
+        document.getElementById("landmarkimage").src = json0402.dataarray[landmarkindex]["url"];
+        document.getElementById("jsonIOlandmarks").value = JSON.stringify(json0402, null, '    ');
+        document.getElementById("bytecodeIOlandmarks").value = "0402:" + string2byteCode(JSON.stringify(json0402, null, '    '));
     }
-    document.getElementById("fwdbutton").onclick = function(){
-        pages[currentPage].style.display = "none";
-        currentPage++;
-        if(currentPage > pages.length -1){
-            currentPage = 0;
+
+    document.getElementById("landmarksnew").onclick = function(){
+        var newelement = JSON.parse(JSON.stringify(json0402.template))
+        json0402.dataarray.push(newelement);
+        document.getElementById("jsonIO").value = JSON.stringify(json0402, null, '    ');
+    }
+    document.getElementById("landmarksfwd").onclick = function(){
+        landmarkindex++;
+        if(landmarkindex > json0402.dataarray.length - 1){
+            landmarkindex = 0;
         }
-        pages[currentPage].style.display = "block";
+        for(var label in json0402.dataarray[landmarkindex]){
+            document.getElementById("div0602").getElementsByClassName(label)[0].value= json0402.dataarray[landmarkindex][label];
+        }
+        redraw0702();
+    }
+    document.getElementById("landmarksback").onclick = function(){
+        landmarkindex--;
+        if(landmarkindex < 0){
+            landmarkindex = json0402.dataarray.length - 1;
+        }
+        for(var label in json0402.dataarray[landmarkindex]){
+            document.getElementById("div0602").getElementsByClassName(label)[0].value= json0402.dataarray[landmarkindex][label];
+        }
+        redraw0702();
     }
 
 </script>
-<!--</page0700>-->
+<!--<page0702>-->                
+<!--<page0703>-->
+<script id = "script0703">
+    viewGlyph0603 = "0300,";
+    viewAction0603 = 0176;
+    mapeditindex = 0;
+    json0403 = JSON.parse(document.getElementById("data0403").innerHTML);
+    currentTable[0403] = string2byteCode(JSON.stringify(json0403, null, '    '));
+    document.getElementById("jsonIOmapedit").value = JSON.stringify(json0403, null, '    ');
+    document.getElementById("bytecodeIOmapedit").value = "0403:" + string2byteCode(JSON.stringify(json0403, null, '    '));
+    mapedittable = document.getElementById("mapedittable");
+
+    for(var label in json0403.template){
+        var newtr = document.createElement("TR");
+        var newtd = document.createElement("TD");
+        newtd.innerHTML = label + ":";
+        newtd.style.textAlign = "right";
+        newtr.appendChild(newtd);
+        mapedittable.appendChild(newtr);
+        var newtd2 = document.createElement("TD");
+        newtr.appendChild(newtd2);
+        var newinput = document.createElement("INPUT");
+        newinput.value = json0403.dataarray[mapeditindex][label];
+        newinput.className = label; 
+        newtd2.appendChild(newinput);
+        newinput.onchange = function(){
+            var newlabel = this.className;
+            json0403.dataarray[mapeditindex][newlabel] = this.value;
+            document.getElementById("jsonIO").value = JSON.stringify(json0403, null, '    ');
+            redraw0703();
+        }
+    }
+    mapindex =  json0403.dataarray[mapeditindex]["mapindex"];
+    document.getElementById("mapeditimage").src = json0401.dataarray[mapindex]["url"];
+    inputs0603 = document.getElementById("mapedittable").getElementsByTagName("INPUT");
+
+    mapdivwidth= 500;
+    mapdivheight= 500;
+    x0 = mapdivwidth/2;
+    y0 = mapdivheight/2;
+
+    document.getElementById("canvas0603").width = mapdivwidth;
+    document.getElementById("canvas0603").height = mapdivheight;
+    ctx = document.getElementById("canvas0603").getContext("2d");
+    function init0703(){
+
+    }
+
+    redraw0703();
+    function redraw0703(){
+        zoom = 1;
+        ctx = document.getElementById("canvas0603").getContext("2d");
+        ctx.clearRect(0,0,mapdivwidth,mapdivheight);
+        mapindex =  json0403.dataarray[mapeditindex]["mapindex"];
+        landmark0index = json0403.dataarray[mapeditindex]["landmark0index"]; 
+        landmark1index = json0403.dataarray[mapeditindex]["landmark1index"];
+        document.getElementById("imglandmark0").src = json0402.dataarray[landmark0index]["url"];
+        document.getElementById("imglandmark1").src = json0402.dataarray[landmark1index]["url"];
+
+        var lat0 = parseFloat(json0402.dataarray[landmark0index]["latlon"].split(',')[0]);
+        var lon0 = parseFloat(json0402.dataarray[landmark0index]["latlon"].split(',')[1]);
+        var lat1 = parseFloat(json0402.dataarray[landmark1index]["latlon"].split(',')[0]);
+        var lon1 = parseFloat(json0402.dataarray[landmark1index]["latlon"].split(',')[1]);
+        var rfeet = distanceFeet(lat0,lon0,lat1,lon1);
+        unit = zoom*rfeet/json0403.dataarray[mapeditindex].feetperpixel;
+        x0 = mapdivwidth/2;
+        y0 = mapdivheight/2;
+        viewGlyph0603 += "0" +  viewAction0603.toString(8) + ",";
+        drawGlyph(viewGlyph0603);
+        x0 = x;
+        y0 = y;
+        zoom = side/unit; 
+        unit = side;
+        document.getElementById("mapeditimage").width = zoom*json0403.dataarray[mapeditindex]["imgw"];
+        document.getElementById("mapeditimage").style.left = (x0 - zoom*json0403.dataarray[mapeditindex].imgx0) + "px";
+        document.getElementById("mapeditimage").style.top = y0 - zoom*json0403.dataarray[mapeditindex].imgy0 + "px";
+        document.getElementById("mapeditimage").src = json0401.dataarray[mapindex]["url"];
+        currentTable[0403] = string2byteCode(JSON.stringify(json0403, null, '    '));
+        document.getElementById("jsonIOmapedit").value = JSON.stringify(json0403, null, '    ');
+        document.getElementById("bytecodeIOmapedit").value = "0403:" + string2byteCode(JSON.stringify(json0403, null, '    '));
+        drawGlyph("0300,0300,0327,0341,0340,0342,0335,0342,0335,0342,0335,0342,")
+    }
+
+
+    document.getElementById("mapeditnew").onclick = function(){
+        var newelement = JSON.parse(JSON.stringify(json0403.template))
+        json0403.dataarray.push(newelement);
+        redraw0703();
+    }
+    document.getElementById("mapeditfwd").onclick = function(){
+        mapeditindex++;
+        if(mapeditindex > json0403.dataarray.length - 1){
+            mapeditindex = 0;
+        }
+        for(var label in json0403.dataarray[mapeditindex]){
+            document.getElementById("div0603").getElementsByClassName(label)[0].value= json0403.dataarray[mapeditindex][label];
+        }
+        redraw0703();
+    }
+    document.getElementById("mapeditback").onclick = function(){
+        mapeditindex--;
+        if(mapeditindex < 0){
+            mapeditindex = json0403.dataarray.length - 1;
+        }
+        for(var label in json0403.dataarray[mapeditindex]){
+            document.getElementById("div0603").getElementsByClassName(label)[0].value= json0403.dataarray[mapeditindex][label];
+        }
+        redraw0703();
+    }
+</script>
+<!--</page0703>-->
+<!--<page0705>-->
+<script id = "script0705">
+    glypheditindex = 0;
+    json0405 = JSON.parse(document.getElementById("data0405").innerHTML);
+    glypheditindex = json0405.dataarray[glypheditindex].mapeditindex;
+    document.getElementById("canvas0605").width= innerWidth;
+    document.getElementById("canvas0605").height= innerHeight;
+    ctx = document.getElementById("canvas0605").getContext("2d");
+    x0 = innerWidth/2;
+    y0 = innerHeight/2;
+    unit = 100;
+    currentGlyph = json0405.dataarray[glypheditindex].glyph + "0207,";
+    zoom = 1;
+    redraw0705();
+    function redraw0705(){
+        ctx = document.getElementById("canvas0605").getContext("2d");
+        document.getElementById("img0605").src = json0401.dataarray[mapindex]["url"];
+        document.getElementById("img0605").width = zoom*json0403.dataarray[mapeditindex]["imgw"];
+        document.getElementById("img0605").style.left = (x0 - zoom*json0403.dataarray[mapeditindex].imgx0) + "px";
+        document.getElementById("img0605").style.top = y0 - zoom*json0403.dataarray[mapeditindex].imgy0 + "px";
+        var lat0 = parseFloat(json0402.dataarray[landmark0index]["latlon"].split(',')[0]);
+        var lon0 = parseFloat(json0402.dataarray[landmark0index]["latlon"].split(',')[1]);
+        var lat1 = parseFloat(json0402.dataarray[landmark1index]["latlon"].split(',')[0]);
+        var lon1 = parseFloat(json0402.dataarray[landmark1index]["latlon"].split(',')[1]);
+        var rfeet = distanceFeet(lat0,lon0,lat1,lon1);
+        unit = zoom*rfeet/json0403.dataarray[mapeditindex].feetperpixel;
+        ctx.clearRect(0,0,innerWidth,innerHeight);
+        drawGlyph(currentGlyph);
+        x = innerWidth - 100;
+        y = 100;
+        side= 30;
+        spellGlyphVertical(currentGlyph);
+        unitmd = unit;        
+        var tempGlyphArray = currentGlyph.split(',');
+        var tempGlyphOut = "";
+        for(var index = 0;index < tempGlyphArray.length;index++){
+            if(tempGlyphArray[index].length > 0 && tempGlyphArray[index] != "0207"){
+                tempGlyphOut += tempGlyphArray[index] + ",";
+            }
+        }
+        json0405.dataarray[glypheditindex].glyph = tempGlyphOut;
+        document.getElementById("jsonIOglyphedit").value = JSON.stringify(json0405, null, '    ');
+        document.getElementById("bytecodeIOglyphedit").value = "0405:" + string2byteCode(JSON.stringify(json0405, null, '    '));
+        currentTable[0405] = string2byteCode(JSON.stringify(json0405, null, '    '));
+    }
+    document.getElementById("keycapture0605").onkeypress = function(){
+        var key = event.key;
+        var keyaddress = key.charCodeAt(0);
+        currentAction = parseInt(currentTable[keyaddress],8);
+        if(currentAction >= 06 && currentAction < 040){
+            doTheThing(currentAction);
+        }
+        else{
+            currentCommand = "0" + currentAction.toString(8);
+            doTheThing(011);
+        }
+        document.getElementById("keycapture0605").value = "";
+    }
+    function redraw(){
+        redraw0705();
+    }
+</script>
+<!--</page0705>-->
+<!--<page0706>-->
+<script id = "script0706">
+    document.getElementById("canvaspage").width = 850;//100 pixels= 1 inch (not really but it's a conversion)
+    document.getElementById("canvaspage").height = 1100;
+    x0 = document.getElementById("canvaspage").width/2;
+    y0 = document.getElementById("canvaspage").height/2;
+    unit = 100;
+    ctx = document.getElementById("canvaspage").getContext("2d");
+    drawGlyph(json0405.dataarray[glypheditindex].glyph);
+    viewGlyph0606 = "0300,";
+    redraw0706();
+    function redraw0706(){
+        zoom = 1;
+        ctx = document.getElementById("canvaspage").getContext("2d");
+        ctx.clearRect(0,0,document.getElementById("canvaspage").width,document.getElementById("canvaspage").height);
+        currentSVG= "<svg width=\"850\" height=\"1100\" viewbox = \"0 0 850 1100\"  xmlns=\"http://www.w3.org/2000/svg\" style = \"border:solid;\">\n";
+        drawGlyph(viewGlyph0606);
+        drawGlyph(json0405.dataarray[glypheditindex].glyph);
+        currentSVG += "</svg>";
+        document.getElementById("svgIO0606").value = currentSVG;
+        var lat0 = parseFloat(json0402.dataarray[landmark0index]["latlon"].split(',')[0]);
+        var lon0 = parseFloat(json0402.dataarray[landmark0index]["latlon"].split(',')[1]);
+        var lat1 = parseFloat(json0402.dataarray[landmark1index]["latlon"].split(',')[0]);
+        var lon1 = parseFloat(json0402.dataarray[landmark1index]["latlon"].split(',')[1]);
+        var rfeet = distanceFeet(lat0,lon0,lat1,lon1);
+        unit = zoom*rfeet/json0403.dataarray[mapeditindex].feetperpixel;
+        x0 = document.getElementById("canvaspage").width/2;
+        y0 = document.getElementById("canvaspage").height/2;
+        viewGlyph0606 += "0" +  viewAction0606.toString(8) + ",";
+        drawGlyph(viewGlyph0606);
+        x0 = x;
+        y0 = y;
+        zoom = side/unit; 
+        unit = side;
+    }
+</script>
+<!--</page0706>-->
 <!--<page0500>-->
 <style id = "style0500">
 html{
@@ -1059,6 +1577,12 @@ input{
         overflow:hidden;
         background-color:black;
     }
+    img{
+        z-index:-2;
+    }
+    canvas{
+        z-index:0;
+    }
 </style>
 <!--</page0500>-->
 <!--<page0501>-->
@@ -1127,7 +1651,204 @@ textarea{
     border-radius:10px;
 }
 </style>
-<!--</page0501>-->                
+<!--</page0501>-->   
+<!--<page0502>-->
+<style id = "style0502">
+#bytecodeIOlandmarks{
+    width:80%;
+    height:70%;
+}
+#jsonIOlandmarks{
+    width:80%;
+    height:70%;
+}
+#landmarkimage{
+    position: absolute;
+    top:15%;
+    border:solid;
+    width:400px;
+    left:500px;
+}
+#landmarksback{
+    left: 5px;
+    top:5px;
+}
+#landmarksfwd{
+    right: 5px;
+    top:5px;
+}
+#landmarksnew{
+    left:120px;
+    top:5px;
+}
+#landmarkstable{
+    position: absolute;
+    top:60px;
+    width:90%;
+}
+</style>                
+<!--</page0502>-->
+<!--<page0503>-->
+<style id = "style0503">
+    #bytecodeIOmapedit{
+        width:80%;
+        height:70%;
+    }
+    #jsonIOmapedit{
+        width:80%;
+        height:70%;
+    }
+    #mapeditimage{
+        position:absolute;
+    }
+    #mapeditimagebox{
+        position: absolute;
+        top:15%;
+        border:solid;
+        left:400px;        
+        width:500px;
+        height:500px;
+        overflow:hidden;
+    }
+    #mapeditback{
+        left: 5px;
+        top:5px;
+    }
+    #mapeditfwd{
+        right: 5px;
+        top:5px;
+    }
+    #mapeditnew{
+        left:120px;
+        top:5px;
+    }
+    #mapedittable{
+        position: absolute;
+        top:60px;
+        width:90%;
+    }
+    #canvas0603{
+        position:absolute;
+        left: 0px;
+        top:0px;
+    }
+    #imglandmark0{
+        position: absolute;
+        left: 0px;
+        top:0px;
+        width:40%;
+    }
+    #imglandmark1{
+        position: absolute;
+        right: 0px;
+        top:0px;
+        width:40%;
+    } 
+    #divlandmark1{
+    }
+    #divlandmark0{
+    }
+.lowerleftscroll{
+    position:absolute;
+    top:70%;
+    bottom:5%;
+    left:2%;
+    width:25%;
+    border:solid;
+    border-radius:15px;
+    text-align:center;
+    overflow:scroll;
+}
+.pantable{
+    position: absolute;
+    bottom:0px;
+    left:40%;
+    z-index:4;
+}
+.panbutton{
+    cursor:pointer;
+    z-index:4;
+}
+.panbutton:hover{
+    background-color:#004000;
+}
+.panbutton:active{
+    background-color:#707000;
+}
+#keycapture0605{
+    border-color:blue;
+    width:4em;
+}
+</style>                
+<!--</page0503>-->
+<!--<page0505>-->
+<style id = "style0505">
+#canvas0605{
+    position:absolute;
+    left: 0px;
+    top:0px;
+}
+#keycapture0605{
+    position: absolute;
+    bottom:2px;
+    left:2px;
+}
+#img0605{
+    position: absolute;
+}
+.tinyleftscroll{
+    position:absolute;
+    height:100px;
+    bottom:3em;
+    left:3px;
+    width:200px;
+    border:solid;
+    border-radius:15px;
+    text-align:center;
+    overflow:scroll;
+}
+</style>
+<!--</page0505>-->
+<!--<page0506>-->
+<style id = "style0506">
+.innerpage{
+    position: absolute;
+    top:15%;
+    left:30%;
+    right:5%;
+    bottom:5%;
+    padding:15px 15px 15px 15px;
+    border-color:blue;
+    border-radius:15px;
+    background-color:white;
+    overflow: scroll;
+}
+#canvaspage{
+    border:solid;
+    border-color:black;
+}
+#svgIO0606{
+    position: absolute;
+    left: 10px;
+    top:10px;
+    right: 10px;
+    bottom:10px;
+}
+.pantableleft{
+    position: absolute;
+    bottom:10px;
+    left:5%;
+    z-index:4;
+}
+.lowerleftlink{
+    position: absolute;
+    left:50px;
+    bottom:150px;
+    z-index: 2;
+    color:#0000ff;
+}
+</style>
+<!--</page0506>-->
 <!--<page05>-->
 </body>
 </html>
