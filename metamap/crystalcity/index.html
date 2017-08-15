@@ -5,6 +5,15 @@
 <!-- PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS, NO PROPERTY NO MONEY NO MINING-->
 <!-- FREE INFORMATION FOR A WORLD FREE OF THE SOFTWARE ENGINEER -->
     <title>Metamap</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+    </script>
 <!--</page01>-->
 <script id = "bytecodeScript">
 /*
@@ -867,6 +876,14 @@ function distanceUnits(Alat,Alon,Blat,Blon,unitvalue){
                 {
                     "name": "23rd and up indoor mall",
                     "url": "https://i.imgur.com/CNgXUST.jpg"
+                },
+                {
+                    "name":"old london map",
+                    "url":"https://assets.londonist.com/uploads/2013/12/i730/map2.png"
+                },
+                {
+                    "name":"Crystal City Mall Official",
+                    "url":"https://i.imgur.com/iESCUlR.png"
                 }
             ]
         }
@@ -953,25 +970,36 @@ function distanceUnits(Alat,Alon,Blat,Blon,unitvalue){
         "dataarray":[
         {
             "sourcedata": "0401,0402,",
-            "mapindex": "1",
-            "landmark0index": 0,
-            "landmark1index": "3",
-            "imgx0": "1284",
-            "imgy0": "1150",
-            "imgw": 1936,
+            "mapindex": 10,
+            "landmark0index": 2,
+            "landmark1index": 3,
+            "imgx0": 230,
+            "imgy0": 385,
+            "imgw": 377,
             "imgtheta": 0,
-            "feetperpixel": "3.1"
+            "feetperpixel": 8.5
         },
         {
             "sourcedata": "0401,0402,",
-            "mapindex": "5",
-            "landmark0index": "5",
-            "landmark1index": "3",
-            "imgx0": "1458",
-            "imgy0": "900",
+            "mapindex": "1",
+            "landmark0index": 0,
+            "landmark1index": 3,
+            "imgx0": 1284,
+            "imgy0": 1150,
             "imgw": 1936,
             "imgtheta": 0,
-            "feetperpixel": "3.2"
+            "feetperpixel": 3.1
+        },
+        {
+            "sourcedata": "0401,0402,",
+            "mapindex": 4,
+            "landmark0index": 5,
+            "landmark1index": 3,
+            "imgx0": 1458,
+            "imgy0": 900,
+            "imgw": 1936,
+            "imgtheta": 0,
+            "feetperpixel":3.2
         }
         ]
     }
@@ -987,12 +1015,134 @@ function distanceUnits(Alat,Alon,Blat,Blon,unitvalue){
         "dataarray": [
             {
                 "mapeditindex": 0,
-                "glyph": "0300,0320,0201,0334,0201,0201,0336,0201,0334,0201,0201,0201,0201,0201,0201,0334,0201,0201,0201,0201,0201,0334,0201,0201,0201,0201,"
-            }
+                "glyph": "0300,0336,0336,0336,0331,0331,0331,0336,0336,0336,0331,0332,0334,0337,0201,0201,0201,0201,0201,0335,0201,0201,0201,0201,0201,0201,0201,0332,0335,0335,0201,0201,0201,0336,0201,0335,0337,0337,0201,0201,0201,0201,0336,0336,0201,0336,0201,0334,0337,0201,0336,0201,0335,0337,0337,0201,0201,0201,0201,0335,0201,0201,0201,0201,0201,0201,0201,0201,0201,0332,0335,0335,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0335,0201,0201,0201,0201,0201,0201,0201,0332,0335,0335,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0335,0201,0336,0201,0334,0201,0201,0201,0201,0201,0201,0335,0201,0201,0201,0201,0201,0201,0332,0335,0335,0201,0201,0201,0201,0201,0201,0335,0201,0201,0201,0201,0335,0201,0201,0334,0201,0201,0201,0201,0201,0201,0201,0335,0201,0201,0201,0201,0201,0332,0332,0335,0335,0201,0201,0201,0201,0201,0335,0201,0201,0201,0201,0332,0332,0332,0332,0335,0335,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0335,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0335,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0331,0331,0331,0331,0331,0331,0331,0331,0331,0331,0331,0331,0331,0334,0337,0201,0201,0201,0201,0334,0201,0201,0201,0201,0201,0201,0201,0336,0201,0334,0201,0201,0335,0201,0201,0201,0201,0201,0201,0201,0201,0336,0201,0334,0201,0201,0201,0201,0201,0201,0201,0201,0201,0335,0201,0334,0201,0201,0201,0335,0201,0334,0201,0201,0201,0337,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0336,0201,0334,0337,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0335,0201,0201,0334,0201,0201,0201,0201,0201,0201,0201,0201,0201,0336,0201,0334,0337,0337,0201,0201,0201,0201,0201,0201,0201,0201,0201,0337,0337,0331,0331,0331,0331,0331,0332,0332,0332,0336,0330,0333,0336,0336,0332,0336,0333,0337,0337,0201,0201,0201,0201,0201,0201,0201,0201,0201,0332,0331,0342,0335,0336,0336,0201,0201,0335,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0335,0201,0201,0334,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,0201,"
+            }      
+        ]
+    }
+
+</div>
+<!--</page0405>-->
+<!--<page0407>-->
+<div style = "display:none" class = "json" id = "data0407">
+    {
+        "template": {
+            "name":"mylink",
+            "text":"",
+            "url":"",            
+            "glyph": "0336,0333,0331,0337,0200,",
+            "latlon0":"38.859107, -77.048975",
+            "x":0,
+            "y":0,
+            "width":1,
+            "height":1,
+            "fontSize":0.2,            
+            "unitfeet":"300",
+            "class":"box1"
+        },
+        "dataarray": [
+        {
+            "name":"mylink",
+            "text":"foo",
+            "url":"http://lafelabs.github.io",            
+            "glyph": "0333,0331,0337,0200,",
+            "latlon0":"38.859107, -77.048975",
+            "x":1.5,
+            "y":0,
+            "w":1,
+            "h":1,
+            "fontSize":0.5,            
+            "unitfeet":"300",
+            "class":"box1"
+        },
+        {
+            "name":"mylink",
+            "text":"bar",
+            "url":"",            
+            "glyph": "0333,0331,0337,0200,",
+            "latlon0":"38.859107, -77.048975",
+            "x":2,
+            "y":2,
+            "w":0.4,
+            "h":0.3,
+            "fontSize":0.2, 
+            "unitfeet":"300",
+            "class":"box1"
+        },
+        {
+            "name":"mylink",
+            "text":"baz",
+            "url":"",            
+            "glyph": "0333,0331,0337,0200,",
+            "latlon0":"38.859107, -77.048975",
+            "x":-1,
+            "y":-1,
+            "w":0.16,
+            "h":0.16,
+            "fontSize":0.1,
+            "unitfeet":"300",
+            "class":"box1"
+        }
         ]
     }
 </div>
-<!--</page0405>-->
+<!--</page0407>-->
+<!--<page0420>-->
+<div style = "display:none" class = "json" id = "data0420">
+{
+    "latlon0":"38.859107, -77.048975",
+    "name":"Crystal City Map",
+    "url":"http://www.geometron.hopto.org/metamap/crystalcity/index.hmtl",
+    "feetperpixel":30,
+    "images":[
+        {
+            "name":"world",
+            "url":"https://i.imgur.com/bDmvTFC.jpg",
+            "latlon0":"0.0,0.0",
+            "latlon1":"0.0,180.0",            
+            "imgx0":1280,
+            "imgy0":740,
+            "imgw":2592,
+            "feetperpixel":61000,
+            "layer":-11
+        },
+        {
+            "name":"USA",
+            "url":"https://i.imgur.com/DUnmGoa.jpg",
+            "latlon0":"40.0,-100.0",
+            "latlon1":"40.0,-80.0",            
+            "imgx0":800,
+            "imgy0":970,
+            "imgw":1936,
+            "feetperpixel":430,
+            "layer":-10
+        },
+        {
+            "name":"Washington, DC",
+            "url":"https://i.imgur.com/cN0ZimG.jpg",
+            "latlon0":"38.889463, -77.035234",
+            "latlon1":"38.791645, -77.039008",            
+            "imgx0":953,
+            "imgy0":974,
+            "imgw":1936,
+            "feetperpixel":45,
+            "layer":-9
+        },
+        {
+            "name":"Crystal City",
+            "url":"https://i.imgur.com/iESCUlR.png",
+            "latlon0":"38.860088, -77.049273",
+            "latlon1":"38.854731, -77.049190",            
+            "imgx0":228,
+            "imgy0":386,
+            "imgw":377,
+            "feetperpixel":3.9,
+            "layer":-8
+        }
+    ]
+}
+    
+</div>
+<!--</page0420>-->
 <!--<page0601>-->
 <div class = "page" id = "div0601">
     <div class = "title">Raw Map Photos</div>
@@ -1114,55 +1264,117 @@ function distanceUnits(Alat,Alon,Blat,Blon,unitvalue){
 </div>
 <!--</page0606>-->             
 <!--<page0607>-->
-        <div class = "page" id = "div0607">
-                <div class = "title">Add Links as "a" Elements in divs</div>
+    <div class = "page" id = "div0607">
+        <div class = "title">Add Links as "a" Elements in divs</div>
+        <canvas id = "canvas0607"></canvas>
+        <div class = "leftscroll">
+            <h2>JSON</h2>
+            <textarea id = "jsonIO0607"></textarea>                
+            <h2>ByteCode</h2>
+            <textarea id = "bytecodeIO0607"></textarea>            
         </div>
+        <div class = "rightscroll">
+                <button class = "navbutton" id = "back0607">&#x25C0</button>
+                <button class = "navbutton" id = "new0607">NEW</button>
+                <button class = "navbutton" id = "fwd0607">&#x25B6</button>        
+                <table class = "jsontable" id = "table0607"></table>        
+        </div>    
+        <table  class = "pantableleft">
+                <tr>
+                    <td class = "panbutton" onclick = "viewAction0607 = 0252;redraw0707();">&#x2B05</td> 
+                    <td class = "panbutton" onclick = "viewAction0607 = 0250;redraw0707();">&#x2B06</td>
+                    <td class = "panbutton" onclick = "viewAction0607 = 0251;redraw0707();">&#x2B07</td>
+                    <td class = "panbutton" onclick = "viewAction0607 = 0253;redraw0707();">&#x27A1</td>
+                    <td class = "panbutton" onclick = "viewAction0607 = 0256;redraw0707();" style = "padding-left:10px;padding-right:10px;">-</td>
+                    <td class = "panbutton" onclick = "viewAction0607 = 0257;redraw0707();" style = "padding-left:10px;padding-right:10px;">+</td>
+                </tr>
+        </table> 
+    </div>
 <!--</page0607>-->             
 <!--<page0610>-->
-    <div class = "page" id = "div0610">
-            <div class = "title">Add Vector Images</div>
+<div class = "page" id = "div0610">
+    <div class = "title">Coordinate Calculator</div>
+    <img id = "img0610" src = "https://i.imgur.com/MrbPMP4.jpg"></img>
+    <table id = "table0610">
+        <tr>
+            <td>Coordinate System Origin:</td><td><input id = "latlon0input0610" value = "38.859107,-77.048975"></input></td>
+        </tr>        
+        <tr>            
+            <td>Lat/Lon of Point:</td><td><input id = "latlon1input0610"></input></td>
+        </tr>        
+        <tr> 
+            <td>Unit of Distance(feet):</td><td><input id = "unitinput0610" value = "300"></input></td>            
+        </tr>
+        <tr> 
+            <td>Coordinates of Point:</td><td><input id = "xyinput0610"></input></td>            
+        </tr>
+    </table>
+    <div id  = "mapequation0610">
+    $$
+    \textrm{1 degree lattitude} = \left(\frac{\textrm{60 NM}}{\textrm{1 deg}}\right)
+    \left(\frac{\textrm{1.151 mile}}{\textrm{1 NM}}\right)
+    \left(\frac{\textrm{5280 feet}}{\textrm{1 mile}}\right)
+    = \textrm{364,637 feet}
+    $$
+    $$
+    \textrm{1 degree longitude} = \textrm{1 degree lattitude} \times \cos{(\textrm{lattitude})} 
+    $$
+    $$
+    = 0.77869\times\textrm{364,637 feet} = \textrm{283,940 feet}
+    $$
     </div>
+</div>
 <!--</page0610>-->             
 <!--<page0620>-->
-        <div class = "page" id = "div0620">
-                <div class = "title">Map Viewer</div>
-        </div>
+<div class = "page" id = "div0620">
+    <div class = "title">Map Viewer</div>
+    <canvas id = "canvas0620"></canvas>
+    <table  class = "pantable">
+            <tr>
+                <td class = "panbuttonblack" onclick = "viewAction0620 = 0252;redraw0720();">&#x2B05</td> 
+                <td class = "panbuttonblack" onclick = "viewAction0620 = 0250;redraw0720();">&#x2B06</td>
+                <td class = "panbuttonblack" onclick = "viewAction0620 = 0251;redraw0720();">&#x2B07</td>
+                <td class = "panbuttonblack" onclick = "viewAction0620 = 0253;redraw0720();">&#x27A1</td>
+                <td class = "panbuttonblack" onclick = "viewAction0620 = 0256;redraw0720();" style = "padding-left:10px;padding-right:10px;">-</td>
+                <td class = "panbuttonblack" onclick = "viewAction0620 = 0257;redraw0720();" style = "padding-left:10px;padding-right:10px;">+</td>
+            </tr>
+    </table>            
+</div>
 <!--</page0620>-->             
 <!--<page0621>-->
         <div class = "page" id = "div0621">
-            <div class = "title">Map Publisher</div>
+            <div class = "title">Messaging</div>
         </div>
 <!--</page0621>-->     
 <!--<page0700>-->
-        <script id = "script0700">
-                zoom = 1;
-                pages = document.getElementsByClassName("page");
-                currentPage = 0;
-                for(index = 0;index < pages.length;index++){
-                    if(index != currentPage){
-                        pages[index].style.display = "none";
-                    }
+    <script id = "script0700">
+            zoom = 1;
+            pages = document.getElementsByClassName("page");
+            currentPage = 0;
+            for(index = 0;index < pages.length;index++){
+                if(index != currentPage){
+                    pages[index].style.display = "none";
                 }
-                
-                document.getElementById("backbutton").onclick = function(){
-                    pages[currentPage].style.display = "none";
-                    currentPage--;
-                    if(currentPage < 0){
-                        currentPage = pages.length - 1;
-                    }
-                    pages[currentPage].style.display = "block";
-                            
-                }
-                document.getElementById("fwdbutton").onclick = function(){
-                    pages[currentPage].style.display = "none";
-                    currentPage++;
-                    if(currentPage > pages.length -1){
-                        currentPage = 0;
-                    }
-                    pages[currentPage].style.display = "block";
-                }
+            }
             
-            </script>
+            document.getElementById("backbutton").onclick = function(){
+                pages[currentPage].style.display = "none";
+                currentPage--;
+                if(currentPage < 0){
+                    currentPage = pages.length - 1;
+                }
+                pages[currentPage].style.display = "block";
+                        
+            }
+            document.getElementById("fwdbutton").onclick = function(){
+                pages[currentPage].style.display = "none";
+                currentPage++;
+                if(currentPage > pages.length -1){
+                    currentPage = 0;
+                }
+                pages[currentPage].style.display = "block";
+            }    
+    </script>
 <!--</page0700>-->        
 <!--<page0701>-->
 <script id = "script0701">
@@ -1375,12 +1587,11 @@ function redraw0701(){
         currentTable[0403] = string2byteCode(JSON.stringify(json0403, null, '    '));
         document.getElementById("jsonIOmapedit").value = JSON.stringify(json0403, null, '    ');
         document.getElementById("bytecodeIOmapedit").value = "0403:" + string2byteCode(JSON.stringify(json0403, null, '    '));
-        drawGlyph("0300,0300,0327,0341,0340,0342,0335,0342,0335,0342,0335,0342,")
+        drawGlyph("0300,0300,0327,0341,0340,0342,0335,0342,0335,0342,0335,0342,");
     }
 
-
     document.getElementById("mapeditnew").onclick = function(){
-        var newelement = JSON.parse(JSON.stringify(json0403.template))
+        var newelement = JSON.parse(JSON.stringify(json0403.template));
         json0403.dataarray.push(newelement);
         redraw0703();
     }
@@ -1433,7 +1644,7 @@ function redraw0701(){
         var rfeet = distanceFeet(lat0,lon0,lat1,lon1);
         unit = zoom*rfeet/json0403.dataarray[mapeditindex].feetperpixel;
         ctx.clearRect(0,0,innerWidth,innerHeight);
-        drawGlyph(currentGlyph);
+            drawGlyph(currentGlyph);
         x = innerWidth - 100;
         y = 100;
         side= 30;
@@ -1471,6 +1682,7 @@ function redraw0701(){
 <!--</page0705>-->
 <!--<page0706>-->
 <script id = "script0706">
+    viewAction0606 = 0176;
     document.getElementById("canvaspage").width = 850;//100 pixels= 1 inch (not really but it's a conversion)
     document.getElementById("canvaspage").height = 1100;
     x0 = document.getElementById("canvaspage").width/2;
@@ -1485,10 +1697,7 @@ function redraw0701(){
         ctx = document.getElementById("canvaspage").getContext("2d");
         ctx.clearRect(0,0,document.getElementById("canvaspage").width,document.getElementById("canvaspage").height);
         currentSVG= "<svg width=\"850\" height=\"1100\" viewbox = \"0 0 850 1100\"  xmlns=\"http://www.w3.org/2000/svg\" style = \"border:solid;\">\n";
-        drawGlyph(viewGlyph0606);
-        drawGlyph(json0405.dataarray[glypheditindex].glyph);
-        currentSVG += "</svg>";
-        document.getElementById("svgIO0606").value = currentSVG;
+        
         var lat0 = parseFloat(json0402.dataarray[landmark0index]["latlon"].split(',')[0]);
         var lon0 = parseFloat(json0402.dataarray[landmark0index]["latlon"].split(',')[1]);
         var lat1 = parseFloat(json0402.dataarray[landmark1index]["latlon"].split(',')[0]);
@@ -1503,9 +1712,175 @@ function redraw0701(){
         y0 = y;
         zoom = side/unit; 
         unit = side;
+        drawGlyph(json0405.dataarray[glypheditindex].glyph);
+        currentSVG += "</svg>";
+        document.getElementById("svgIO0606").value = currentSVG;
     }
 </script>
 <!--</page0706>-->
+<!--<page0707>-->
+<script id = "script0707">
+    viewAction0607 = 0177;
+    viewGlyph0607 = "0300,";
+    document.getElementById("canvas0607").width = innerWidth;
+    document.getElementById("canvas0607").height = innerHeight;
+    x0 = innerWidth/2;
+    y0 = innerHeight/2;
+    unit = 100;
+    json0407 = JSON.parse(document.getElementById("data0407").innerHTML);
+    boxes0607 = [];
+    for(var index = 0;index < json0407.dataarray.length;index++){
+        var newdiv = document.createElement("a");
+        document.getElementById("div0607").appendChild(newdiv);        
+        boxes0607.push(newdiv);
+    }
+    redraw0707();
+    function redraw0707(){
+        ctx = document.getElementById("canvas0607").getContext("2d");
+        ctx.clearRect(0,0,document.getElementById("canvas0607").width,document.getElementById("canvas0607").height);
+        
+        var lat0 = parseFloat(json0402.dataarray[landmark0index]["latlon"].split(',')[0]);
+        var lon0 = parseFloat(json0402.dataarray[landmark0index]["latlon"].split(',')[1]);
+        var lat1 = parseFloat(json0402.dataarray[landmark1index]["latlon"].split(',')[0]);
+        var lon1 = parseFloat(json0402.dataarray[landmark1index]["latlon"].split(',')[1]);
+        var rfeet = distanceFeet(lat0,lon0,lat1,lon1);
+        unit = zoom*rfeet/json0403.dataarray[mapeditindex].feetperpixel;
+        x0 = document.getElementById("canvaspage").width/2;
+        y0 = document.getElementById("canvaspage").height/2;
+        viewGlyph0607 += "0" +  viewAction0607.toString(8) + ",";
+        drawGlyph(viewGlyph0607);
+        x0 = x;
+        y0 = y;
+        zoom = side/unit; 
+        unit = side;
+        
+        for(var index = 0;index < boxes0607.length;index++){
+            boxes0607[index].className = json0407.dataarray[index].class;
+            boxes0607[index].style.left = (x0 + json0407.dataarray[index].x*unit - 0.5*json0407.dataarray[index].w*unit).toString() +  "px";
+            boxes0607[index].style.top = (y0 - json0407.dataarray[index].y*unit - 0.5*json0407.dataarray[index].h*unit).toString() +  "px";
+            boxes0607[index].style.width = (json0407.dataarray[index].w*unit).toString() +  "px";
+            boxes0607[index].style.height = (json0407.dataarray[index].h*unit).toString() +  "px";
+            boxes0607[index].style.fontSize = (json0407.dataarray[index].fontSize*unit).toString() +  "px";
+            boxes0607[index].style.paddingTop = (0.5*unit*(json0407.dataarray[index].h - json0407.dataarray[index].fontSize)).toString() + "px";  
+            boxes0607[index].innerHTML = json0407.dataarray[index].text;
+            boxes0607[index].href = json0407.dataarray[index].url;
+            doTheThing(0300);
+            x = x0 + json0407.dataarray[index].x*unit;
+            y = y0 - json0407.dataarray[index].y*unit;
+            side = json0407.dataarray[index].h*unit;
+            doTheThing(0327);
+            drawGlyph(json0407.dataarray[index].glyph);
+
+        }
+    }
+
+</script>
+<!--</page0707>-->
+<!--<page0710>-->
+<script id = "script0710">
+
+    latfeet = 364637;//feet per degree latitude
+    lonfeet = 283940;//feet per degree longitude
+ 
+    document.getElementById("latlon1input0610").onchange = function(){
+        var lat0 = parseFloat(document.getElementById("latlon0input0610").value.split(",")[0]);
+        var lon0 = parseFloat(document.getElementById("latlon0input0610").value.split(",")[1]);
+        var lat1 = parseFloat(this.value.split(",")[0]);
+        var lon1 = parseFloat(this.value.split(",")[1]);
+        var xfeet = (lon1-lon0)*lonfeet;
+        var yfeet = (lat1-lat0)*latfeet;
+        var xunits = xfeet/parseFloat(document.getElementById("unitinput0610").value);
+        var yunits = yfeet/parseFloat(document.getElementById("unitinput0610").value);
+        xunits = Math.round(10*xunits)/10;
+        yunits = Math.round(10*yunits)/10;
+        document.getElementById("xyinput0610").value = xunits.toString() + "," + yunits.toString();
+    }
+    document.getElementById("unitinput0610").onchange = function(){
+        var lat0 = parseFloat(document.getElementById("latlon0input0610").value.split(",")[0]);
+        var lon0 = parseFloat(document.getElementById("latlon0input0610").value.split(",")[1]);
+        var lat1 = parseFloat(document.getElementById("latlon1input0610").value.split(",")[0]);
+        var lon1 = parseFloat(document.getElementById("latlon1input0610").value.split(",")[1]);
+        var xfeet = (lon1-lon0)*lonfeet;
+        var yfeet = (lat1-lat0)*latfeet;
+        var xunits = xfeet/parseFloat(this.value);
+        var yunits = yfeet/parseFloat(this.value);
+        xunits = Math.round(10*xunits)/10;
+        yunits = Math.round(10*yunits)/10;
+        document.getElementById("xyinput0610").value = xunits.toString() + "," + yunits.toString();
+    }
+    document.getElementById("xyinput0610").onchange = function(){
+        var xunits = parseFloat(this.value.split(",")[0]);
+        var yunits = parseFloat(this.value.split(",")[1]);
+        var lat0 = parseFloat(document.getElementById("latlon0input0610").value.split(",")[0]);
+        var lon0 = parseFloat(document.getElementById("latlon0input0610").value.split(",")[1]);
+        var xfeet = xunits*parseFloat(document.getElementById("unitinput0610").value);
+        var yfeet = yunits*parseFloat(document.getElementById("unitinput0610").value);
+        var deltalat = yfeet/latfeet;
+        var deltalon = xfeet/lonfeet;
+        var lat1 = lat0 + deltalat;
+        var lon1 = lon0 + deltalon;
+        document.getElementById("latlon1input0610").value = lat1.toString() + "," + lon1.toString();
+
+    }
+
+</script>
+<!--</page0710>-->  
+<!--<page0720>-->
+<script id = "script0720">
+    viewAction0620 = 0177;
+    viewGlyph0620 = "0300,";
+    document.getElementById("canvas0620").width = innerWidth;
+    document.getElementById("canvas0620").height = innerHeight;
+    ctx = document.getElementById("canvas0620").getContext("2d");    
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+    x0 = innerWidth/2;
+    y0 = innerHeight/2;
+    json0420 = JSON.parse(document.getElementById("data0420").innerHTML);
+    for(var index = 0;index < json0420.images.length;index++){
+        var newimg = document.createElement("IMG");
+        newimg.className = "images0620";
+        newimg.style.zIndex = json0420.images[index].layer;
+        newimg.style.left = "0px";
+        newimg.style.top = "0px";
+        newimg.style.position = "absolute";
+        newimg.src = json0420.images[index].url;
+        newimg.onload  = function(){
+            redraw0720();
+        }
+        document.getElementById("div0620").appendChild(newimg);
+    }
+
+    images0620 = document.getElementsByClassName("images0620");
+
+    redraw0720();
+    function redraw0720(){
+        x = innerWidth/2;
+        y = innerHeight/2;
+        x0 = innerWidth/2;
+        y0 = innerHeight/2;
+        unit = 100.0; 
+        viewGlyph0620 += "0" +  viewAction0620.toString(8) + ",";
+        drawGlyph(viewGlyph0620);
+        x0 = x;
+        y0 = y;
+        localzoom = side/100; 
+        unit = 100;
+        ctx = document.getElementById("canvas0620").getContext("2d");    
+        ctx.clearRect(0,0,innerWidth,innerHeight);
+        for(var index = 0;index < images0620.length;index++){
+            images0620[index].width = localzoom*json0420.images[index].imgw*json0420.images[index].feetperpixel/json0420.feetperpixel;
+            var xlocalfeet = distanceFeet(json0420.latlon0.split(",")[0],json0420.images[index].latlon0.split(",")[1],json0420.latlon0.split(",")[0],json0420.latlon0.split(",")[1]);
+            var ylocalfeet = distanceFeet(json0420.images[index].latlon0.split(",")[0],json0420.latlon0.split(",")[1],json0420.latlon0.split(",")[0],json0420.latlon0.split(",")[1]);
+            var xlocalpx = localzoom*xlocalfeet/json0420.feetperpixel;
+            var ylocalpx = localzoom*ylocalfeet/json0420.feetperpixel;
+            images0620[index].style.left =  (Math.round(x0 - xlocalpx) ).toString() + "px";
+            images0620[index].style.top = (Math.round(y0 - ylocalpx) ).toString() + "px";
+            console.log(xlocalpx);
+        }
+    }
+
+</script>
+<!--</page0720>-->
 <!--<page0500>-->
 <style id = "style0500">
 html{
@@ -1621,6 +1996,7 @@ input{
     border-radius:15px;
     text-align:center;
     overflow:scroll;
+    z-index:3;
 }
 .rightscroll{
     position:absolute;
@@ -1632,6 +2008,7 @@ input{
     border-radius:15px;
     text-align:center;
     overflow:scroll;
+    z-index:3;
 }
 #bytecodeIO{
     width:80%;
@@ -1758,6 +2135,7 @@ textarea{
     border-radius:15px;
     text-align:center;
     overflow:scroll;
+    z-index:3;
 }
 .pantable{
     position: absolute;
@@ -1806,6 +2184,8 @@ textarea{
     border-radius:15px;
     text-align:center;
     overflow:scroll;
+    z-index:3;
+
 }
 </style>
 <!--</page0505>-->
@@ -1849,6 +2229,108 @@ textarea{
 }
 </style>
 <!--</page0506>-->
+<!--<page0507>-->
+<style id = "style0507">
+#canvas0607{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.box1{
+    position: absolute;
+    color:#00ff00;
+    border-radius:0.5em;
+    text-align:center;
+    font-family:courier;
+    cursor:pointer;
+    z-index:2;
+}
+.box1:hover{
+    background-color:#004000;
+}
+.box1:active{
+    background-color:#707000;
+}
+#bytecodeIO0607{
+        width:80%;
+        height:70%;
+    }
+#jsonIO0607{
+        width:80%;
+        height:70%;
+}
+#back0607{
+    left: 5px;
+    top:5px;
+}
+#fwd0607{
+    right: 5px;
+    top:5px;
+}
+#new0607{
+    left:120px;
+    top:5px;
+}
+#table0607{
+    position: absolute;
+    top:60px;
+    width:90%;
+}
+
+</style>
+<!--</page0507>-->
+<!--<page0510>-->
+<style id = "style0510">
+
+#table0610{
+    position:absolute;
+    left:40%;
+    right: 40%;
+    top:20%;
+    z-index:3;
+}
+#img0610{
+    position: absolute;
+    width:400px;
+    left: 10px;
+    top:100px;
+}
+#mapequation0610{
+    position: absolute;
+    bottom:5%;
+    left:40%;
+    border:solid;
+    border-radius:15px;
+    padding: 10px 10px 10px 10px;
+    z-index:2;
+}
+</style>
+<!--</page0510>-->
+<!--<page0520>-->
+<style id = "style0510">
+    #canvas0620{
+        position: absolute;
+        left: 0px;
+        top:0px;
+    }
+    #div0620{
+        color:black;
+    }
+    .panbuttonblack{
+        cursor:pointer;
+        z-index:4;
+    }
+    .panbuttonblack:hover{
+        background-color:#30ff30;
+    }
+    .panbuttonblack:active{
+        background-color:yellow;
+    }
+    .images0620{
+        position: absolute;
+    }
+</style>
+<!--</page0520>-->
 <!--<page05>-->
 </body>
 </html>
